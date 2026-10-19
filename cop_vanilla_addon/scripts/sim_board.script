@@ -146,6 +146,7 @@ simulation_activities = {
 
 
 -- VRA diagnostic trace: log ordinary simulation squad composition and routing state.
+class "sim_board"
 function sim_board:__init()
 	--' Òàáëèöà ñîäåðæàùàÿ ñìàðòû è äàííûå î íèõ â ôîðìàòå:
 	--' smart = {smrt, targets = {}, dangers = {}, squads = {}, stayed_squad_quan = 0}
