@@ -1,0 +1,101 @@
+* Detected CPU: Intel(R) Xeon(R) CPU E5-2667 v4 @ 3.20GHz [GenuineIntel], F0/M2/S14
+* CPU features: RDTSC, MMX, SSE, SSE2, SSE3, SSE 4.1, SSE 4.2
+* CPU cores/threads: 8/16
+Initializing File System...
+using fs-ltx fsgame.ltx
+pFSltx: (null)
+Init FileSystem 0.562210 sec
+'xrCore' build 10081, Sep 14 2026
+-----loading d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\system.ltx
+Enable shader option: USE_LEGACY_LIGHT
+Initializing Engine...
+Starting INPUT device...
+Executing config-script "user.ltx"...
+! Cannot open script file [user.ltx]
+Loading DLL: xrRender_R1.dll
+Loading DLL: xrGame.dll
+Found xrGameSpy.dll DLL! Enable MP subsystem!
+IX-Ray Call Of Pripyat r1.3.6 build info: hash[612b165c9] branch[default] commit author[Drombeys]
+SOUND: OpenAL: enumerate devices...
+SOUND: OpenAL: system  default SndDevice name is Default Device
+SOUND: OpenAL: All available devices:
+1. Default Device, Spec Version 1.1, EFX Spec Version 1.0
+2. USB Audio Device, Spec Version 1.1, EFX Spec Version 1.0
+3. NVIDIA High Definition Audio, Spec Version 1.1, EFX Spec Version 1.0
+4. S/PDIF, Spec Version 1.1, EFX Spec Version 1.0
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_controls.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_controls.ltx] successfully loaded.
+Executing config-script "user.ltx"...
+! Cannot open script file [user.ltx]
+SOUND: Selected device is Default Device
+* sound : cache: 524296 kb, 38848 lines, 13820 bpl
+Starting RENDER device...
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+* Starting rendering as 2-GPU.
+* DVB created: 4096K
+* DIB created: 512K
+* distortion: used, dev(30),need(14)
+* color_mapping: used, dev(30),need(14)
+* SSample: 2560x1440
+* SSample: enabled
+- r__tf_aniso 16
+- r__tf_mipbias -0.1
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings.ltx] successfully loaded.
+* DVB created: 4096K
+* DIB created: 512K
+- r__tf_aniso 16
+- r__tf_mipbias -0.1
+* SSample: 2560x1440
+* SSample: enabled
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+* Starting rendering as 2-GPU.
+*** RESET [93 ms]
+* loading script _g.script
+* loading script class_registrator.script
+* loading script ui_main_menu.script
+* loading script smart_terrain.script
+* loading script se_level_changer.script
+* loading script se_actor.script
+* loading script se_stalker.script
+* loading script se_heli.script
+* loading script se_zones.script
+* loading script se_item.script
+* loading script se_smart_cover.script
+* loading script se_artefact.script
+* loading script se_monster.script
+* loading script sim_squad_scripted.script
+* loading script game_registrator.script
+* loading script ixray_global.script
+* loading script se_car.script
+Starting engine...
+* End of synchronization A[1] R[1]
+~ Missing ogg-comment, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\video\bitcomposer.ogg
+~ Missing ogg-comment, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\video\ati_radeon_1920x1080.ogg
+~ Missing ogg-comment, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\video\amd_fusion_final_720.ogg
+intro_start intro_logo
+intro_delete ::update_logo_intro
+* loading script xr_s.script
+* loading script ui_mm_opt_main.script
+* loading script ui_mm_opt_video.script
+* loading script ui_mm_opt_sound.script
+* loading script ui_mm_opt_gameplay.script
+* loading script ui_mm_opt_controls.script
+* loading script ui_mm_opt_video_adv.script
+Config-file [_appdata_ixray_\tmp.ltx] saved successfully
+* DVB created: 4096K
+* DIB created: 512K
+- r__tf_aniso 16
+- r__tf_mipbias -0.1
+* SSample: 2560x1440
+* SSample: enabled
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+* Starting rendering as 2-GPU.
+*** RESET [158 ms]
+* sound : cache: 524296 kb, 38848 lines, 13820 bpl
+Config-file [_appdata_ixray_\user.ltx] saved successfully
+* End of synchronization A[1] R[1]
+Config-file [_appdata_ixray_\user.ltx] saved successfully

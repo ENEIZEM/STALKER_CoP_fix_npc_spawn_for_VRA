@@ -1,0 +1,458 @@
+* Detected CPU: Intel(R) Xeon(R) CPU E5-2667 v4 @ 3.20GHz [GenuineIntel], F0/M2/S14
+* CPU features: RDTSC, MMX, SSE, SSE2, SSE3, SSE 4.1, SSE 4.2
+* CPU cores/threads: 8/16
+Initializing File System...
+using fs-ltx fsgame.ltx
+pFSltx: (null)
+Processing cop_vanilla_addon\ addon completed!
+Processing cop_vanilla_ccon_grass\ addon completed!
+Processing cop_vanilla_swr_addon\ addon completed!
+Processing cop_vanilla_swr_addon_adopt\ addon completed!
+Processing cop_vanilla_thap_hands\ addon completed!
+Processing ixray-atmosfear-3-r1.0\ addon completed!
+Processing ixray-hd-hud\ addon completed!
+Processing ixray-paradox-sfx-v2.3\ addon completed!
+Init FileSystem 1.717092 sec
+'xrCore' build 10081, Sep 14 2026
+-----loading d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\system.ltx
+Enable shader option: USE_LEGACY_LIGHT
+Enable shader option: USE_LEGACY_SKY_TONEMAP
+Initializing Engine...
+Starting INPUT device...
+XML file:text\eng\st_dialog_manager.xml value:(null) errDescr:Error=XML_ERROR_MISMATCHED_ELEMENT ErrorID=14 (0xe) Line number=621: XMLElement name=string
+! duplicate fallback string table id: jup_b15_zulus_about_dialog_134
+! duplicate fallback string table id: zat_b14_stalker_1_first_deal_start_7
+! duplicate fallback string table id: zat_b14_stalker_1_first_deal_start_8
+Executing config-script "user.ltx"...
+[_appdata_ixray_\user.ltx] successfully loaded.
+Loading DLL: xrRender_R2.dll
+Loading DLL: xrGame.dll
+Found xrGameSpy.dll DLL! Enable MP subsystem!
+IX-Ray Call Of Pripyat r1.3.6 build info: hash[612b165c9] branch[default] commit author[Drombeys]
+SOUND: OpenAL: enumerate devices...
+SOUND: OpenAL: system  default SndDevice name is Default Device
+SOUND: OpenAL: All available devices:
+1. Default Device, Spec Version 1.1, EFX Spec Version 1.0
+2. CMF Buds Pro 2, Spec Version 1.1, EFX Spec Version 1.0
+3. NVIDIA High Definition Audio, Spec Version 1.1, EFX Spec Version 1.0
+4. USB Audio Device, Spec Version 1.1, EFX Spec Version 1.0
+5. S/PDIF, Spec Version 1.1, EFX Spec Version 1.0
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_controls.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_controls.ltx] successfully loaded.
+Executing config-script "user.ltx"...
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\rspec_default.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\rspec_default.ltx] successfully loaded.
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_controls.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_controls.ltx] successfully loaded.
+[_appdata_ixray_\user.ltx] successfully loaded.
+SOUND: Selected device is Default Device
+* sound : cache: 524296 kb, 38848 lines, 13820 bpl
+Starting RENDER device...
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+* Starting rendering as 2-GPU.
+* DVB created: 4096K
+* DIB created: 512K
+! Renderer doesn't support blender 'effects\shadow_world'
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 136
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 126
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 126
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 133
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 133
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 133
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 133
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 132
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 132
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 129
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 131
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 131
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 99
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 137
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 137
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 154
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 134
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 134
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 150
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 150
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 158
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 158
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 153
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 153
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 158
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 158
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 138
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 138
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 144
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 144
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 143
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 143
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 148
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 148
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 118
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 118
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 123
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 123
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 117
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 117
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 118
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 118
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 124
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 124
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 117
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 117
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 125
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 117
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 117
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 119
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 120
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 120
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 120
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 120
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 116
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 116
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 121
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 121
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 122
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 115
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 127
+! THM chunk THM_CHUNK_... fixed, wrong size = 2, correct size = 127
+* HWDST/PCF supported and used
+- r__tf_aniso 16
+- r__tf_mipbias -0.1
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings.ltx] successfully loaded.
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings_af3.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings_af3.ltx] successfully loaded.
+Executing config-script "d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings_swr.ltx"...
+[d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\configs\ixray_settings\default_settings_swr.ltx] successfully loaded.
+* DVB created: 4096K
+* DIB created: 512K
+- r__tf_aniso 16
+- r__tf_mipbias -0.1
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+* Starting rendering as 2-GPU.
+*** RESET [1156 ms]
+* loading script _g.script
+* loading script class_registrator.script
+* loading script ui_main_menu.script
+* loading script smart_terrain.script
+* loading script se_level_changer.script
+* loading script se_actor.script
+* loading script se_stalker.script
+* loading script se_heli.script
+* loading script se_zones.script
+* loading script se_item.script
+* loading script se_smart_cover.script
+* loading script se_artefact.script
+* loading script se_monster.script
+* loading script sim_squad_scripted.script
+* loading script game_registrator.script
+* loading script ixray_global.script
+* loading script se_car.script
+Starting engine...
+* End of synchronization A[1] R[1]
+~ Missing ogg-comment, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\video\ati_radeon_1920x1080.ogg
+~ Missing ogg-comment, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\video\amd_fusion_final_720.ogg
+intro_start intro_logo
+intro_delete ::update_logo_intro
+* loading script xr_s.script
+"d:\games\s.t.a.l.k.e.r. call of pripyat\bin\xrengine.exe" 
+* Game Loading Timer: Started!
+Кэширование объектов...
+Loading objects...
+! Can't find sound 'weapons\spas12\spas12_revival'
+! Invalid ogg-comment version, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\weapons\svd\svd_reload_partial1.ogg
+! Invalid ogg-comment version, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\weapons\svd\svd_reload_partial2.ogg
+! Invalid ogg-comment version, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\weapons\svd\svd_reload_partial3.ogg
+! Can't find sound 'weapons\winchester1300\winchester1300_revival'
+Loading models...
+Loading textures...
+Сервер: Старт...
+* loading script _g.script
+* loading script class_registrator.script
+* loading script ui_main_menu.script
+* loading script smart_terrain.script
+* loading script se_level_changer.script
+* loading script se_actor.script
+* loading script se_stalker.script
+* loading script se_heli.script
+* loading script se_zones.script
+* loading script se_item.script
+* loading script se_smart_cover.script
+* loading script se_artefact.script
+* loading script se_monster.script
+* loading script sim_squad_scripted.script
+* loading script game_registrator.script
+* loading script ixray_global.script
+* loading script se_car.script
+* loading script smart_names.script
+* loading script task_manager.script
+* loading script sound_theme.script
+* loading script utils.script
+* loading script db.script
+* loading script actor_proxy.script
+* loading script xr_sound.script
+* loading script dialog_manager.script
+* loading script xr_logic.script
+* loading script xr_s.script
+* loading script xrs_dyn_music.script
+* loading script sim_objects.script
+* loading script sim_board.script
+* loading script sr_light.script
+* loading script pda.script
+* loading script treasure_manager_cs.script
+Сервер: Загрузка симуляции жизни...
+Загрузка игры "maksim - быстрое сохранение [2].scop"...
+* loading script alife_storage_manager.script
+* loading script ffx_path_utils.script
+* Loading spawn registry...
+* loading script story_objects.script
+* loading script smart_covers.script
+* loading script smart_covers_combat_prone.script
+* loading script smart_covers_loophole_prone.script
+* loading script smart_covers_combat_front.script
+* loading script smart_covers_loophole_crouch_front_left.script
+* loading script smart_covers_loophole_crouch_front.script
+* loading script smart_covers_loophole_crouch_front_right.script
+* loading script smart_covers_loophole_stand_front_left.script
+* loading script smart_covers_loophole_stand_front_right.script
+* loading script smart_covers_animpoint_stay_wall.script
+* loading script smart_covers_loophole_animpoint_stay_wall.script
+* loading script smart_covers_animpoint_stay_table.script
+* loading script smart_covers_loophole_animpoint_stay_table.script
+* loading script smart_covers_animpoint_sit_high.script
+* loading script smart_covers_loophole_animpoint_sit_high.script
+* loading script smart_covers_animpoint_sit_normal.script
+* loading script smart_covers_loophole_animpoint_sit_normal.script
+* loading script smart_covers_animpoint_sit_low.script
+* loading script smart_covers_loophole_animpoint_sit_low.script
+* loading script smart_covers_animpoint_sit_ass.script
+* loading script smart_covers_loophole_animpoint_sit_ass.script
+* loading script smart_covers_animpoint_sit_knee.script
+* loading script smart_covers_loophole_animpoint_sit_knee.script
+* loading script smart_covers_animpoint_pri_a15.script
+* loading script smart_covers_loophole_animpoint_pri_a15.script
+* loading script smart_covers_anim_pri_a22.script
+* loading script smart_covers_loophole_anim_pri_a22.script
+* loading script smart_terrain_control.script
+* 6400 spawn points are successfully loaded
+* Loading objects...
+* loading script sound_manager.script
+* 11584 objects are successfully loaded
+* loading script simulation_objects.script
+* loading script xr_conditions.script
+* loading script xr_statistic.script
+* loading script treasure_manager.script
+* loading script gulag_general.script
+* loading script xr_gulag.script
+* loading script modules.script
+* Game maksim - быстрое сохранение [2] is successfully loaded from file '_appdata_ixray_\savedgames\maksim - быстрое сохранение [2].scop' (1.802s)
+* loading script inventory_upgrades.script
+Сервер: Соединение...
+* loading script loadscreen.script
+Клиент: Соединение с localhost...
+* WARNING: player not logged in
+* client : connection accepted - <All Ok>
+Открытие потока...
+Загрузка формы объектов...
+* Level collision DB cache found...
+Загрузка шейдеров...
+Загрузка геометрии...
+Загрузка базы пространств...
+Загрузка детальных объектов...
+* [DETAILS] 161250 v(20), 94000 p
+* [DETAILS] Batch(50), VB(3149K), IB(550K)
+Загрузка секторов и порталов...
+* Level collision DB cache found...
+* Loading HOM: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\levels\zaton\level.hom
+* Level collision DB cache found...
+Загрузка ИИ объектов...
+Загрузка текстур...
+* t-report - base: 1653, 1230668 K
+* t-report - lmap: 13, 13313 K
+* WARNING: player not logged in
+Клиент: Синхронизация...
+! Unsupported texture [d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\textures\sky\sky_7_cube.dds]
+! DDS METADATA ERROR: Failed to get DDS metadata for 'sky\sky_7_cube'
+File size: 8388916 bytes
+Error: Такой запрос не поддерживается.
+ (0x80070032)
+Possible causes:
+- Corrupted DDS header
+- Unsupported DDS variant
+! Unsupported texture [d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\textures\sky\sky_8_cube.dds]
+! DDS METADATA ERROR: Failed to get DDS metadata for 'sky\sky_8_cube'
+File size: 8388916 bytes
+Error: Такой запрос не поддерживается.
+ (0x80070032)
+Possible causes:
+- Corrupted DDS header
+- Unsupported DDS variant
+* loading script bind_anomaly_field.script
+* loading script bind_smart_terrain.script
+* loading script bind_stalker.script
+* loading script level_weathers.script
+* loading script atmosfear.script
+* loading script surge_manager.script
+* loading script psi_storm_manager.script
+! Invalid weather name: 
+! [LUA][ERROR] INCORRECT LOAD [_WeatherManager].[7475][72]
+[LUA] Error: INCORRECT LOAD [_WeatherManager].[7475][72]
+
+FATAL ERROR
+
+[error]Expression    : 0
+[error]Function      : ErrorLog
+[error]File          : F:\ixray-1.6-stcop\src\xrScripts\script_engine_script.cpp
+[error]Line          : 27
+[error]Description   : INCORRECT LOAD [_WeatherManager].[7475][72]
+
+stack trace:
+* loading script release_body_manager.script
+! [LUA][ERROR] INCORRECT LOAD [_Crelease_body].[0][96002]
+[LUA] Error: INCORRECT LOAD [_Crelease_body].[0][96002]
+! [LUA][ERROR] INCORRECT LOAD [_AtmosFear].[0][56]
+[LUA] Error: INCORRECT LOAD [_AtmosFear].[0][56]
+! [LUA][ERROR] INCORRECT LOAD [_PsiStorm].[0][8]
+[LUA] Error: INCORRECT LOAD [_PsiStorm].[0][8]
+! [LUA][ERROR] INCORRECT LOAD [_SurgeHide].[0][8]
+[LUA] Error: INCORRECT LOAD [_SurgeHide].[0][8]
+* loading script sr_psy_antenna.script
+! [LUA][ERROR] INCORRECT LOAD [_sr_psy_antenna].[0][1]
+[LUA] Error: INCORRECT LOAD [_sr_psy_antenna].[0][1]
+* loading script bind_camp.script
+* loading script sr_camp.script
+* loading script bind_physic_object.script
+* loading script bind_smart_cover.script
+* loading script bind_monster.script
+! Invalid ogg-comment version, file: d:\games\s.t.a.l.k.e.r. call of pripyat\gamedata\sounds\material\wood\wood_big_hard_1.ogg
+* loading script xr_motivator.script
+* loading script state_mgr.script
+* loading script xr_evaluators_id.script
+* loading script xr_actions_id.script
+* loading script state_mgr_goap.script
+* loading script state_mgr_weapon.script
+* loading script state_mgr_movement.script
+* loading script state_mgr_mental.script
+* loading script state_mgr_bodystate.script
+* loading script state_mgr_direction.script
+* loading script state_mgr_animation.script
+* loading script state_mgr_animstate_list.script
+* loading script state_mgr_animstate_list_animpoint.script
+* loading script xr_effects.script
+* loading script state_mgr_animstate.script
+* loading script state_mgr_animation_list.script
+* loading script xr_corpse_detection.script
+* loading script xr_help_wounded.script
+* loading script state_mgr_animation_list_animpoint.script
+* loading script state_mgr_scenario.script
+* loading script state_mgr_pri_a15.script
+* loading script state_mgr_smartcover.script
+* loading script move_mgr.script
+* loading script trade_manager.script
+* loading script xr_reach_task.script
+* loading script xr_combat.script
+* loading script xr_hit.script
+* loading script xr_meet.script
+* loading script xr_combat_ignore.script
+* loading script stalker_generic.script
+* loading script xr_danger.script
+* loading script xr_gather_items.script
+* loading script xr_wounded.script
+* loading script xr_abuse.script
+* loading script xr_death.script
+* loading script spawner.script
+* loading script game_relations.script
+* loading script restrictor_manager.script
+* loading script xr_hear.script
+* loading script xr_animpoint.script
+* loading script xr_animpoint_predicates.script
+* loading script post_combat_idle.script
+* loading script bind_restrictor.script
+* loading script bind_anomaly_zone.script
+* loading script bind_campfire.script
+* loading script bind_level_changer.script
+* loading script mob_combat.script
+* loading script bind_artefact.script
+* loading script bind_crow.script
+* loading script bind_signal_light.script
+* loading script bind_door_labx8.script
+! [LUA] SCRIPT RUNTIME ERROR
+[LUA] Error: [string "xr_logic"]:1270: attempt to index local 'obj' (a nil value)
+
+FATAL ERROR
+
+[error]Expression    : !m_error_code
+[error]Function      : raii_guard::~raii_guard
+[error]File          : F:\ixray-1.6-stcop\src\xrScripts\script_storage.cpp
+[error]Line          : 530
+[error]Description   : see call_stack for details!
+
+stack trace:
