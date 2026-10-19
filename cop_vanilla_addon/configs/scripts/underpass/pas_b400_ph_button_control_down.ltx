@@ -1,0 +1,31 @@
+[logic]
+active = ph_button@wait
+
+[ph_button@wait] 
+anim = idle_close
+anim_blend = true
+on_press = ph_button@open
+tooltip = tip_el_control_open
+
+[ph_button@open] 
+anim_blend = true
+anim = idle_open_off
+on_press = ph_button@swith
+tooltip = tip_el_control_turn_on
+
+[ph_button@swith] 
+anim_blend = true
+anim = switch
+on_info = ph_button@turned
+
+[ph_button@turned] 
+anim_blend = true
+anim = idle_open_on
+on_info = {-pas_b400_control_down_door_opened} %=anim_obj_forward(pas_b400_door_control_down) +pas_b400_control_down_door_opened%
+on_game_timer = 15 | ph_idle@attack %=create_squad(pas_b400_hall_monolith_squad:pas_b400_hall)%
+
+[ph_idle@attack]
+on_game_timer = 30 | ph_idle@nil %+pas_b400_hall_monolith_squad_attacked%
+on_info2 = {-jup_b217_actor_want_solo -pas_b400_ph_button_control_down_stalkers_squad_heal} %=heal_squad(pas_b400_stalkers_squad) +pas_b400_ph_button_control_down_stalkers_squad_heal%
+
+[ph_idle@nil]

@@ -1,0 +1,595 @@
+[wpn_lr300]:identity_immunities,weapon_probability,default_weapon_params,wpn_lr300_sounds
+
+;-------------------------------------------------------------------------------
+; MAIN & COMMON
+;-------------------------------------------------------------------------------
+$spawn                              = "weapons\lr-300"
+class                               = WP_AK74
+weapon_class                        = assault_rifle
+hud                                 = wpn_lr300_hud
+
+ef_main_weapon_type                 = 2
+ef_weapon_type                      = 8
+
+default_to_ruck                     = false
+sprint_allowed                      = true
+
+upgrades                            = up_gr_firstab_lr300, up_gr_seconab_lr300, up_gr_thirdab_lr300, up_gr_fourtab_lr300, up_gr_fifthab_lr300
+installed_upgrades                  = 
+upgrade_scheme                      = upgrade_scheme_lr300
+
+;-------------------------------------------------------------------------------
+; INVENTORY & UI
+;-------------------------------------------------------------------------------
+cost                                = 6000
+inv_weight                          = 2.7
+
+slot                                = 2
+animation_slot                      = 2
+inv_name                            = st_wpn_lr300
+inv_name_short                      = st_wpn_lr300
+description                         = st_wpn_lr300_descr
+
+icons_texture                       = ui\ui_icon_equipment_swr.dds
+inv_grid_width                      = 5
+inv_grid_height                     = 2
+inv_grid_x                          = 0
+inv_grid_y                          = 6
+
+upgr_icon_x                         = 290
+upgr_icon_y                         = 1595
+upgr_icon_width                     = 290
+upgr_icon_height                    = 145
+
+;-------------------------------------------------------------------------------
+; AMMUNITION & FIRING MODES
+;-------------------------------------------------------------------------------
+ammo_class                          = ammo_5.56x45_ss190, ammo_5.56x45_ap
+ammo_elapsed                        = 30
+ammo_mag_size                       = 30
+ammo_in_chamber                     = true
+fire_modes                          = 1, 3, -1
+
+grenade_class                       = ammo_m209
+launch_speed                        = 0
+hand_dependence                     = 1
+single_handed                       = 0
+
+;-------------------------------------------------------------------------------
+; BALLISTICS & DAMAGE
+;-------------------------------------------------------------------------------
+hit_power                           = 0.3, 0.3, 0.3, 0.3
+hit_impulse                         = 100
+hit_type                            = fire_wound
+fire_distance                       = 400
+bullet_speed                        = 650
+rpm                                 = 685
+rpm_empty_click                     = 200
+
+min_radius                          = 0
+max_radius                          = 100
+
+;-------------------------------------------------------------------------------
+; DISPERSION & ACCURACY
+;-------------------------------------------------------------------------------
+fire_dispersion_base                = 0.3
+control_inertion_factor             = 1.0
+crosshair_inertion                  = 5.25
+fire_dispersion_condition_factor    = 8
+
+PDM_disp_base                       = 0.5
+PDM_disp_vel_factor                 = 2.0
+PDM_disp_accel_factor               = 2.0
+PDM_disp_crouch                     = 1.0
+PDM_disp_crouch_no_acc              = 1.0
+
+;-------------------------------------------------------------------------------
+; RECOIL & CAMERA MOVEMENT
+;-------------------------------------------------------------------------------
+cam_return                          = 0
+cam_relax_speed                     = 5
+cam_relax_speed_ai                  = 360
+cam_dispersion                      = 0.55
+cam_dispersion_inc                  = 0.13
+cam_dispersion_frac                 = 1.0
+cam_max_angle                       = 10.0
+cam_max_angle_horz                  = 5.0
+cam_step_angle_horz                 = 0.55
+
+zoom_cam_relax_speed                = 5
+zoom_cam_relax_speed_ai             = 360
+zoom_cam_dispersion                 = 0.5
+zoom_cam_dispersion_inc             = 0.1
+zoom_cam_dispersion_frac            = 1.0
+zoom_cam_max_angle                  = 9.0
+zoom_cam_max_angle_horz             = 5.0
+zoom_cam_step_angle_horz            = 0.5
+
+;-------------------------------------------------------------------------------
+; RELIABILITY & DEGRADATION
+;-------------------------------------------------------------------------------
+misfire_probability                 = 0.005
+misfire_start_condition             = 0.6
+misfire_end_condition               = 0.1
+misfire_start_prob                  = 0.006
+misfire_end_prob                    = 0.072
+condition_shot_dec                  = 0.001
+condition_queue_shot_dec            = 0.0012
+
+;-------------------------------------------------------------------------------
+; WORLD MODEL & POSITIONING
+;-------------------------------------------------------------------------------
+position                            = -0.026, -0.130, 0.0
+orientation                         = 0.0, 0.0, 0.0
+
+strap_position                      = -0.15, -0.37, 0.2
+strap_orientation                   = -10, -5, 10
+strap_bone0                         = bip01_spine2
+strap_bone1                         = bip01_spine1
+visual                              = dynamics\weapons\wpn_lr300\wpn_lr300.ogf
+
+;-------------------------------------------------------------------------------
+; EFFECTS & PARTICLES
+;-------------------------------------------------------------------------------
+fire_point              			= 0.0, 0.199, 0.575
+fire_point2             			= 0.0, 0.199, 0.575
+shell_point             			= 0.120000,0.000000,0.070000
+shell_dir               			= 0.0, 0.0, 0.4
+
+flame_particles                     = weapons\generic_weapon05
+smoke_particles                     = weapons\generic_shoot_00
+grenade_flame_particles             = weapons\generic_weapon01
+shell_particles                     = weapons\generic_shells
+
+light_disabled                      = false
+light_color                         = 0.6, 0.5, 0.3
+light_range                         = 5
+light_var_color                     = 0.05
+light_var_range                     = 0.1
+light_time                          = 0.2
+
+;-------------------------------------------------------------------------------
+; OPTICS & ADDONS
+;-------------------------------------------------------------------------------
+zoom_enabled                        = true
+zoom_rotate_time                    = 0.25
+zoom_dof                            = 0.5, 1.0, 180
+reload_dof                          = 0.0, 0.5, 5, 2
+
+scope_status                        = 2
+scope_zoom_factor                   = 1.1
+scopes                              = wpn_addon_scope_acog, wpn_addon_scope_susat_adapter
+parent_section                      = wpn_lr300
+
+silencer_status                     = 2
+silencer_name                       = wpn_addon_silencer_ar15
+silencer_x                          = 196
+silencer_y                          = 13
+silencer_smoke_particles            = weapons\generic_shoot_00
+silencer_light_color                = 0.6, 0.5, 0.3
+silencer_light_range                = 0.01
+silencer_light_var_color            = 0.05
+silencer_light_var_range            = 0.5
+silencer_light_time                 = 0.2
+
+grenade_launcher_status             = 2
+grenade_launcher_name               = wpn_addon_grenade_launcher_m203
+grenade_launcher_x                  = 111
+grenade_launcher_y                  = 25
+
+;-------------------------------------------------------------------------------
+; SOUNDS
+;-------------------------------------------------------------------------------
+snd_draw                            = weapons\generic_draw
+snd_holster                         = weapons\generic_holster
+;snd_shoot                           = weapons\lr300\shot
+;snd_silncer_shot                    = weapons\lr300\shot_sil
+snd_empty                           = weapons\lr300\empty, 0.5
+snd_reload                          = weapons\lr300\lr300_reload
+snd_reload_empty                    = weapons\lr300\lr300_reload_full
+snd_shoot_grenade                   = weapons\gen_grenshoot
+snd_reload_grenade                  = weapons\lr300\lr300_gl_reload
+snd_switch                          = weapons\lr300\lr300_gl_activate
+snd_reload_misfire                  = weapons\lr300\lr300_revival
+snd_changefiremode                        = weapons\l85\l85_firemode
+snd_changefiremode_w_gl                   = weapons\l85\l85_firemode
+snd_sprint_idle					    = weapons\sprint_assault
+
+snd_gasmask							= interface\item_usage\rifle_mask_use
+snd_gasmask1						= interface\item_usage\rifle_mask_use1
+snd_gasmask2						= interface\item_usage\rifle_mask_use2
+snd_gasmask3						= interface\item_usage\rifle_mask_use3
+snd_gasmask4						= interface\item_usage\rifle_mask_use4
+
+snd_switch_device					= interface\item_usage\rifle_torch_use
+
+;===============================================================================
+; HUD SECTION
+;===============================================================================
+
+[wpn_lr300_hud]:hud_base
+item_visual                         = dynamics\weapons\wpn_lr300\wpn_lr300_hud.ogf
+
+hands_position                      = -0.009900, 0.008600, -0.077800
+hands_position_16x9                 = -0.009900, 0.008600, -0.077800
+hands_orientation                   = 0, 0, 0
+hands_orientation_16x9              = 0, 0, 0
+
+item_position                    	= -0.000200, -0.003800, 0.006000
+item_orientation                    = 0, 0, 0
+
+aim_hud_offset_pos          		= -0.070600, 0.020400, -0.061400
+aim_hud_offset_rot          		= 0.000675, 0.000275, 0.000000
+aim_hud_offset_pos_16x9          	= -0.070600, 0.020400, -0.061400
+aim_hud_offset_rot_16x9          	= 0.000675, 0.000275, 0.000000		
+
+gl_hud_offset_pos           		= -0.077900, -0.026200, -0.067400
+gl_hud_offset_rot           		= -0.057150, 0.009325, 0.086500
+gl_hud_offset_pos_16x9           	= -0.077900, -0.026200, -0.067400
+gl_hud_offset_rot_16x9           	= -0.057150, 0.009325, 0.086500		
+
+fire_bone                           = wpn_body
+fire_bone2                          = wpn_launcher_barrel
+fire_point                          = 0, 0.05, 0.4
+fire_point2                         = 0, 0, 0
+
+shell_bone                          = wpn_body
+shell_dir                           = 0, 1, 0
+shell_point                         = 200, 200, 200
+
+;-------------------------------------------------------------------------------
+; HUD ANIMATIONS
+;-------------------------------------------------------------------------------
+anm_show                            = m4_draw, idle
+anm_show_empty                      = m4_draw, idle_empty
+anm_show_jammed                     = m4_draw, idle
+anm_show_w_gl                       = m4_gloff_draw, idle
+anm_show_empty_w_gl                 = m4_gloff_draw, idle_empty
+anm_show_jammed_w_gl                = m4_gloff_draw, idle
+anm_show_g                          = m4_glon_draw, idle_glon
+anm_show_empty_g                    = m4_glon_draw, idle_glon_empty
+anm_show_jammed_g                   = m4_glon_draw, idle_glon
+
+anm_hide                            = m4_hide, idle
+anm_hide_empty                      = m4_hide, idle_empty
+anm_hide_jammed                     = m4_hide, idle
+anm_hide_w_gl                       = m4_gloff_hide, idle
+anm_hide_empty_w_gl                 = m4_gloff_hide, idle_empty
+anm_hide_jammed_w_gl                = m4_gloff_hide, idle
+anm_hide_g                          = m4_glon_hide, idle_glon
+anm_hide_empty_g                    = m4_glon_hide, idle_glon_empty
+anm_hide_jammed_g                   = m4_glon_hide, idle_glon
+
+anm_idle                            = m4_idle, idle
+anm_idle_empty                      = m4_idle, idle_empty
+anm_idle_jammed                     = m4_idle, idle
+anm_idle_slow                       = m4_idle, idle, 0.7
+anm_idle_slow_empty                 = m4_idle, idle_empty, 0.7
+anm_idle_slow_jammed                = m4_idle, idle, 0.7
+anm_idle_crouch                     = m4_idle, idle, 0.7
+anm_idle_crouch_empty               = m4_idle, idle_empty, 0.7
+anm_idle_crouch_jammed              = m4_idle, idle, 0.7
+anm_idle_crouch_slow                = m4_idle, idle, 0.7
+anm_idle_crouch_slow_empty          = m4_idle, idle_empty, 0.7
+anm_idle_crouch_slow_jammed         = m4_idle, idle, 0.7
+
+anm_idle_w_gl                       = m4_gloff_idle, idle
+anm_idle_empty_w_gl                 = m4_gloff_idle, idle_empty
+anm_idle_jammed_w_gl                = m4_gloff_idle, idle
+anm_idle_slow_w_gl                  = m4_gloff_idle, idle, 0.7
+anm_idle_slow_empty_w_gl            = m4_gloff_idle, idle_empty, 0.7
+anm_idle_slow_jammed_w_gl           = m4_gloff_idle, idle, 0.7
+anm_idle_crouch_w_gl                = m4_gloff_idle, idle, 0.7
+anm_idle_crouch_empty_w_gl          = m4_gloff_idle, idle_empty, 0.7
+anm_idle_crouch_jammed_w_gl         = m4_gloff_idle, idle, 0.7
+anm_idle_crouch_slow_w_gl           = m4_gloff_idle, idle, 0.7
+anm_idle_crouch_slow_empty_w_gl     = m4_gloff_idle, idle_empty, 0.7
+anm_idle_crouch_slow_jammed_w_gl    = m4_gloff_idle, idle, 0.7
+
+anm_idle_g                          = m4_glon_idle, idle_glon
+anm_idle_empty_g                    = m4_glon_idle, idle_glon_empty
+anm_idle_jammed_g                   = m4_glon_idle, idle_glon
+anm_idle_slow_g                     = m4_glon_idle, idle_glon, 0.7
+anm_idle_slow_empty_g               = m4_glon_idle, idle_glon_empty, 0.7
+anm_idle_slow_jammed_g              = m4_glon_idle, idle_glon, 0.7
+anm_idle_crouch_g                   = m4_glon_idle, idle_glon, 0.7
+anm_idle_crouch_empty_g             = m4_glon_idle, idle_glon_empty, 0.7
+anm_idle_crouch_jammed_g            = m4_glon_idle, idle_glon, 0.7
+anm_idle_crouch_slow_g              = m4_glon_idle, idle_glon, 0.7
+anm_idle_crouch_slow_empty_g        = m4_glon_idle, idle_glon_empty, 0.7
+anm_idle_crouch_slow_jammed_g       = m4_glon_idle, idle_glon, 0.7
+
+anm_idle_aim                        = m4_idle_aim, idle
+anm_idle_aim_empty                  = m4_idle_aim, idle_empty
+anm_idle_aim_jammed                 = m4_idle_aim, idle
+anm_idle_aim_w_gl                   = m4_gloff_idle_aim, idle
+anm_idle_aim_empty_w_gl             = m4_gloff_idle_aim, idle_empty
+anm_idle_aim_jammed_w_gl            = m4_gloff_idle_aim, idle
+anm_idle_aim_g                      = m4_glon_idle_aim, idle_glon
+anm_idle_aim_empty_g                = m4_glon_idle_aim, idle_glon_empty
+anm_idle_aim_jammed_g               = m4_glon_idle_aim, idle_glon
+
+anm_idle_aim_moving                 = m4_aim_walk, idle, 0.7
+anm_idle_aim_moving_empty           = m4_aim_walk, idle_empty, 0.7
+anm_idle_aim_moving_jammed          = m4_aim_walk, idle, 0.7
+anm_idle_aim_moving_w_gl            = m4_gloff_aim_walk, idle, 0.7
+anm_idle_aim_moving_empty_w_gl      = m4_gloff_aim_walk, idle_empty, 0.7
+anm_idle_aim_moving_jammed_w_gl     = m4_gloff_aim_walk, idle, 0.7
+anm_idle_aim_moving_g               = m4_glon_walk, idle_glon, 0.7
+anm_idle_aim_moving_empty_g         = m4_glon_walk, idle_glon_empty, 0.7
+anm_idle_aim_moving_jammed_g        = m4_glon_walk, idle_glon, 0.7
+
+anm_idle_moving                     = m4_walk, idle
+anm_idle_moving_jammed              = m4_walk, idle
+anm_idle_moving_empty               = m4_walk, idle_empty
+anm_idle_moving_w_gl                = m4_gloff_walk, idle
+anm_idle_moving_jammed_w_gl         = m4_gloff_walk, idle
+anm_idle_moving_empty_w_gl          = m4_gloff_walk, idle_empty
+anm_idle_moving_g                   = m4_glon_walk, idle_glon
+anm_idle_moving_jammed_g            = m4_glon_walk, idle_glon
+anm_idle_moving_empty_g             = m4_glon_walk, idle_glon_empty
+
+anm_idle_moving_slow                = m4_walk, idle, 0.7
+anm_idle_moving_slow_jammed         = m4_walk, idle, 0.7
+anm_idle_moving_slow_empty          = m4_walk, idle_empty, 0.7
+anm_idle_moving_slow_w_gl           = m4_gloff_walk, idle, 0.7
+anm_idle_moving_slow_jammed_w_gl    = m4_gloff_walk, idle, 0.7
+anm_idle_moving_slow_empty_w_gl     = m4_gloff_walk, idle_empty, 0.7
+anm_idle_moving_slow_g              = m4_glon_walk, idle_glon, 0.7
+anm_idle_moving_slow_jammed_g       = m4_glon_walk, idle_glon, 0.7
+anm_idle_moving_slow_empty_g        = m4_glon_walk, idle_glon_empty, 0.7
+
+anm_idle_moving_crouch              = m4_walk, idle, 0.7
+anm_idle_moving_crouch_jammed       = m4_walk, idle, 0.7
+anm_idle_moving_crouch_empty        = m4_walk, idle_empty, 0.7
+anm_idle_moving_crouch_w_gl         = m4_gloff_walk, idle, 0.7
+anm_idle_moving_crouch_jammed_w_gl  = m4_gloff_walk, idle, 0.7
+anm_idle_moving_crouch_empty_w_gl   = m4_gloff_walk, idle_empty, 0.7
+anm_idle_moving_crouch_g            = m4_glon_walk, idle_glon, 0.7
+anm_idle_moving_crouch_jammed_g     = m4_glon_walk, idle_glon, 0.7
+anm_idle_moving_crouch_empty_g      = m4_glon_walk, idle_glon_empty, 0.7
+
+anm_idle_moving_crouch_slow         = m4_walk, idle, 0.7
+anm_idle_moving_crouch_slow_jammed  = m4_walk, idle, 0.7
+anm_idle_moving_crouch_slow_empty   = m4_walk, idle_empty, 0.7
+anm_idle_moving_crouch_slow_w_gl    = m4_gloff_walk, idle, 0.7
+anm_idle_moving_crouch_slow_jammed_w_gl = m4_gloff_walk, idle, 0.7
+anm_idle_moving_crouch_slow_empty_w_gl = m4_gloff_walk, idle_empty, 0.7
+anm_idle_moving_crouch_slow_g       = m4_glon_walk, idle_glon, 0.7
+anm_idle_moving_crouch_slow_jammed_g = m4_glon_walk, idle_glon, 0.7
+anm_idle_moving_crouch_slow_empty_g = m4_glon_walk, idle_glon_empty, 0.7
+
+anm_idle_sprint_start               = m4_sprint_start, idle
+anm_idle_sprint_start_empty         = m4_sprint_start, idle_empty
+anm_idle_sprint_start_jammed        = m4_sprint_start, idle
+anm_idle_sprint_start_w_gl          = m4_sprint_w_gl_start, idle
+anm_idle_sprint_start_empty_w_gl    = m4_sprint_w_gl_start, idle_empty
+anm_idle_sprint_start_jammed_w_gl   = m4_sprint_w_gl_start, idle
+anm_idle_sprint_start_g             = m4_sprint_g_start, idle_glon
+anm_idle_sprint_start_empty_g       = m4_sprint_g_start, idle_glon_empty
+anm_idle_sprint_start_jammed_g      = m4_sprint_g_start, idle_glon
+
+anm_idle_sprint                     = m4_sprint, idle
+anm_idle_sprint_empty               = m4_sprint, idle_empty
+anm_idle_sprint_jammed              = m4_sprint, idle
+anm_idle_sprint_w_gl                = m4_sprint_w_gl, idle
+anm_idle_sprint_empty_w_gl          = m4_sprint_w_gl, idle_empty
+anm_idle_sprint_jammed_w_gl         = m4_sprint_w_gl, idle
+anm_idle_sprint_g                   = m4_sprint_g, idle_glon
+anm_idle_sprint_empty_g             = m4_sprint_g, idle_glon_empty
+anm_idle_sprint_jammed_g            = m4_sprint_g, idle_glon
+
+anm_idle_sprint_end                 = m4_sprint_end, idle
+anm_idle_sprint_end_empty           = m4_sprint_end, idle_empty
+anm_idle_sprint_end_jammed          = m4_sprint_end, idle
+anm_idle_sprint_end_w_gl            = m4_sprint_w_gl_end, idle
+anm_idle_sprint_end_empty_w_gl      = m4_sprint_w_gl_end, idle_empty
+anm_idle_sprint_end_jammed_w_gl     = m4_sprint_w_gl_end, idle
+anm_idle_sprint_end_g               = m4_sprint_g_end, idle_glon
+anm_idle_sprint_end_empty_g         = m4_sprint_g_end, idle_glon_empty
+anm_idle_sprint_end_jammed_g        = m4_sprint_g_end, idle_glon
+
+anm_shoot                           = m4_shoot, shoot
+anm_shoot_sil                       = m4_shoot, shoot
+anm_shoot_jammed                    = m4_shoot, idle
+anm_shoot_jammed_sil                = m4_shoot, idle
+anm_shoot_last                      = m4_shoot, shoot
+anm_shoot_last_sil                  = m4_shoot, shoot
+anm_shoot_aim                       = m4_aim_shoot, shoot
+anm_shoot_aim_sil                   = m4_aim_shoot, shoot
+anm_shoot_aim_jammed                = m4_aim_shoot, idle
+anm_shoot_aim_jammed_sil            = m4_aim_shoot, idle
+anm_shoot_aim_last                  = m4_aim_shoot, shoot
+anm_shoot_aim_last_sil              = m4_aim_shoot, shoot
+
+anm_shoot_w_gl                      = m4_gloff_shoot, shoot
+anm_shoot_sil_w_gl                  = m4_gloff_shoot, shoot
+anm_shoot_jammed_w_gl               = m4_gloff_shoot, idle
+anm_shoot_jammed_sil_w_gl           = m4_gloff_shoot, idle
+anm_shoot_last_w_gl                 = m4_gloff_shoot, shoot
+anm_shoot_last_sil_w_gl             = m4_gloff_shoot, shoot
+anm_shoot_aim_w_gl                  = m4_gloff_aim_shoot, shoot
+anm_shoot_aim_sil_w_gl              = m4_gloff_aim_shoot, shoot
+anm_shoot_aim_jammed_w_gl           = m4_gloff_aim_shoot, idle
+anm_shoot_aim_jammed_sil_w_gl       = m4_gloff_aim_shoot, idle
+anm_shoot_aim_last_w_gl             = m4_gloff_aim_shoot, shoot
+anm_shoot_aim_last_sil_w_gl         = m4_gloff_aim_shoot, shoot
+
+anm_shoot_aim_scope_w_gl            = m4_gloff_aim_shoot, shoot
+anm_shoot_aim_scope_sil_w_gl        = m4_gloff_aim_shoot, shoot
+anm_shoot_aim_scope_last_w_gl       = m4_gloff_aim_shoot, shoot
+anm_shoot_aim_scope_last_sil_w_gl   = m4_gloff_aim_shoot, shoot
+anm_shoot_aim_scope_jammed_w_gl     = m4_gloff_aim_shoot, idle
+anm_shoot_aim_scope_jammed_sil_w_gl = m4_gloff_aim_shoot, idle
+
+anm_shoot_g                         = m4_glon_shoot, idle_glon
+anm_shoot_empty_g                   = m4_glon_shoot, idle_glon_empty
+anm_shoot_jammed_g                  = m4_glon_shoot, idle_glon
+anm_shoot_aim_g                     = m4_glon_shoot, idle_glon
+anm_shoot_aim_empty_g               = m4_glon_shoot, idle_glon_empty
+anm_shoot_aim_jammed_g              = m4_glon_shoot, idle_glon
+
+anm_reload                          = m4_reload, reload
+anm_reload_empty                    = m4_reload_empty, reload_empty
+anm_reload_jammed                   = m4_revival, revival
+anm_reload_jammed_last              = m4_revival, revival
+
+anm_reload_w_gl                     = m4_gloff_reload, reload
+anm_reload_empty_w_gl               = m4_gloff_reload_empty, reload_empty
+anm_reload_jammed_w_gl              = m4_gloff_revival, revival
+anm_reload_jammed_last_w_gl         = m4_gloff_revival, revival
+
+anm_reload_g                        = m4_gl_reload, reload_gl
+anm_reload_empty_g                  = m4_gl_reload, reload_gl_empty
+anm_reload_jammed_g                 = m4_gl_reload, reload_gl
+
+anm_switch                          = m4_gl_off, gl_deactivate
+anm_switch_w_gl                     = m4_gl_off, gl_deactivate
+anm_switch_empty_w_gl               = m4_gl_off, gl_deactivate_empty
+anm_switch_jammed_w_gl              = m4_gl_off, gl_deactivate
+
+anm_switch_g                        = m4_gl_on, gl_activate
+anm_switch_empty_g                  = m4_gl_on, gl_activate_empty
+anm_switch_jammed_g                 = m4_gl_on, gl_activate
+
+anm_firemode                	    = m4_firemode, idle
+anm_firemode_empty                  = m4_firemode, idle_empty
+
+;anm_switch_device                   = m4_flash
+;anm_gasmask                         = m4_clear
+;anm_switch_device_w_gl              = m4_flash_w_gl
+;anm_gasmask_w_gl                    = m4_clear_w_gl
+;anm_switch_device_g                 = m4_flash_g, idle_glon
+;anm_gasmask_g                       = m4_clear_g, idle_glon
+;anm_switch_device_empty             = m4_flash, idle_empty
+;anm_gasmask_empty                   = m4_clear, idle_empty
+;anm_switch_device_w_gl_empty        = m4_flash_w_gl, idle_empty
+;anm_gasmask_w_gl_empty              = m4_clear_w_gl, idle_empty
+;anm_switch_device_g_empty           = m4_flash_g, idle_glon_empty	
+;anm_gasmask_g_empty                 = m4_clear_g, idle_glon_empty	
+
+;===============================================================================
+; ATTACHABLE SCOPES SECTIONS
+;===============================================================================
+
+[wpn_lr300_wpn_addon_scope_susat_adapter]:wpn_lr300
+hud                                 = wpn_lr300_wpn_addon_scope_susat_adapter_hud
+
+scope_x                             = 82
+scope_y                             = -5
+
+[wpn_lr300_wpn_addon_scope_susat_adapter_hud]:wpn_lr300_hud
+aim_hud_offset_pos          		= -0.070800, 0.003000, -0.058200
+aim_hud_offset_rot          		= 0.000675, 0.000275, 0.000000
+aim_hud_offset_pos_16x9          	= -0.070800, 0.003000, -0.058200
+aim_hud_offset_rot_16x9          	= 0.000675, 0.000275, 0.000000
+		
+item_visual                         = dynamics\weapons\wpn_lr300\wpn_lr300_susat_hud.ogf
+
+[wpn_lr300_wpn_addon_scope_acog]:wpn_lr300
+hud                                 = wpn_lr300_wpn_addon_scope_acog_hud
+
+scope_x                             = 82
+scope_y                             = -5
+
+visual                              = dynamics\weapons\wpn_lr300\wpn_lr300_acog.ogf
+
+[wpn_lr300_wpn_addon_scope_acog_hud]:wpn_lr300_hud
+aim_hud_offset_pos          		= -0.070800, 0.003000, -0.058200
+aim_hud_offset_rot          		= 0.000675, 0.000275, 0.000000
+aim_hud_offset_pos_16x9          	= -0.070800, 0.003000, -0.058200
+aim_hud_offset_rot_16x9          	= 0.000675, 0.000275, 0.000000
+
+item_visual                         = dynamics\weapons\wpn_lr300\wpn_lr300_acog_hud.ogf
+
+
+;===============================================================================
+; UNIQUE WEAPONS
+;===============================================================================
+
+[wpn_lr300_sniper]:wpn_lr300
+visual                              = dynamics\weapons\wpn_lr300\wpn_lr300_sniper.ogf
+hud                                 = wpn_lr300_sniper_hud
+
+cost                                = 15000
+inv_weight                          = 2.6
+
+weapon_class                        = assault_rifle
+inv_name                            = st_wpn_lr300_sniper
+inv_name_short                      = st_wpn_lr300_sniper
+description                         = st_wpn_lr300_sniper_descr
+
+inv_grid_width                      = 6
+inv_grid_height                     = 2
+inv_grid_x                          = 26
+inv_grid_y                          = 11
+
+upgr_icon_x                         = 290
+upgr_icon_y                         = 1450
+upgr_icon_width                     = 290
+upgr_icon_height                    = 145
+
+ammo_class                          = ammo_5.56x45_ss190, ammo_5.56x45_ap
+ammo_elapsed                        = 20
+ammo_mag_size                       = 20
+fire_modes                          = 1
+
+hit_power                           = 0.35, 0.35, 0.35, 0.35
+hit_impulse                         = 100
+hit_type                            = fire_wound
+fire_distance                       = 800
+bullet_speed                        = 750
+rpm                                 = 300
+rpm_empty_click                     = 150
+
+fire_dispersion_base                = 0.23
+fire_dispersion_condition_factor    = 5
+
+scopes_sect                         = scope_susat_lr_sniper, scope_susat_x1.6_lr_sniper, scope_susat_custom_lr_sniper, scope_susat_dusk_lr_sniper, scope_susat_night_lr_sniper
+grenade_launcher_status             = 0
+
+parent_section                      = wpn_lr300_sniper
+
+silencer_x                          = 232
+silencer_y                          = 15
+
+[wpn_lr300_sniper_hud]:wpn_lr300_hud
+aim_hud_offset_pos          		= -0.070600, 0.023200, -0.051600
+aim_hud_offset_rot          		= -0.035325, 0.001475, 0.000000
+aim_hud_offset_pos_16x9          	= -0.070600, 0.023200, -0.051600
+aim_hud_offset_rot_16x9          	= -0.035325, 0.001475, 0.000000
+		
+item_visual                         = dynamics\weapons\wpn_lr300\wpn_lr300_sniper_hud.ogf
+
+
+;===============================================================================
+; UNIQUE SCOPES SECTIONS
+;===============================================================================
+
+[wpn_lr300_sniper_wpn_addon_scope_susat_adapter]:wpn_lr300_sniper
+hud                                 = wpn_lr300_sniper_wpn_addon_scope_susat_adapter_hud
+
+scope_x                             = 86
+scope_y                             = -1
+
+[wpn_lr300_sniper_wpn_addon_scope_susat_adapter_hud]:wpn_lr300_sniper_hud
+aim_hud_offset_pos          		= -0.070600, 0.011600, -0.044600
+aim_hud_offset_rot          		= 0.000675, 0.000275, 0.000000
+aim_hud_offset_pos_16x9          	= -0.070600, 0.011600, -0.044600
+aim_hud_offset_rot_16x9          	= 0.000675, 0.000275, 0.000000
+		
+[wpn_lr300_sniper_wpn_addon_scope_acog]:wpn_lr300_sniper
+hud                                 = wpn_lr300_sniper_wpn_addon_scope_acog_hud
+
+scope_x                             = 78
+scope_y                             = -2
+
+visual                              = dynamics\weapons\wpn_lr300\wpn_lr300_sniper_acog.ogf
+
+[wpn_lr300_sniper_wpn_addon_scope_acog_hud]:wpn_lr300_sniper_hud
+aim_hud_offset_pos          		= -0.070600, 0.011600, -0.044600
+aim_hud_offset_rot          		= 0.000675, 0.000275, 0.000000
+aim_hud_offset_pos_16x9          	= -0.070600, 0.011600, -0.044600
+aim_hud_offset_rot_16x9          	= 0.000675, 0.000275, 0.000000
+
+item_visual                         = dynamics\weapons\wpn_lr300\wpn_lr300_sniper_acog_hud.ogf

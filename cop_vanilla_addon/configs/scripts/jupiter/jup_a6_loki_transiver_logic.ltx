@@ -1,0 +1,15 @@
+[logic]
+active = ph_idle@wait
+
+[ph_idle@wait]
+on_info = %=play_sound_looped(broken_noise_radio)%
+on_info2 = {=surge_started} ph_idle@surge %=stop_sound_looped%
+hit_on_bone = 2 | ph_idle@broken
+
+[ph_idle@surge]
+on_info = %=play_sound_looped(radio_call_if_surge)%
+on_info2 = {!surge_started} ph_idle@wait %=stop_sound_looped%
+hit_on_bone = 2 | ph_idle@broken
+
+[ph_idle@broken]
+on_info = nil %=stop_sound%

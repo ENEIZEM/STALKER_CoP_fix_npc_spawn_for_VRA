@@ -1,0 +1,68 @@
+[logic@zat_b215_stalker_guide_jupiter]
+suitable = {=check_npc_name(zat_b215_stalker_guide_jupiter)} true
+prior = 200
+active = animpoint
+level_spot = guider
+
+[animpoint]
+cover_name = jup_a6_animpoint_guider_start
+avail_animations = wait_na
+use_camp = false
+reach_distance = 2
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+meet = no_meet
+out_restr = jup_a6_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+on_info = {+jup_b217_welcome_faded -jup_b217_welcome_guide_talked} animpoint@first_visit
+on_info2 = {+jup_b217_welcome_faded +jup_b217_welcome_guide_talked} animpoint@rest
+
+[animpoint@first_visit]
+cover_name = jup_a6_animpoint_guider_start
+avail_animations = ward
+use_camp = false
+reach_distance = 0.3
+on_info = {-jup_b217_guide_welcome_end} %=play_sound(jup_b217_stalker_guide_welcome) +jup_b217_guide_welcome_end%
+on_info2 = {!actor_in_zone(jup_b217_cutscene_control) -jup_b217_welcome_guide_talked} animpoint@rest %+jup_b217_welcome_guide_talked =stop_sound%
+on_signal = sound_end | {-jup_b217_welcome_guide_talked} animpoint@rest %+jup_b217_welcome_guide_talked%
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+meet = no_meet
+out_restr = jup_a6_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[animpoint@rest]
+cover_name = jup_a6_animpoint_guider
+use_camp = false
+reach_movement = walk
+reach_distance = 0.5
+on_game_timer = 27 | {-jup_b217_tech_begin_to_talk} %+jup_b217_tech_begin_to_talk%
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+meet = meet
+invulnerable = true
+out_restr = jup_a6_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[meet]
+close_snd_hello = zat_b215_stalker_guide_greeting
+close_snd_bye = zat_b215_stalker_guide_farewell
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+close_snd_distance = {!animpoint_reached} 0, 3
+use = {!animpoint_reached} false, {=actor_enemy} false, true
+allow_break = false
+trade_enable = false
+meet_on_talking = false

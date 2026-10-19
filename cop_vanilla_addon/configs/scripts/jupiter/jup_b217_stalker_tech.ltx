@@ -1,0 +1,61 @@
+[animpoint@presets]
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_a6_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+use_camp = false
+
+;*************************************
+
+[logic@jup_b217_stalker_tech]
+suitable = {=check_npc_name(jup_b217_stalker_tech)} true
+active = animpoint
+prior = 200
+level_spot = mechanic
+can_select_weapon = false
+
+[animpoint]:animpoint@presets
+cover_name = jup_a6_animpoint_tech_start_wall
+avail_animations = animpoint_stay_wall
+reach_distance = 50
+meet = no_meet
+on_info = {+jup_b217_welcome_guide_talked =actor_in_zone(jup_a6_animpoint_tech_start_restrictor)} animpoint@first_visit
+on_info2 = {+jup_b217_welcome_guide_talked !actor_in_zone(jup_a6_animpoint_tech_start_restrictor)} animpoint@sit %+jup_b217_stalker_tech_met +jup_b217_welcome_tech_talked +jup_b217_tech_welcome_end%
+
+[animpoint@first_visit]:animpoint@presets
+cover_name = jup_a6_animpoint_tech_start_wall
+avail_animations = animpoint_stay_wall
+reach_distance = 1
+reach_movement = walk_noweap
+on_signal = sound_end | {-jup_b217_welcome_tech_talked} %+jup_b217_welcome_tech_talked%
+on_info = {+jup_b217_tech_begin_to_talk -jup_b217_tech_welcome_end} %=play_sound(jup_b217_stalker_tech_welcome) +jup_b217_tech_welcome_end +jup_b217_stalker_tech_met%
+on_info2 = {+jup_b217_welcome_tech_talked} animpoint@sit
+on_info3 = {+jup_b217_tech_welcome_end !actor_in_zone(jup_a6_animpoint_tech_start_restrictor)} animpoint@sit %+jup_b217_welcome_tech_talked =stop_sound%
+on_info4 = {-jup_b217_tech_welcome_end !actor_in_zone(jup_a6_animpoint_tech_start_restrictor)} animpoint@sit %+jup_b217_welcome_tech_talked +jup_b217_tech_welcome_end +jup_b217_stalker_tech_met%
+meet = no_meet
+ 
+[animpoint@sit]:animpoint@presets
+cover_name = jup_a6_animpoint_tech
+reach_distance = 1
+avail_animations = animpoint_sit_normal
+on_info = {-jup_a6_stalker_tech_info -jup_b9_blackbox_decrypted +jup_b9_blackbox_decrypting !talking} %+jup_a6_stalker_tech_info%
+meet = meet@default
+
+[meet@default]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+close_snd_distance = {!animpoint_reached} 0, 3
+far_snd_distance = {!animpoint_reached} 0, 5
+use 			= {+jup_b9_blackbox_records_end -jup_b9_blackbox_decrypted} self, {!actor_enemy} true
+meet_dialog		= {-jup_b9_blackbox_decrypted +jup_a6_stalker_tech_info +jup_b9_blackbox_decrypting} jup_b217_stalker_tech_blackbox_start
+allow_break 	= false
+close_snd_hello = jup_b217_stalker_tech_greeting
+close_snd_bye 	= jup_b217_stalker_tech_farewell
+meet_on_talking = false

@@ -1,0 +1,10 @@
+[logic]
+active = sr_idle@off
+
+[sr_idle@off]
+on_info = sr_idle@on %=turn_off(jup_b219_projector_1)%
+
+[sr_idle@on]
+on_info = {+jup_b219_generator_start} sr_idle@nil %=turn_on(jup_b219_projector_1)%
+
+[sr_idle@nil]

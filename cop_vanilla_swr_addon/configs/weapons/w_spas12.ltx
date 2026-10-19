@@ -1,0 +1,338 @@
+[wpn_spas12]:identity_immunities,weapon_probability,default_weapon_params,wpn_spas12_sounds
+
+;-------------------------------------------------------------------------------
+; MAIN & COMMON
+;-------------------------------------------------------------------------------
+$spawn                              = "weapons\spas12"
+class                               = WP_ASHTG
+weapon_class                        = shotgun
+hud                                 = wpn_spas12_hud
+
+ef_main_weapon_type                 = 1
+ef_weapon_type                      = 9
+
+upgrades                            = up_gr_firstab_spas12, up_gr_seconab_spas12, up_gr_thirdab_spas12, up_gr_fourtab_spas12
+installed_upgrades                  = 
+upgrade_scheme                      = upgrade_scheme_spas12
+
+;-------------------------------------------------------------------------------
+; INVENTORY & UI
+;-------------------------------------------------------------------------------
+cost                                = 7500
+inv_weight                          = 4.4
+
+slot                                = 2
+animation_slot                      = 9
+inv_name                            = st_wpn_spas12
+inv_name_short                      = st_wpn_spas12
+description                         = st_wpn_spas12_descr
+
+icons_texture                       = ui\ui_icon_equipment_swr.dds
+inv_grid_width                      = 5
+inv_grid_height                     = 1
+inv_grid_x                          = 12
+inv_grid_y                          = 3
+
+upgr_icon_x                         = 580
+upgr_icon_y                         = 0
+upgr_icon_width                     = 290
+upgr_icon_height                    = 145
+
+;-------------------------------------------------------------------------------
+; AMMUNITION & FIRING MODES
+;-------------------------------------------------------------------------------
+ammo_class                          = ammo_12x70_buck, ammo_12x76_zhekan
+ammo_elapsed                        = 8
+ammo_mag_size                       = 8
+ammo_in_chamber                     = true
+fire_modes                          = -1
+tri_state_reload                    = on
+
+hand_dependence                     = 1
+single_handed                       = 0
+
+;-------------------------------------------------------------------------------
+; BALLISTICS & DAMAGE
+;-------------------------------------------------------------------------------
+hit_power                           = 0.51, 0.51, 0.51, 0.51
+hit_impulse                         = 120
+hit_type                            = fire_wound
+fire_distance                       = 130
+bullet_speed                        = 350
+rpm                                 = 220
+rpm_empty_click                     = 200
+
+min_radius                          = 0
+max_radius                          = 50
+
+;-------------------------------------------------------------------------------
+; DISPERSION & ACCURACY
+;-------------------------------------------------------------------------------
+fire_dispersion_base                = 0.28
+control_inertion_factor             = 1.0
+crosshair_inertion                  = 7.15
+fire_dispersion_condition_factor    = 2.5
+
+PDM_disp_base                       = 0.5
+PDM_disp_vel_factor                 = 2.0
+PDM_disp_accel_factor               = 2.0
+PDM_disp_crouch                     = 1.0
+PDM_disp_crouch_no_acc              = 1.0
+
+;-------------------------------------------------------------------------------
+; RECOIL & CAMERA MOVEMENT
+;-------------------------------------------------------------------------------
+cam_return                          = 0
+cam_relax_speed                     = 20
+cam_relax_speed_ai                  = 360
+cam_dispersion                      = 5.0
+cam_dispersion_inc                  = 0.8
+cam_dispersion_frac                 = 1.0
+cam_max_angle                       = 15.0
+cam_max_angle_horz                  = 10.0
+cam_step_angle_horz                 = 5.0
+
+zoom_cam_relax_speed                = 10
+zoom_cam_relax_speed_ai             = 120.75
+zoom_cam_dispersion                 = 5.0
+zoom_cam_dispersion_inc             = 0.8
+zoom_cam_dispersion_frac            = 0.7
+zoom_cam_max_angle                  = 10.0
+zoom_cam_max_angle_horz             = 5.0
+zoom_cam_step_angle_horz            = 5.0
+
+;-------------------------------------------------------------------------------
+; RELIABILITY & DEGRADATION
+;-------------------------------------------------------------------------------
+misfire_probability                 = 0.005
+misfire_start_condition             = 0.6
+misfire_end_condition               = 0.1
+misfire_start_prob                  = 0
+misfire_end_prob                    = 0
+condition_shot_dec                  = 0.002
+condition_queue_shot_dec            = 0.0025
+
+;-------------------------------------------------------------------------------
+; WORLD MODEL & POSITIONING
+;-------------------------------------------------------------------------------
+position                            = -0.024, -0.081, 0.0
+orientation                         = 0, 0, 0
+
+strap_position                      = -0.26, -0.10, 0.05
+strap_orientation                   = -15, -9, 110
+strap_bone0                         = bip01_spine2
+strap_bone1                         = bip01_spine1
+visual                              = dynamics\weapons\wpn_spas12\wpn_spas12.ogf
+
+;-------------------------------------------------------------------------------
+; EFFECTS & PARTICLES
+;-------------------------------------------------------------------------------
+flame_particles                     = weapons\generic_weapon05
+smoke_particles                     = weapons\generic_shoot_00
+shell_particles                     = weapons\generic_shells_shotgun
+
+light_color                         = 0.6, 0.5, 0.3
+light_range                         = 6.0
+light_var_color                     = 0.05
+light_var_range                     = 0.5
+light_time                          = 0.2
+
+;-------------------------------------------------------------------------------
+; OPTICS & ADDONS
+;-------------------------------------------------------------------------------
+zoom_enabled                        = true
+zoom_dof                            = 0.5, 1.0, 180
+scope_zoom_factor                   = 1.1
+
+scope_status                        = 0
+silencer_status                     = 0
+grenade_launcher_status             = 0
+
+;-------------------------------------------------------------------------------
+; SOUNDS
+;-------------------------------------------------------------------------------
+snd_bore 							= weapons\spas12\inspect
+snd_bore_empty 						= weapons\spas12\inspect
+snd_bore_jammed 					= weapons\spas12\inspect_jammed
+snd_draw                            = weapons\spas12\draw
+snd_holster                         = weapons\spas12\holster
+;snd_shoot                           = weapons\spas12\spas12_1
+;snd_shoot_duplet                    = weapons\spas12\spas12_1
+snd_empty                           = weapons\spas12\empty
+snd_reload                          = weapons\spas12\close
+snd_open_weapon                     = weapons\spas12\open
+snd_open_weapon_empty               = weapons\spas12\open_empty
+snd_add_cartridge                   = weapons\spas12\load
+snd_add_cartridge_empty             = weapons\spas12\load_empty
+snd_close_weapon                    = weapons\spas12\close
+snd_reload_misfire                  = weapons\spas12\spas12_revival
+
+snd_ammo_check                 = weapons\spas12\magcheck
+snd_ammo_check_empty           = weapons\spas12\magcheck
+snd_ammo_check_jammed          = weapons\spas12\magcheck
+snd_ammo_check_empty_jammed    = weapons\spas12\magcheck
+
+;===============================================================================
+; HUD SECTION
+;===============================================================================
+
+[wpn_spas12_hud]:hud_base
+item_visual                         = dynamics\weapons\wpn_spas12\wpn_spas12_hud.ogf
+
+hands_position                      = 0, 0, 0
+hands_position_16x9                 = 0, 0, 0
+hands_orientation                   = 0, 0, 0
+hands_orientation_16x9              = 0, 0, 0
+
+item_position                    	= 0, 0, 0
+item_orientation                    = 0, 0, 0
+
+aim_hud_offset_pos          		= -0.064009, 0.043202, -0.016913
+aim_hud_offset_rot          		= 0.010134, -0.021134, -0.031884
+aim_hud_offset_pos_16x9          	= -0.064009, 0.043202, -0.016913
+aim_hud_offset_rot_16x9          	= 0.010134, -0.021134, -0.031884		
+
+lowered_hud_offset_pos				= 0.052129,-0.022413, -0.02
+lowered_hud_offset_pos_16x9			= 0.052129,-0.022413, -0.02
+lowered_hud_offset_rot				= -0.1,-0.6,0.4
+lowered_hud_offset_rot_16x9			= -0.1,-0.6,0.4
+
+fire_bone                           = muzzle
+fire_bone2                          = muzzle
+fire_point                          = 0, 0, 0
+fire_point2                         = 0, 0, 0
+
+shell_bone                          = wpn_body
+shell_dir                           = 0.0, 1.0, 0.0
+shell_point                         = 200, 200, 200
+
+;-------------------------------------------------------------------------------
+; HUD ANIMATIONS
+;-------------------------------------------------------------------------------
+anm_open                                  = wpn_spas12_new_open, open
+anm_open_empty                            = wpn_spas12_new_open_empty, open_empty
+anm_add_cartridge_empty                   = wpn_spas12_new_load_empty, load_empty
+anm_add_cartridge                         = wpn_spas12_new_load
+anm_close                                 = wpn_spas12_new_close, close
+
+anm_hide                                  = wpn_spas12_new_holster, idle
+anm_idle                                  = wpn_spas12_new_idle, idle
+anm_idle_aim                              = wpn_spas12_new_aim, idle
+anm_idle_aim_moving                       = wpn_spas12_new_walk, idle, 0.75
+anm_idle_aim_moving_crouch                = wpn_spas12_new_walk, idle, 0.7
+anm_idle_moving                           = wpn_spas12_new_walk, idle
+anm_idle_sprint                           = wpn_spas12_new_sprint_less_wavy, idle, 1.2
+anm_shots                                 = wpn_spas12_new_shoot_hip
+anm_show                                  = wpn_spas12_new_draw, idle
+
+anm_hide_empty                            = wpn_spas12_new_holster, idle_empty
+anm_idle_empty                            = wpn_spas12_new_idle, idle_empty
+anm_idle_aim_empty                        = wpn_spas12_new_aim, idle_empty
+anm_idle_aim_moving_empty                 = wpn_spas12_new_walk, idle_empty, 0.75
+anm_idle_aim_moving_crouch_empty          = wpn_spas12_new_walk, idle_empty, 0.7
+anm_idle_moving_empty                     = wpn_spas12_new_walk, idle_empty
+anm_idle_sprint_empty                     = wpn_spas12_new_sprint_less_wavy, idle_empty, 1.2
+anm_shot_l                                = wpn_spas12_new_shoot_hip, shoot_empty
+anm_show_empty                            = wpn_spas12_new_draw, idle_empty
+
+anm_walk2sprint                           = wpn_spas12_new_sprint_start, idle, 1.1
+anm_walk2sprint_empty                     = wpn_spas12_new_sprint_start, idle_empty, 1.1
+
+anm_sprint2walk                           = wpn_spas12_new_sprint_end, idle,
+anm_sprint2walk_empty                     = wpn_spas12_new_sprint_end, idle_empty
+
+anm_bore_empty                            = wpn_spas12_new_inspect, idle_empty
+anm_bore                                  = wpn_spas12_new_inspect, idle
+
+anm_reload_misfire                        = wpn_spas12_new_unjam, unjam
+anm_reload_misfire_empty                  = wpn_spas12_new_unjam_empty, idle_empty
+
+anm_hide_jammed                           = wpn_spas12_new_holster, idle_jammed
+anm_idle_jammed                           = wpn_spas12_new_idle, idle_jammed
+anm_idle_aim_jammed                       = wpn_spas12_new_aim, idle_jammed
+anm_idle_aim_moving_jammed                = wpn_spas12_new_walk, idle_jammed, 0.75
+anm_idle_aim_moving_crouch_jammed         = wpn_spas12_new_walk, idle_jammed, 0.7
+anm_idle_moving_jammed                    = wpn_spas12_new_walk, idle_jammed
+anm_idle_sprint_jammed                    = wpn_spas12_new_sprint_less_wavy, idle_jammed, 1.2
+anm_show_jammed                           = wpn_spas12_new_draw, idle_jammed
+anm_bore_jammed                           = wpn_spas12_new_inspect_jammed, idle_jammed
+anm_walk2sprint_jammed                    = wpn_spas12_new_sprint_start, idle_jammed, 1.1
+anm_sprint2walk_jammed                    = wpn_spas12_new_sprint_end, idle_jammed
+
+anm_hide_empty_jammed                     = wpn_spas12_new_holster, idle_empty
+anm_idle_empty_jammed                     = wpn_spas12_new_idle, idle_empty
+anm_idle_aim_empty_jammed                 = wpn_spas12_new_aim, idle_empty
+anm_idle_aim_moving_empty_jammed          = wpn_spas12_new_walk, idle_empty, 0.75
+anm_idle_aim_moving_crouch_empty_jammed   = wpn_spas12_new_walk, idle_empty, 0.7
+anm_idle_moving_empty_jammed              = wpn_spas12_new_walk, idle_empty
+anm_idle_sprint_empty_jammed              = wpn_spas12_new_sprint_less_wavy, idle_empty, 1.2
+anm_show_empty_jammed                     = wpn_spas12_new_draw, idle_empty
+anm_bore_empty_jammed                     = wpn_spas12_new_inspect, idle_empty
+
+anm_walk2sprint_empty_jammed              = wpn_spas12_new_sprint_start, idle_empty, 1.1
+anm_sprint2walk_empty_jammed              = wpn_spas12_new_sprint_end, idle_empty
+
+ts_pattern_walk2sprint                    = .+, anm_idle_sprint, anm_walk2sprint, 1
+
+ts_pattern_sprint2walk                    = anm_idle_sprint, ^anm_idle.*, anm_sprint2walk, 1
+ts_pattern_sprint2walk_aim                = anm_walk2sprint, ^anm_idle_aim.*, anm_sprint2walk, 1
+ts_strict_sprint2walk_idle                = anm_walk2sprint, anm_idle, anm_sprint2walk
+ts_strict_sprint2walk_move                = anm_walk2sprint, anm_idle_moving, anm_sprint2walk
+
+;ts_pattern_idle2aim                      = ^anm_idle.*, ^anm_idle_aim$, anm_idle2aim, 1
+ts_strict_sprint2aim                      = anm_idle_sprint, anm_idle_aim, anm_sprint2walk
+
+ts_strict_sprint2inspect                  = anm_idle_sprint, anm_bore, anm_sprint2walk
+ts_strict_walk2sprint_inspect             = anm_walk2sprint, anm_bore, anm_sprint2walk
+
+ts_pattern_reload_interrupt               = anm_add_cartridge, ^anm_idle.*, anm_close 
+ts_pattern_reload_empty_interrupt         = anm_add_cartridge_empty, ^anm_idle.*, anm_close
+
+
+;===============================================================================
+; UNIQUE WEAPONS
+;===============================================================================
+
+[wpn_spas12_nimble]:wpn_spas12
+$spawn                              = "weapons\wpn_spas12_nimble"
+
+cost                                = 9000
+
+inv_name                            = st_wpn_spas12_nimble
+description                         = st_wpn_spas12_nimble_descr
+
+ammo_mag_size                       = 10
+fire_modes                          = 1, -1
+rpm                                 = 180
+
+fire_dispersion_base                = 0.26
+control_inertion_factor             = 1.0
+
+PDM_disp_base                       = 0.7
+PDM_disp_vel_factor                 = 2.8
+PDM_disp_accel_factor               = 2.8
+PDM_disp_crouch                     = 1.0
+PDM_disp_crouch_no_acc              = 1.0
+
+cam_return                          = 1
+cam_relax_speed                     = 10
+cam_relax_speed_ai                  = 360
+cam_dispersion                      = 3.3
+cam_dispersion_inc                  = 0.8
+cam_dispersion_frac                 = 1.0
+cam_max_angle                       = 13.0
+cam_max_angle_horz                  = 8.0
+cam_step_angle_horz                 = 3.3
+
+zoom_cam_relax_speed                = 10
+zoom_cam_relax_speed_ai             = 120.75
+zoom_cam_dispersion                 = 3.0
+zoom_cam_dispersion_inc             = 0.8
+zoom_cam_dispersion_frac            = 1.0
+zoom_cam_max_angle                  = 8.0
+zoom_cam_max_angle_horz             = 4.0
+zoom_cam_step_angle_horz            = 3.0
+
+scope_status                        = 0
+silencer_status                     = 0
+grenade_launcher_status             = 0

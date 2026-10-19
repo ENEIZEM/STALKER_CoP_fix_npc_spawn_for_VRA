@@ -1,0 +1,36 @@
+[logic@jup_a10_stalker_vano]
+suitable = {=check_npc_name(jup_a10_stalker_vano)}
+active = animpoint@vano
+prior = 200
+
+[animpoint@vano]
+cover_name = jup_a6_animpoint_vano
+use_camp = false
+on_info = {+vano_debt_to_bandits_give_own_money -vano_debt_to_bandits_task_give} %=give_task(vano_debt_to_bandits_task) +vano_debt_to_bandits_task_give%
+on_info2 = {+vano_debt_to_bandits_task_end -jup_a10_vano_max_simpathy} %=actor_friend +jup_a10_vano_max_simpathy%
+;on_info3 = {=dist_to_actor_ge(150) +vano_debt_to_bandits_task_fail} %=destroy_object(story:jup_a10_stalker_vano)%
+on_actor_dist_le = 2 | {-vano_debt_to_bandits_give_own_money -vano_debt_to_bandits_whining +jup_b217_welcome_tech_talked} %=play_sound(jup_a10_vano_need_help) +jup_a10_vano_need_help_infoporshin%
+on_actor_dist_ge_nvis = 100 | {+vano_debt_to_bandits_whining} %-vano_debt_to_bandits_whining%
+meet = meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+corpse_detection_enabled = false
+invulnerable = true
+out_restr = jup_a6_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+snd_on_use = nil
+use = {+vano_debt_to_bandits_task_fail} false, {=actor_enemy} false, true
+allow_break = false
+trade_enable = false
+meet_dialog	= jup_a10_vano_help_dialog
+meet_on_talking = false

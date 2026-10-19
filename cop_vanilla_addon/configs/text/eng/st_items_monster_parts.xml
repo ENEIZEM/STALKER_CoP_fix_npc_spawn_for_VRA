@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+	<string id="st_item_mutant_zombie_hand">
+		<text>Zombie Hand</text>
+	</string>
+	<string id="st_item_mutant_zombie_hand_description">
+		<text>A dirty and disgusting zombie hand. Having lost everything except primitive instincts, the zombified use them as weapons.</text>
+	</string>
+
+	<string id="st_item_mutant_flesh_eye">
+		<text>Flesh Eye</text>
+	</string>
+	<string id="st_item_mutant_flesh_eye_description">
+		<text>Completely different from the eyes of ordinary pigs, from which these creatures originated. The Flesh Eye is a large, heavy ball of a completely brown color.</text>
+	</string>
+
+	<string id="st_item_mutant_boar_leg">
+		<text>Boar Hoof</text>
+	</string>
+	<string id="st_item_mutant_boar_leg_description">
+		<text>Some stalkers hang boar hooves around their necks as talismans. Some also find more exotic uses for them, grinding them into powder.</text>
+	</string>
+
+	<string id="st_item_mutant_dog_tail">
+		<text>Blind Dog Tail</text>
+	</string>
+	<string id="st_item_mutant_dog_tail_description">
+		<text>A long, hairless tail of a blind dog. It is completely useless and is the cheapest trophy in the Zone.</text>
+	</string>
+
+	<string id="st_item_mutant_psevdodog_tail">
+		<text>Pseudodog Tail</text>
+	</string>
+	<string id="st_item_mutant_psevdodog_tail_description">
+		<text>The fur on a pseudodog's tail is an excellent thermal insulator, so stalkers often sew them into their suits and body armor during the cold seasons.</text>
+	</string>
+
+	<string id="st_item_mutant_krovosos_jaw">
+		<text>Bloodsucker Tentacles</text>
+	</string>
+	<string id="st_item_mutant_krovosos_jaw_description">
+		<text>The bloodsucker's tentacles contain a special gland: it secretes an enzyme that dissolves the victim's skin and simultaneously prevents blood clotting. If scientists can determine the structure of this enzyme, it could lead to a breakthrough in medicine.</text>
+	</string>
+
+	<string id="st_item_mutant_snork_leg">
+		<text>Snork Foot</text>
+	</string>
+	<string id="st_item_mutant_snork_leg_description">
+		<text>A snork's foot, unlike a human's, contains a greater number of tendons with incredible elasticity. This explains the snorks' ability to perform incredible leaps.</text>
+	</string>
+
+	<string id="st_item_mutant_chimera_claw">
+		<text>Chimera Claw</text>
+	</string>
+	<string id="st_item_mutant_chimera_claw_description">
+		<text>Although this creature's claw can easily slice through several layers of kevlar, they often wear down due to extreme conditions of use and, like its teeth, simply fall off. Therefore, sometimes cutting them off isn't particularly difficult despite the sturdy skeleton.</text>
+	</string>
+
+	<string id="st_item_mutant_tushkano_head">
+		<text>Tushkano Head</text>
+	</string>
+	<string id="st_item_mutant_tushkano_head_description">
+		<text>A not very useful useful trophy, however, scientists still continue to perform some experiments on tushkanos.</text>
+	</string>
+
+	<string id="st_item_mutant_controller_brain">
+		<text>Controller Brain</text>
+	</string>
+	<string id="st_item_mutant_controller_brain_description">
+		<text>The controller's brain is highly developed and endowed with the ability to dominate the minds of other creatures, which is why it is so valued by scientists. Can be sold for much more than any other trophy.</text>
+	</string>
+
+	<string id="st_item_mutant_cat_gland">
+		<text>Cat Glands</text>
+	</string>
+	<string id="st_item_mutant_cat_gland_description">
+		<text>It is believed that cats in the Zone descended from wild lynxes. Scientists may pay for the red ulcerous growths found on the cats' muzzles.</text>
+	</string>
+
+	<string id="st_item_mutant_pseudogigant_hand">
+		<text>Pseudogiant Hand</text>
+	</string>
+	<string id="st_item_mutant_pseudogigant_hand_description">
+		<text>A huge, muscular hand of a pseudogiant, which, nevertheless, is one of the smallest parts of this creature's body. It is useless, but highly valued by collectors for its rarity.</text>
+	</string>
+
+	<string id="st_item_mutant_pseudogigant_eye">
+		<text>Pseudogiant Eye</text>
+	</string>
+	<string id="st_item_mutant_pseudogigant_eye_description">
+		<text>A huge eye of a pseudogiant, compared to a human's. Interestingly, these creatures usually have eyes of different sizes. It is useless, but sometimes sells for decent money.</text>
+	</string>
+
+	<string id="st_item_mutant_burer_hand">
+		<text>Burer Hand</text>
+	</string>
+	<string id="st_item_mutant_burer_hand_description">
+		<text>Burer hands are definitely connected to their abilities to move objects, create protective fields, and attack enemies with mental waves. They are of great value to scientists.</text>
+	</string>
+
+	<string id="st_item_mutant_karlik_ear">
+		<text>Dwarf Ear</text>
+	</string>
+	<string id="st_item_mutant_karlik_ear_description">
+		<text>A pointed ear of a dwarf. A body part interesting only from a scientific point of view, as the brain and other cells are destroyed by chemicals after death. Highly valued because of the immense amount of luck and skill required to obtain this trophy.</text>
+	</string>
+
+	<string id="st_item_mutant_crow_quill">
+		<text>Crow Feather</text>
+	</string>
+	<string id="st_item_mutant_crow_quill_description">
+		<text>For some reason, crows are the only creatures in the Zone that have not undergone radical mutations. Researchers believe they have a strong immunity to radiation. And that is why they are interested in any part of these birds' bodies.</text>
+	</string>
+	
+</string_table>

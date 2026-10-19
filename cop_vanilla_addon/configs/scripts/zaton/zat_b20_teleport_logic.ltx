@@ -1,0 +1,19 @@
+[logic]
+active = sr_teleport@active
+
+[sr_teleport@active]
+point1 = zat_b20_quest_teleport_walk
+look1 = zat_b20_quest_teleport_look
+on_info = {+zat_b20_noah_jump} sr_particle@rupture_particle
+
+[sr_particle@rupture_particle]
+name = anomaly2\teleport_out_00
+path = zat_b20_teleport_way
+mode = 2
+looped = false 
+on_info = {-zat_b20_teleport_ruptured} %+zat_b20_teleport_ruptured =play_sound(zat_b20_teleport_noise)%
+on_signal = particle_end | {+zat_b20_teleport_ruptured} sr_teleport@after_noah
+
+[sr_teleport@after_noah]
+point1 = zat_b20_quest_teleport_walk
+look1 = zat_b20_quest_teleport_look

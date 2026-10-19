@@ -1,0 +1,476 @@
+local treasure_manager = nil
+
+class "CTreasureManager"
+function CTreasureManager:__init()
+	self.items_spawned = false
+	self.check_time = nil
+	self.secrets = {}
+	self.secret_restrs = {}
+	self.items_from_secrets = {}
+	
+	-- Очередь для безопасного удаления и замены
+	self.items_to_modify = {}
+end
+
+function CTreasureManager:initialize()
+    local ini = ini_file("misc\\secrets.ltx")
+	
+    self.global_drop_chance = ini:section_exist("settings") and ini:line_exist("settings", "global_drop_chance") 
+                              and ini:r_float("settings", "global_drop_chance") or 0	
+	
+    local n = ini:line_count("list")
+    for i = 0, n - 1 do
+        local result, id, value	= ini:r_line("list", i, "", "")
+        if(ini:section_exist(id)) then
+            self.secrets[id] = {
+                items = {},
+                modifiers = {}, -- ДОБАВЛЕНО ДЛЯ ЗАДАЧИ 2 (remove / replace)
+                given = false, 
+                empty = nil, 
+                refreshing = false, 
+                checked = false, 
+                to_find = 0,
+
+                name = ini:line_exist(id, "name") and ini:r_string(id, "name") or "",
+                description = ini:line_exist(id, "description") and ini:r_string(id, "description") or "",
+				
+                rank = ini:line_exist(id, "rank") and ini:r_string(id, "rank") or "all",
+                community = ini:line_exist(id, "community") and ini:r_string(id, "community") or "none"				
+            }
+            
+            local items_count = ini:line_count(id)
+            local item_section = ""
+            for j = 0, items_count - 1 do
+                result, item_section, str = ini:r_line(id, j, "", "")
+                
+                if(item_section == "empty") then
+                    local parsed_condlist = xr_logic.parse_condlist(nil, "treasure_manager", "empty_cond", str)
+                    self.secrets[id].empty = parsed_condlist
+                elseif(item_section == "refreshing") then
+                    local parsed_condlist = xr_logic.parse_condlist(nil, "treasure_manager", "refreshing_cond", str)
+                    self.secrets[id].refreshing = parsed_condlist
+                elseif(item_section ~= "name" and item_section ~= "description" and item_section ~= "rank" and item_section ~= "community") then
+                    
+                    -- ЗАДАЧА 2: Обработка remove и replace
+                    local str_clean = str:match("^%s*(.-)%s*$")
+                    if str_clean == "remove" then
+                        self.secrets[id].modifiers[item_section] = { action = "remove" }
+                    elseif string.find(str_clean, "^replace") then
+                        -- Сделал поиск более надёжным, чтобы съедал любые пробелы
+                        local target_sect = string.match(str_clean, "^replace%s*,%s*([^%s]+)")
+                        if target_sect then
+                            self.secrets[id].modifiers[item_section] = { action = "replace", target = target_sect }
+                        end
+                    else
+                        -- Обычный парсинг
+                        self.secrets[id].items[item_section] = {}
+                        local tbl = utils.parse_spawns(str)
+                        if(#tbl == 0) then
+                            abort("There is no items count set for treasure [%s], item [%s]", id, item_section)
+                        end
+                        for k = 1, #tbl do
+                            local item_data = {
+                                count = tonumber(tbl[k].section) or 0,
+                                prob = tonumber(tbl[k].prob or 1) or 1
+                            }
+                            table.insert(self.secrets[id].items[item_section], item_data)
+                        end
+                    end
+                end
+            end
+        else
+            abort("There is no section [%s] in secrets.ltx", tostring(id))
+        end
+    end
+end
+
+function CTreasureManager:fill(se_obj, treasure_id)
+	if(self.secrets[treasure_id]) then
+        local sect = se_obj:section_name()
+        
+        -- Перехват в очередь remove/replace
+        if self.secrets[treasure_id].modifiers[sect] then
+            local mod = self.secrets[treasure_id].modifiers[sect]
+            table.insert(self.items_to_modify, {id = se_obj.id, mod = mod})
+            return true 
+        end
+
+		local item = self.secrets[treasure_id].items[sect]
+		if(item) then
+			for i=1,#item do
+				if not(item[i].item_ids) then
+					item[i].item_ids = {}
+				end
+				local count = #item[i].item_ids
+				if(count < item[i].count) then
+					item[i].item_ids[count+1] = se_obj.id
+					return true
+				end
+			end
+		else
+			abort("Attempt to register unknown item [%s] in secret [%s]", sect, treasure_id)
+		end
+	else
+		abort("Attempt to register item [%s] in unexistent secret [%s]", se_obj:name(), treasure_id)
+	end
+end
+
+function CTreasureManager:register_item(se_obj)
+	local spawn_ini = se_obj:spawn_ini()
+	if(spawn_ini:section_exist("secret")) then
+		local result, id, value
+		result, id, value = spawn_ini:r_line("secret",0,"","")
+		if id ~= "name" then
+			abort("There is no 'name' field in [secret] section for object [%s]", se_obj:name())
+		end
+		if value == "" then
+			abort("Field 'name' in [secret] section got no value for object [%s]", se_obj:name())
+		end
+		return self:fill(se_obj, value)
+	end
+end
+
+function CTreasureManager:register_restrictor(se_obj)
+	local spawn_ini = se_obj:spawn_ini()
+	if(spawn_ini:section_exist("secret")) then
+		self.secret_restrs[se_obj:name()] = se_obj.id
+	end
+end
+
+-- ЗАДАЧА 1: Функция очистки провалившихся вещей
+function CTreasureManager:check_fallen_items()
+    local to_remove = {}
+    
+    for obj_id, restr_id in pairs(self.items_from_secrets) do
+        local obj = level.object_by_id(obj_id) -- Проверяем клиентский онлайн-объект!
+        if obj then
+            local se_restr = alife():object(restr_id)
+            if se_restr then
+                -- Сравниваем реальную физическую высоту
+                if obj:position().y < (se_restr.position.y - 5.0) then
+                    table.insert(to_remove, obj_id)
+                end
+            end
+        else
+            -- Подстраховка: если движок уже психанул и безвозвратно удалил улетевший в бездну предмет из игры
+            if not alife():object(obj_id) then
+                table.insert(to_remove, obj_id)
+            end
+        end
+    end
+
+    -- Удаляем и виртуально "поднимаем" провалившиеся предметы, чтобы счетчик тайника обновился
+    for _, obj_id in ipairs(to_remove) do
+        printf("TreasureManager: Item [%d] fell underground, auto-collecting to fix stash...", obj_id)
+        
+        local se_item = alife():object(obj_id)
+        if se_item then
+            alife():release(se_item, true)
+        end
+        
+        -- Вызов on_item_take уберет его из списка items_from_secrets и уменьшит to_find
+        self:on_item_take(obj_id) 
+    end
+end
+
+function CTreasureManager:update()
+	if not(self.items_spawned) then
+		for k,v in pairs(self.secrets) do
+			self:spawn_treasure(k)
+		end
+		self.items_spawned = true
+	end
+    
+    -- БЕЗОПАСНАЯ обработка remove и replace
+    if #self.items_to_modify > 0 then
+        for i = 1, #self.items_to_modify do
+            local data = self.items_to_modify[i]
+            local se_obj = alife():object(data.id)
+            
+            if se_obj then
+                if data.mod.action == "remove" then
+                    alife():release(se_obj, true)
+                elseif data.mod.action == "replace" and data.mod.target then
+                    -- Вот тут был косяк: забыли скопировать AI-свойства старого предмета
+                    local new_obj = alife():create(data.mod.target, se_obj.position, se_obj.m_level_vertex_id, se_obj.m_game_vertex_id)
+                    new_obj.angle = se_obj.angle
+                    new_obj:use_ai_locations(se_obj:used_ai_locations())
+                    alife():release(se_obj, true)
+                end
+            end
+        end
+        self.items_to_modify = {}
+    end
+	
+	local global_time = time_global()
+	if(self.check_time and global_time - self.check_time <= 500) then
+		return
+	end
+	self.check_time = global_time
+
+    self:check_fallen_items()
+
+	for k,v in pairs(self.secrets) do
+		if(v.given) then
+		 	if(v.empty) then
+				local sect = xr_logic.pick_section_from_condlist(db.actor, nil, v.empty)
+				if(sect == "true") and not v.checked then
+					level.map_remove_object_spot(self.secret_restrs[k], "treasure")
+					xr_statistic.inc_founded_secrets_counter()
+					v.empty = nil
+					v.checked = true
+					printf("Empty secret [%s] remove map spot!", k)
+				end
+			elseif(v.refreshing and v.checked) then
+				local sect = xr_logic.pick_section_from_condlist(db.actor, nil, v.refreshing)
+				if(sect == "true") then
+					v.given = false
+					v.checked = false
+					printf("Given secret [%s] now is avaliable!", k)
+				end
+			end
+		end
+	end
+end
+
+function CTreasureManager:spawn_treasure(treasure_id)
+	if not(self.secrets[treasure_id]) then
+		abort("There is no stored secret [%s]", tostring(treasure_id))
+	end
+	if(self.secrets[treasure_id].given) then
+		printf("Secret [%s] already given!", treasure_id)
+		return
+	end
+	for item_section, item_params in pairs(self.secrets[treasure_id].items) do
+		for num = 1, #item_params do
+            local item_count = item_params[num].count
+            if type(item_count) ~= "number" then
+                item_count = 0
+            end
+            
+            for i = 1, item_count do
+                local prob = math.random()
+                if(prob < item_params[num].prob) then
+                    if(item_params[num].item_ids and item_params[num].item_ids[i]) then
+                        local se_obj = alife():object(item_params[num].item_ids[i])
+                        local obj = alife():create( item_section,
+                                                    se_obj.position,
+                                                    se_obj.m_level_vertex_id,
+                                                    se_obj.m_game_vertex_id)
+                        obj.angle = se_obj.angle
+                        obj:use_ai_locations(se_obj:used_ai_locations())
+                        self.items_from_secrets[obj.id] = self.secret_restrs[treasure_id]
+                        self.secrets[treasure_id].to_find = self.secrets[treasure_id].to_find + 1
+                    end
+                end
+            end
+		end
+	end
+end
+
+function CTreasureManager:give_treasure(treasure_id, spawn)
+	if not(self.secrets[treasure_id]) then
+		abort("There is no stored secret [%s]", tostring(treasure_id))
+	end
+	if(self.secrets[treasure_id].given) then
+		printf("Secret [%s] already given!", treasure_id)
+		return
+	end
+	if(self.secrets[treasure_id].to_find == 0 and not(self.secrets[treasure_id].empty)) then
+		if self.secrets[treasure_id].name ~= "" and news_manager.send_treasure_name then
+			news_manager.send_treasure_name(2, self.secrets[treasure_id].name)
+		elseif news_manager.send_treasure then
+			news_manager.send_treasure(2) -- Заглушка, если функции send_treasure_name не существует
+		end
+		
+		printf("Secret [%s] already empty", treasure_id)
+		return
+	end
+	if(spawn) then
+		self:spawn_treasure(treasure_id)
+	end
+	
+	local spot_text = ""
+	if self.secrets[treasure_id].name ~= "" then
+		local name_text = game.translate_string(self.secrets[treasure_id].name)
+		name_text = "%c[255,255,160,0]" .. name_text .. "%c[default]"
+		
+		if self.secrets[treasure_id].description ~= "" then
+			local desc_text = game.translate_string(self.secrets[treasure_id].description)
+			spot_text = name_text .. " \\n" .. desc_text
+		else
+			spot_text = name_text
+		end
+	end
+	
+	level.map_add_object_spot_ser(self.secret_restrs[treasure_id], "treasure", spot_text)
+	self.secrets[treasure_id].given = true
+	if self.secrets[treasure_id].name ~= "" and news_manager.send_treasure_name then
+		news_manager.send_treasure_name(0, self.secrets[treasure_id].name)
+	elseif news_manager.send_treasure then
+		news_manager.send_treasure(0) -- Заглушка, если функции send_treasure_name не существует
+	end
+	printf("Give secret [%s]", treasure_id)
+end
+
+function CTreasureManager:give_random(count)
+    count = count or 1 
+    
+    if type(count) ~= "number" then
+        count = 1
+    end
+    
+    local actor = db.actor
+    if not actor then return end
+    
+    local level_name = level.name()
+    local prefix = ""
+    if level_name == "zaton" then
+        prefix = "zat_hiding_place_"
+    elseif level_name == "jupiter" then
+        prefix = "jup_hiding_place_"
+    elseif level_name == "pripyat" then
+        prefix = "pri_hiding_place_"
+    else return end
+    
+    local available_treasures = {}
+    for k,v in pairs(self.secrets) do
+        if not v.given and string.find(k, "^" .. prefix) then
+            table.insert(available_treasures, k)
+        end
+    end
+    
+    if #available_treasures == 0 then return end
+    
+    local actual_count = math.min(count, #available_treasures)
+    for i = 1, actual_count do
+        if #available_treasures > 0 then
+            local random_index = math.random(1, #available_treasures)
+            local treasure_name = available_treasures[random_index]
+            self:give_treasure(treasure_name)
+            table.remove(available_treasures, random_index)
+        else break end
+    end
+end
+
+function CTreasureManager:on_item_take(obj_id)
+	local restr_id = self.items_from_secrets[obj_id]
+	local treasure_id = nil
+	for k,v in pairs(self.secret_restrs) do
+		if(restr_id == v) then
+			treasure_id = k
+		end
+	end
+	if(treasure_id) then
+		self.secrets[treasure_id].to_find = self.secrets[treasure_id].to_find - 1
+		
+		if(self.secrets[treasure_id].to_find <= 0) then
+			level.map_remove_object_spot(self.secret_restrs[treasure_id], "treasure")
+			xr_statistic.inc_founded_secrets_counter()
+			printf("Secret [%s] now is empty!", treasure_id)
+			self.secrets[treasure_id].checked = true
+			news_manager.send_treasure(1)
+		end
+		self.items_from_secrets[obj_id] = nil
+	end
+end
+
+function CTreasureManager:save(package)
+	set_save_marker(package, "save", false, "CTreasureManager")
+	package:w_bool(self.items_spawned)
+	local num = 0
+	for k,v in pairs(self.items_from_secrets) do
+		num = num + 1
+	end
+	package:w_u16(num)
+	for k,v in pairs(self.items_from_secrets) do
+		package:w_u16(k)
+		package:w_u16(v)
+	end
+
+	num = 0
+	for k,v in pairs(self.secrets) do
+		num = num + 1
+	end
+	package:w_u16(num)
+	for k,v in pairs(self.secrets) do
+		if not(self.secret_restrs[k]) then
+			package:w_u16(-1)
+		else
+			package:w_u16(self.secret_restrs[k])
+		end
+		package:w_bool(v.given)
+		package:w_bool(v.checked)
+		package:w_u8(v.to_find)
+	end
+	set_save_marker(package, "save", true, "CTreasureManager")
+end
+
+function CTreasureManager:load(package)
+	set_save_marker(package, "load", false, "CTreasureManager")
+	self.items_spawned = package:r_bool()
+	self.items_from_secrets = {}
+	local num = package:r_u16()
+	for i = 1, num do
+		local k = package:r_u16()
+		local v = package:r_u16()
+		self.items_from_secrets[k] = v
+	end
+
+	local num2 = package:r_u16()
+	for i = 1, num2 do
+		local id = package:r_u16()
+		for k,v in pairs(self.secret_restrs) do
+			if(v == id) then
+				id = k
+				break
+			end
+		end
+		local given = package:r_bool()
+		local checked = package:r_bool()
+		local to_find = package:r_u8()
+		if(id ~= 65535 and self.secrets[id]) then
+			self.secrets[id].given = given
+			self.secrets[id].checked = checked
+			self.secrets[id].to_find = to_find
+		end
+	end
+ 	set_save_marker(package, "load", true, "CTreasureManager")
+end
+--------------------------------------------------------------------------------
+function get_treasure_manager()
+	if(treasure_manager == nil) then
+		treasure_manager = CTreasureManager()
+		treasure_manager:initialize()
+	end
+	return treasure_manager
+end
+
+function CTreasureManager:give_random_from_deadbody(npc)
+
+    if math.random(100) > self.global_drop_chance then
+        return false
+    end
+
+    local npc_rank = ranks.get_obj_rank_name(npc)
+    local npc_comm = character_community(npc)
+    local pool = {}
+
+    for k, v in pairs(self.secrets) do
+        if not v.given and v.community ~= "none" then
+            
+            local comm_match = (v.community == "all") or string.find(v.community, npc_comm)
+            local rank_match = (v.rank == "all") or (v.rank == npc_rank)
+            
+            if comm_match and rank_match then
+                table.insert(pool, k)
+            end
+        end
+    end
+    
+    if #pool == 0 then return false end
+    
+    local selected_id = pool[math.random(#pool)]
+    self:give_treasure(selected_id)
+    return true 
+end

@@ -1,0 +1,201 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Прыгун 1
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@snork_1]
+suitable = {=is_monster_snork -zat_b28_heli_3_searched}
+active = mob_home@snork_normal_1
+monster_job = true
+prior = 150
+
+[mob_home@snork_normal_1]
+path_home = mob_home_2
+home_min_radius = 20
+home_max_radius = 40
+on_info = {!npc_in_zone(zat_b28_smart_terrain_att)}  %=kill_npc()%
+on_info2 = {=actor_in_zone(zat_b28_heli_3_snork_territory) -zat_b28_snork_normal_today_not_jumping -zat_b28_snork_1_jumped -zat_b28_heli_3_searched} mob_walker@snork_normal_1 %=teleport_npc(zat_b28_snork_1_jump_walk)%
+on_info3 = {=actor_in_zone(zat_b28_heli_3_snork_territory_2) -zat_b28_snork_normal_today_not_jumping -zat_b28_snork_1_jumped -zat_b28_heli_3_searched} mob_walker@snork_normal_1 %=teleport_npc(zat_b28_snork_1_jump_walk)%
+on_info4 = {=actor_in_zone(zat_surge_hide_b28) -zat_b28_snork_normal_today_not_jumping} mob_home@snork_normal_1_attacker %+zat_b28_snork_normal_today_not_jumping%
+
+[mob_walker@snork_normal_1]
+path_walk = snork_1_jump_walk
+path_look = snork_1_jump_look
+on_signal = plato_snork_1_jump | {=actor_in_zone(zat_b28_heli_3_snork_territory) !actor_in_zone(zat_b28_heli_3_snork_territory_2)} mob_jump@snork_normal_1_jump_1, {=actor_in_zone(zat_b28_heli_3_snork_territory_2) !actor_in_zone(zat_b28_heli_3_snork_territory)} mob_jump@snork_normal_1_jump_2
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = true
+
+[mob_jump@snork_normal_1_jump_1]
+path_jump = snork_1_jump
+ph_jump_factor = 1.4
+offset = 0,0,0
+on_signal = jumped | mob_home@snork_normal_1_attacker %+zat_b28_snork_1_jumped%
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = true
+
+[mob_jump@snork_normal_1_jump_2]
+path_jump = snork_1_jump_1
+ph_jump_factor = 1.4
+offset = 0,0,0
+on_signal = jumped | mob_home@snork_normal_1_attacker %+zat_b28_snork_1_jumped%
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = true
+
+[mob_home@snork_normal_1_attacker]
+path_home = mob_home_3
+home_min_radius = 20
+home_max_radius = 40
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = false
+on_info = {!actor_in_zone(zat_b28_heli_3_snork_territory)} mob_home@snork_normal_1
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Прыгун 2
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@snork_2]
+suitable = {=is_monster_snork -zat_b28_heli_3_searched}
+active = mob_home@snork_normal_2
+monster_job = true
+prior = 150
+
+[mob_home@snork_normal_2]
+path_home = mob_home_2
+home_min_radius = 20
+home_max_radius = 40
+on_info = {!npc_in_zone(zat_b28_smart_terrain_att)}  %=kill_npc()%
+on_info2 = {=actor_in_zone(zat_b28_heli_3_snork_territory) -zat_b28_snork_normal_today_not_jumping -zat_b28_snork_2_jumped -zat_b28_heli_3_searched} mob_walker@snork_normal_2 %=teleport_npc(zat_b28_snork_2_jump_walk)%
+on_info3 = {=actor_in_zone(zat_b28_heli_3_snork_territory_2) -zat_b28_snork_normal_today_not_jumping -zat_b28_snork_2_jumped -zat_b28_heli_3_searched} mob_walker@snork_normal_2 %=teleport_npc(zat_b28_snork_2_jump_walk)%
+on_info4 = {=actor_in_zone(zat_surge_hide_b28) -zat_b28_snork_normal_today_not_jumping} mob_home@snork_normal_1_attacker
+
+[mob_walker@snork_normal_2]
+path_walk = snork_2_jump_walk
+path_look = snork_2_jump_look
+on_signal = plato_snork_2_jump | {=actor_in_zone(zat_b28_heli_3_snork_territory) !actor_in_zone(zat_b28_heli_3_snork_territory_2)} mob_jump@snork_normal_2_jump_1, {=actor_in_zone(zat_b28_heli_3_snork_territory_2) !actor_in_zone(zat_b28_heli_3_snork_territory)} mob_jump@snork_normal_2_jump_2
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = true
+
+[mob_jump@snork_normal_2_jump_1]
+path_jump = snork_2_jump
+ph_jump_factor = 1.2
+offset = 0,0,0
+on_signal = jumped | mob_home@snork_normal_2_attacker %+zat_b28_snork_2_jumped%
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = true
+
+[mob_jump@snork_normal_2_jump_2]
+path_jump = snork_2_jump_1
+ph_jump_factor = 1.4
+offset = 0,0,0
+on_signal = jumped | mob_home@snork_normal_2_attacker %+zat_b28_snork_2_jumped%
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = true
+
+[mob_home@snork_normal_2_attacker]
+path_home = mob_home_3
+home_min_radius = 25
+home_max_radius = 50
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = false
+on_info = {!actor_in_zone(zat_b28_heli_3_snork_territory)} mob_home@snork_normal_2
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Сим 3
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@snork_3]
+suitable = {=is_monster_snork -zat_b28_heli_3_searched}
+active = mob_home@snork_normal_3
+monster_job = true
+prior = 100
+
+[mob_home@snork_normal_3]
+path_home = mob_home_2
+home_min_radius = 20
+home_max_radius = 40
+on_info = {!npc_in_zone(zat_b28_smart_terrain_att)}  %=kill_npc()%
+on_info2 = {=actor_in_zone(zat_b28_heli_3_snork_territory) !actor_in_zone(zat_surge_hide_b28)} mob_home@snork_normal_3_attacker
+on_info3 = {=actor_in_zone(zat_b28_heli_3_snork_territory_2) !actor_in_zone(zat_surge_hide_b28)} mob_home@snork_normal_3_attacker
+
+[mob_home@snork_normal_3_attacker]
+path_home = mob_home_3
+home_min_radius = 25
+home_max_radius = 50
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = false
+on_info = {!actor_in_zone(zat_b28_heli_3_snork_territory)} mob_home@snork_normal_3
+on_info2 = {!actor_in_zone(zat_b28_heli_3_snork_territory_2)} mob_home@snork_normal_3
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Сим 4
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@snork_4]
+suitable = {=is_monster_snork -zat_b28_heli_3_searched}
+active = mob_home@snork_normal_4
+monster_job = true
+prior = 100
+
+[mob_home@snork_normal_4]
+path_home = mob_home_2
+home_min_radius = 20
+home_max_radius = 40
+on_info = {!npc_in_zone(zat_b28_smart_terrain_att)}  %=kill_npc()%
+on_info2 = {=actor_in_zone(zat_b28_heli_3_snork_territory) !actor_in_zone(zat_surge_hide_b28)} mob_home@snork_normal_4_attacker
+on_info3 = {=actor_in_zone(zat_b28_heli_3_snork_territory_2) !actor_in_zone(zat_surge_hide_b28)} mob_home@snork_normal_4_attacker
+
+[mob_home@snork_normal_4_attacker]
+path_home = mob_home_3
+home_min_radius = 25
+home_max_radius = 50
+out_restr = zat_b28_heli_3_snork_territory
+combat_ignore_cond = false
+on_info = {!actor_in_zone(zat_b28_heli_3_snork_territory)} mob_home@snork_normal_4
+on_info2 = {!actor_in_zone(zat_b28_heli_3_snork_territory_2)} mob_home@snork_normal_4
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Сим 5
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@snork_5]
+suitable = {=is_monster_snork -zat_b28_heli_3_searched}
+active = mob_home@snork_normal_5
+monster_job = true
+prior = 100
+
+[mob_home@snork_normal_5]
+path_home = mob_home_1
+home_min_radius = 20
+home_max_radius = 40
+on_info = {!npc_in_zone(zat_b28_smart_terrain_att)}  %=kill_npc()%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Сим 6
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@snork_6]
+suitable = {=is_monster_snork -zat_b28_heli_3_searched}
+active = mob_home@snork_normal_6
+monster_job = true
+prior = 100
+
+[mob_home@snork_normal_6]
+path_home = mob_home_1
+home_min_radius = 20
+home_max_radius = 40
+on_info = {!npc_in_zone(zat_b28_smart_terrain_att)}  %=kill_npc()%
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Сим 7
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[logic@snork_7]
+suitable = {=is_monster_snork -zat_b28_heli_3_searched}
+active = mob_home@snork_normal_7
+monster_job = true
+prior = 100
+
+[mob_home@snork_normal_7]
+path_home = mob_home_1
+home_min_radius = 20
+home_max_radius = 40
+on_info = {!npc_in_zone(zat_b28_smart_terrain_att)}  %=kill_npc()%

@@ -1,0 +1,375 @@
+--------------------- 18.03.26
+
+local treasure_by_target = {}
+local items_spawned_on_start = false
+local ordered_treasures = {}
+
+class "CTreasure"
+function CTreasure:__init(ini, section)
+	self.section		= section
+	self.target			= utils.cfg_get_string(ini, section, "target", nil, true, "")
+	self.name			= utils.cfg_get_string(ini, section, "name", nil, true, "")
+	self.description	= utils.cfg_get_string(ini, section, "description", nil, true, "")
+	self.custom_spot    = utils.cfg_get_string(ini, section, "custom_spot", nil, false, "treasure")
+	
+	self.processed      = false	
+	self.statistics_given = false
+	
+	if ini:line_exist(section, "items_on_game_start") then
+		self.items_on_game_start = ini:r_bool(section, "items_on_game_start")
+	else
+		self.items_on_game_start = true
+	end	
+
+    -- НОВАЯ ЛОГИКА РАНДОМНЫХ НАБОРОВ
+    self.items = nil
+    local item_variants = {}
+    
+    -- Собираем все items, items1, items2, ... но с защитой от зацикливания
+    for i = 0, 99 do  -- максимум 100 вариантов
+        local items_key = (i == 0) and "items" or "items" .. tostring(i)
+        if not ini:line_exist(section, items_key) then
+            break
+        end
+        
+        local items_str = ini:r_string(section, items_key)
+        if items_str and items_str ~= "" then
+            table.insert(item_variants, items_str)
+        end
+    end
+    
+    -- Выбираем случайный вариант
+    if #item_variants > 0 then
+        local selected_index = math.random(1, #item_variants)
+        local selected_items = item_variants[selected_index]
+        self.items = utils.parse_spawns(selected_items)
+        
+        if self.items == nil then
+            abort("Cant parse items in %s", section)
+        end
+    end
+	
+	self.rank			= utils.cfg_get_string(ini, section, "rank", nil, false, "", "all")
+	local community		= parse_names(utils.cfg_get_string(ini, section, "community", nil, false, "", "stalker, bandit, dolg, freedom, ecolog, monolith, zombied, killer, army"))
+	self.on_empty		= xr_logic.parse_condlist(db.actor, section, "on_empty", utils.cfg_get_string(ini, section, "on_empty", nil, false, "", "false"))
+	self.community = {}
+	for k,v in pairs(community) do
+		self.community[v] = true
+	end
+	if treasure_by_target[self.target] == nil then
+		treasure_by_target[self.target] = {}
+	end
+	table.insert(treasure_by_target[self.target], self)
+	self.condlist		= xr_logic.parse_condlist(db.actor, section, "condlist", utils.cfg_get_string(ini, section, "condlist", nil, false, "", "false"))
+end
+
+function CTreasure:give_treasure()
+    local obj_id = get_story_object_id(self.target)
+        
+    if obj_id ~= nil then
+        local obj = alife():object(obj_id)
+        if obj ~= nil then
+            -- Проверяем, не обработан ли уже тайник
+            if self.processed then
+                printf("Treasure %s was already processed, sending 'already found' message", self.section)
+                news_manager.send_treasure_name(2, self.name)
+                return
+            end
+            
+            news_manager.send_treasure_name(0, self.name)
+            
+            local name_text = game.translate_string(self.name)
+            name_text = "%c[255,255,160,0]" .. name_text .. "%c[default]"
+			
+            local desc_text = game.translate_string(self.description)
+            local text = name_text .. " \\n" .. desc_text
+
+            -- ИСПРАВЛЕНО: проверяем пустоту только если items_on_game_start = true
+            if self.items_on_game_start == true then
+                local game_obj = level.object_by_id(obj_id)
+                if game_obj and game_obj:is_inv_box_empty() then
+                    printf("Treasure box is already empty, skipping spot creation")
+                    self:process_empty_treasure(game_obj)
+                    return
+                end
+            end
+
+			local spot_type = self.custom_spot
+			
+			if spot_type == "" or spot_type == nil then
+				spot_type = "treasure"
+			end
+
+            level.map_add_object_spot_ser(obj.id, spot_type, text)
+                
+            if self.items_on_game_start ~= true and self.items then
+                printf("Spawning items for treasure with items_on_game_start = false: %s", self.section)
+                for k, v in pairs(self.items) do
+                    if ammo_section[v.section] then
+                        utils.create_ammo(v.section, obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id, v.prob)
+                    else
+                        for i = 1, v.prob do
+                            alife():create(v.section, obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
+                        end
+                    end
+                end
+            end
+            self.active = true
+        end
+    end
+end
+
+function CTreasure:process_empty_treasure(game_obj)
+    printf("Processing already empty treasure: %s", self.section)
+    
+    -- НАЧИСЛЯЕМ СТАТИСТИКУ ТОЛЬКО ЕСЛИ ЕЩЁ НЕ НАЧИСЛЯЛИ
+    if not self.statistics_given then
+        news_manager.send_treasure(1)  -- Тайник найден
+        xr_statistic.inc_founded_secrets_counter()
+        self.statistics_given = true
+        printf("Statistics given for treasure: %s", self.section)
+    else
+        news_manager.send_treasure_name(2, self.name)  -- Тайник уже найден
+    end
+  
+    self.active = false
+    self.processed = true
+  
+    printf("Empty treasure processed: %s", self.section)
+end
+
+function CTreasure:check_rank_and_community(npc)
+    local community = (self.community[npc:character_community()] == true)
+    
+    if self.rank == "all" then
+        return community
+    else
+        -- Используем реальные интервалы из игры
+        local required_rank_name = self.rank
+        local npc_rank = ranks.get_obj_rank_name(npc)
+        return (npc_rank == required_rank_name) and community
+    end
+end
+
+function CTreasure:check_for_used_target()
+	for k,v in pairs(treasure_by_target[self.target]) do
+		if v.active == true then
+			return false
+		end
+	end
+	return true
+end
+
+function CTreasure:reset_treasure()
+	printf("treasure_manager: reset_treasure [%s]", self.section)
+	self.active = false
+end
+
+function treasure_spawn_on_game_start()
+    if items_spawned_on_start then
+        return  -- уже спаунили
+    end
+    
+    printf("=== SPAWNING TREASURE ITEMS ON GAME START ===")
+    for k, treasure in pairs(treasures) do
+        if treasure.items_on_game_start == true and treasure.items then
+            printf("Spawning items for: %s", treasure.section)
+            local obj_id = get_story_object_id(treasure.target)
+            if obj_id ~= nil then
+                local obj = alife():object(obj_id)
+                if obj ~= nil then
+                    for k, v in pairs(treasure.items) do
+                        if ammo_section[v.section] then
+                            utils.create_ammo(v.section, obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id, v.prob)
+                        else
+                            for i = 1, v.prob do
+                                alife():create(v.section, obj.position, obj.m_level_vertex_id, obj.m_game_vertex_id, obj.id)
+                            end
+                        end
+                    end
+                    printf("SUCCESS: Items spawned for: %s", treasure.section)
+                end
+            end
+        end
+    end
+    items_spawned_on_start = true
+end
+
+local dead_body_stash_chance = 50
+
+function use(npc)
+    for banned_name, _ in pairs(banned_names) do
+        if string.find(npc:name(), banned_name) then
+            printf("! Treasure manager: banned name '%s'.", banned_name)
+            return
+        end
+    end
+
+    printf("treasure_manager: npc[%s] is used by actor", npc:name())
+    local available_treasures = {}
+    local selected_treasure = nil
+    for k,v in pairs(treasures) do
+        if xr_logic.pick_section_from_condlist(db.actor, npc, v.condlist) == "true" 
+            and v:check_rank_and_community(npc) == true
+            and v.active ~= true
+            and v:check_for_used_target() == true
+			and not v.processed
+        then
+            table.insert(available_treasures, v)
+        end
+    end
+    
+    local chance = dead_body_stash_chance or 50
+    if #available_treasures == 0 or math.random(100) <= (100 - chance)then
+        return
+    end
+    
+    selected_treasure = available_treasures[math.random(1, #available_treasures)]
+    selected_treasure:give_treasure()
+end
+
+function treasure_empty(box, box_story_id)
+    printf("!!! treasure empty - active treasure")
+    local treasures = treasure_by_target[box_story_id] or treasure_by_target[box:name()]
+
+    if treasures == nil then
+        return
+    end
+
+    for k,v in pairs(treasures) do
+        if v.active then
+            local spot_type = v.custom_spot or "treasure"
+			
+            if level.map_has_object_spot(box:id(), spot_type) ~= 0 then
+                level.map_remove_object_spot(box:id(), spot_type)
+            end        
+            
+            xr_logic.pick_section_from_condlist(db.actor, box, v.on_empty)
+            v:process_empty_treasure(box)
+        end
+    end
+end
+
+function take_item_from_box(box, box_story_id, item)
+    printf("!!! take item from box")
+    
+    if box:is_inv_box_empty() == true then
+        local treasures = treasure_by_target[box_story_id] or treasure_by_target[box:name()]
+        
+        if treasures == nil then
+            return
+        end
+
+        for k,v in pairs(treasures) do
+            -- ДЛЯ items_on_game_start = true: обрабатываем если не обработан
+            if not v.processed and v.items_on_game_start == true then
+                printf("Processing empty treasure with items_on_game_start = true: %s", v.section)
+				
+                local spot_type = v.custom_spot or "treasure"				
+				
+                if level.map_has_object_spot(box:id(), spot_type) ~= 0 then
+                    level.map_remove_object_spot(box:id(), spot_type)
+                end        
+                
+                xr_logic.pick_section_from_condlist(db.actor, box, v.on_empty)
+                v:process_empty_treasure(box)
+                break
+            end
+            
+            -- ДЛЯ items_on_game_start = false: обрабатываем если активен (получил наводку)
+            if v.active and v.items_on_game_start == false then
+                printf("Processing empty treasure with items_on_game_start = false: %s", v.section)
+                treasure_empty(box, box_story_id)
+                break
+            end
+        end
+    end
+end
+
+function load_treasures()
+	local treasure_ini = ini_file("misc\\treasure_manager_cs.ltx")
+
+    if not treasure_ini:section_exist("list") then
+		abort("There is no section [list] in treasure_manager_cs.ltx")
+	elseif not treasure_ini:section_exist("settings") then
+		abort("There is no section [settings] in treasure_manager_cs.ltx")	
+	end
+
+    if treasure_ini:section_exist("settings") then
+        dead_body_stash_chance = treasure_ini:r_float("settings", "dead_body_stash_chance", 50)
+    end	
+	
+    banned_names = {}
+    if treasure_ini:section_exist("banned_names") then
+        local n = treasure_ini:line_count("banned_names")
+        for i = 0, n - 1 do
+            local result, name, value = treasure_ini:r_line("banned_names", i, "", "")
+            banned_names[name] = true
+        end
+    end     
+	
+	treasures = {}	
+	ordered_treasures = {}	
+	
+	local n = treasure_ini:line_count("list")
+	for i=0, n - 1 do
+		local result, section, value  = treasure_ini:r_line("list", i, "", "")
+		treasures[section] = CTreasure(treasure_ini, section)
+		
+        table.insert(ordered_treasures, section)		
+    end
+end
+
+function save(thread)
+    set_save_marker(thread, "save", false, "treasure_manager")
+    
+    for i = 1, #ordered_treasures do
+        local section_name = ordered_treasures[i]
+        local v = treasures[section_name]
+        
+        thread:w_bool(v.active == true)
+        thread:w_bool(v.processed == true)        
+        thread:w_bool(v.statistics_given == true) 
+    end
+    
+    thread:w_bool(items_spawned_on_start)
+    set_save_marker(thread, "save", true, "treasure_manager")
+end
+
+function load(thread)
+    set_save_marker(thread, "load", false, "treasure_manager")
+    
+    for i = 1, #ordered_treasures do
+        local section_name = ordered_treasures[i]
+        local v = treasures[section_name]
+        
+        v.active = thread:r_bool()
+        v.processed = thread:r_bool()
+        v.statistics_given = thread:r_bool()
+    end
+    
+    items_spawned_on_start = thread:r_bool()
+    set_save_marker(thread, "load", true, "treasure_manager")
+end
+
+function give_treasure(treasure_id)
+	if treasures[treasure_id] ~= nil then
+		if treasures[treasure_id].active ~= true then
+			treasures[treasure_id]:give_treasure()
+		else
+			local active_treasure = get_active_treasure_by_target(treasures[treasure_id].target)
+			printf("! Unable to give treasure [%s] because inventory box is already in use by treasure [%s]", treasure_id, active_treasure)
+		end
+	else
+		printf("! There is no treasure with id [%s]", treasure_id)
+	end
+end
+
+function get_active_treasure_by_target(target)
+	for k,v in pairs(treasure_by_target[target]) do
+		if v.active == true then
+			return v.section
+		end
+	end
+	return "nil"
+end

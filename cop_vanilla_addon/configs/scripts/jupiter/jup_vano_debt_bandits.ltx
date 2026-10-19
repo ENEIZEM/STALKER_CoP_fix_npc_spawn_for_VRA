@@ -1,0 +1,68 @@
+;;;;;;;;;;;;;;;;; Валет
+
+[logic@jup_bandit_vano_debt_1]
+suitable = {=check_npc_name(jup_bandit_vano_debt_leader) -vano_debt_to_bandits_task_end}
+prior = 200
+active = walker@wait_actor
+on_death = death@bandit_leader
+on_hit = hit@bandit_leader
+
+[death@bandit_leader]
+on_info = %+jup_bandit_vano_debt_leader_dead% 
+
+[hit@bandit_leader]
+on_info = {-jup_bandit_vano_debt_leader_hitted_by_actor =hit_by_actor} %+jup_bandit_vano_debt_leader_hitted_by_actor%
+
+[walker@wait_actor]
+path_walk = jup_bandit_vano_debt_2_walk
+path_look = jup_bandit_vano_debt_2_look
+def_state_standing = wait_na
+def_state_moving = walk_noweap
+meet = meet@stand
+on_info = {+vano_debt_to_bandits_task_actor_threatening !actor_enemy}  %=hit_npc_from_actor%
+on_info2 = {=is_squad_enemy_to_actor(jup_bandit_vano_debt_squad) +vano_debt_to_bandits_give_own_money} %+vano_debt_to_bandits_task_shootout_begin%
+combat_ignore_cond = {!actor_enemy} true, false
+combat_ignore_keep_when_attacked = false
+invulnerable = {=dist_to_actor_ge(60)} true, false
+out_restr = jup_b202_jup_vano_debt_bandits
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+
+[meet@stand]
+close_snd_hello = jup_a10_bandit_leader_hello
+close_snd_bye 	= nil
+close_anim 		= wait_na
+close_victim 	= actor
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 3
+far_distance 	= 0
+close_snd_distance = 3
+use = {=actor_enemy} false, true
+allow_break = false
+trade_enable = false
+meet_on_talking = false
+
+;;;;;;;;;;;;;;;;; Второй браток
+
+[logic@jup_bandit_vano_debt_2]
+suitable = {=check_npc_name(sim_default_bandit) -vano_debt_to_bandits_task_end}
+prior = 200
+active = walker@guard
+
+[walker@guard]
+path_walk = jup_bandit_vano_debt_1_walk
+path_look = jup_bandit_vano_debt_1_look
+def_state_standing = guard
+def_state_moving = walk
+meet = no_meet
+combat_ignore_cond = {!actor_enemy} true, false
+combat_ignore_keep_when_attacked = false
+invulnerable = {=dist_to_actor_ge(60)} true, false
+out_restr = jup_b202_jup_vano_debt_bandits
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false

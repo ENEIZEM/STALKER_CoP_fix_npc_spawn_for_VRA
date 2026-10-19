@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="ls_header">
+		<text>«100 SURVIVAL TIPS IN THE ZONE»</text>
+	</string>
+	<string id="ls_tip_number">
+		<text>TIP №</text>
+	</string>	
+	
+	<string id="ls_tip_1">
+		<text>Vodka is a cheap alternative to anti-radiation drugs and the most accessible way to reduce radiation levels in the body.</text>
+	</string>
+	<string id="ls_tip_2">
+		<text>The properties of weapons, suits, or helmets can be improved by technicians in stalker camps.</text>
+	</string>
+	<string id="ls_tip_3">
+		<text>The weight of your gear directly affects stamina consumption. Excessive weight limits mobility, and total overload will prevent movement entirely.</text>
+	</string>
+	<string id="ls_tip_4">
+		<text>You can use filters in the PDA to hide or display different types of map markers. Filter controls are located between the map image and the active task line.</text>
+	</string>
+	<string id="ls_tip_5">
+		<text>Some suits come with integrated helmets. Wearing other helmets with such suits is impossible.</text>
+	</string>
+	<string id="ls_tip_6">
+		<text>You can safely wait out an emission in a sturdy building or underground. When an emission approaches, the location of the nearest shelter will be displayed on your PDA.</text>
+	</string>
+	<string id="ls_tip_7">
+		<text>Flatness is a weapon parameter affecting the bullet's flight trajectory, while Handling determines how quickly the sights return to their original position after a shot.</text>
+	</string>
+	<string id="ls_tip_8">
+		<text>To stop bleeding, use a bandage, an army medkit, or «Barvinok» drug. Unchecked bleeding causes significant damage and can lead to death.</text>
+	</string>
+	<string id="ls_tip_9">
+		<text>The effects of medicine are not instantaneous, and some drugs have a very long duration. Note that the effect of the most recently taken drug overwrites similar effects from previously consumed substances.</text>
+	</string>
+	<string id="ls_tip_10">
+		<text>Ask various stalkers about the current local situation, rumors, or stories—sometimes they can tell you something very useful.</text>
+	</string>
+	<string id="ls_tip_11">
+		<text>To replenish your ammo supply, unload found weapons. To do this, right-click the weapon icon in your inventory and select the corresponding command.</text>
+	</string>
+	<string id="ls_tip_12">
+		<text>To use an item quickly, drag it from your backpack to one of the four quick-access slots.</text>
+	</string>
+	<string id="ls_tip_13">
+		<text>A detector is necessary for finding artefacts. More advanced models make the search easier and help detect rare and valuable specimens.</text>
+	</string>
+	<string id="ls_tip_14">
+		<text>Some stalkers will refuse to speak with you until you holster your weapon.</text>
+	</string>
+	<string id="ls_tip_15">
+		<text>Anomalies' boundaries can be identified by "probing" them with bolts. To prepare a bolt for throwing, press «$$ACTION_WPN_6$$».</text>
+	</string>
+	<string id="ls_tip_16">
+		<text>Radiation is one of the most common dangers in the Zone. High exposure leads to rapid health deterioration and, without proper treatment, inevitable death.</text>
+	</string>
+	<string id="ls_tip_17">
+		<text>Always check your food supplies before heading into the Zone; hunger or thirst can cripple your stamina at the worst possible moment.</text>
+	</string>
+	<string id="ls_tip_18">
+		<text>There are drugs and food products that directly and positively influence your stamina and strength.</text>
+	</string>
+	<string id="ls_tip_19">
+		<text>When heading out on a long expedition, double-check your essentials. Running out of medical supplies, food, water, or ammo will make your life significantly harder.</text>
+	</string>
+	<string id="ls_tip_20">
+		<text>Running out of stamina can lead to a total loss of mobility at a critical moment, making you an easy target.</text>
+	</string>
+	<string id="ls_tip_21">
+		<text>Visibility and noise levels can be monitored using the indicators in the upper-left corner of the screen.</text>
+	</string>
+	<string id="ls_tip_22">
+		<text>Holding a detector in one hand does not prevent you from using a knife, pistol, or bolt in the other.</text>
+	</string>
+	<string id="ls_tip_23">
+		<text>Certain medicines increase the body's resistance to environmental hazards and may be the only way to survive expeditions into deep anomalous zones.</text>
+	</string>
+	<string id="ls_tip_24">
+		<text>A blood drop icon in the corner of the screen warns of bleeding. The color of the icon indicates its intensity.</text>
+	</string>
+	<string id="ls_tip_25">
+		<text>A radiation symbol in the corner of the screen warns of dangerous exposure. The color indicates the intensity of the accumulated dose.</text>
+	</string>
+	<string id="ls_tip_26">
+		<text>Relationships with those around you affect prices. Don't expect discounts if you have a bad reputation; conversely, good relations can grant access to unique goods.</text>
+	</string>
+	<string id="ls_tip_27">
+		<text>A context menu is available for items in your backpack: hover over an item and press the right mouse button.</text>
+	</string>
+	<string id="ls_tip_28">
+		<text>Most artefacts are radioactive. This effect can be compensated for by using other artefacts that absorb radiation.</text>
+	</string>
+	<string id="ls_tip_29">
+		<text>The knife is ineffective against enemies with firearms. Its use is mainly utilitarian—designed for opening various supply crates.</text>
+	</string>
+	<string id="ls_tip_30">
+		<text>A detector is the only reliable way to find artefacts in an anomalous zone.</text>
+	</string>
+	<string id="ls_tip_31">
+		<text>Most artefacts are invisible to the naked eye until "highlighted" by a detector at a close enough range.</text>
+	</string>
+	<string id="ls_tip_32">
+		<text>Night is the time of high mutant activity. Stalkers prefer to carry out their expeditions during daylight hours.</text>
+	</string>
+	<string id="ls_tip_33">
+		<text>In case of heavy radiation exposure, use anti-rad drugs or see a medic. In emergencies, a medkit can slightly reduce the negative effects.</text>
+	</string>
+	<string id="ls_tip_34">
+		<text>Guides can take you to remote locations quickly and safely, but their services are expensive.</text>
+	</string>
+	<string id="ls_tip_35">
+		<text>Traders do not pay full price for items and will not buy gear that is in critical condition.</text>
+	</string>
+	<string id="ls_tip_36">
+		<text>To repair gear, find a technician and click the repair button under the corresponding item in the upgrade window.</text>
+	</string>
+	<string id="ls_tip_37">
+		<text>The AN-94 «Abakan» features a unique two-round burst mode. In this mode, both bullets hit practically the same point.</text>
+	</string>
+	<string id="ls_tip_38">
+		<text>To detach attachments (scopes, silencers, grenade launchers), right-click the weapon in your backpack and select the corresponding command.</text>
+	</string>
+	<string id="ls_tip_39">
+		<text>Double-barreled shotguns allow you to fire both shots almost simultaneously.</text>
+	</string>
+	<string id="ls_tip_40">
+		<text>To move more quietly, use the walk key («$$ACTION_ACCEL$$») or crouch («$$ACTION_CROUCH$$»).</text>
+	</string>
+	<string id="ls_tip_41">
+		<text>The shotgun is a close-quarters weapon. Its effectiveness drops to zero at medium and long ranges.</text>
+	</string>
+	<string id="ls_tip_42">
+		<text>When choosing cover, consider the penetration power of bullets. Wooden fences and thin sheet metal won't protect you like a concrete slab or brick wall.</text>
+	</string>
+	<string id="ls_tip_43">
+		<text>Do not underestimate pistols. They can be life-savers if your primary weapon jams or requires a long reload.</text>
+	</string>
+	<string id="ls_tip_44">
+		<text>A direct hit to the head is fatal for most enemies not protected by heavy helmets.</text>
+	</string>
+	<string id="ls_tip_45">
+		<text>Study mutant behavior. Knowing how a Snork or Bloodsucker attacks significantly increases your chances of survival.</text>
+	</string>
+	<string id="ls_tip_46">
+		<text>The distance of a grenade throw can be adjusted by holding the aim button («$$ACTION_WPN_ZOOM$$»).</text>
+	</string>
+	<string id="ls_tip_47">
+		<text>If you notice someone is about to throw a grenade at you, run for cover immediately. Shrapnel wounds are extremely dangerous.</text>
+	</string>
+	<string id="ls_tip_48">
+		<text>By using a running jump, you can overcome significant obstacles and gaps.</text>
+	</string>
+	<string id="ls_tip_49">
+		<text>Health and stamina indicators are located in the bottom-right corner of the screen.</text>
+	</string>
+	<string id="ls_tip_50">
+		<text>Sniper rifles are ideal for eliminating targets at long distances but are extremely inconvenient in close combat.</text>
+	</string>
+	<string id="ls_tip_51">
+		<text>Firing accuracy while moving is significantly lower than from a static position. For maximum accuracy, fire while crouching.</text>
+	</string>
+	<string id="ls_tip_52">
+		<text>Worn weapons lose accuracy and begin to jam frequently, while a damaged suit provides less protection against bullets and anomalies.</text>
+	</string>
+	<string id="ls_tip_53">
+		<text>The Zone is constantly changing. You might encounter mutants in an area you cleared just a few hours ago.</text>
+	</string>
+	<string id="ls_tip_54">
+		<text>Anomalous fields may change their structure after an emission. Do not rely on old routes.</text>
+	</string>
+	<string id="ls_tip_55">
+		<text>Artefacts can move slowly within anomalous zones. Be careful when chasing a "jumping" artefact—following it blindly makes it easy to fall into an anomaly.</text>
+	</string>
+	<string id="ls_tip_56">
+		<text>«Hercules» drug temporarily increases your maximum carry weight, while psi-blockers protect your mind from psi-radiation.</text>
+	</string>
+	<string id="ls_tip_57">
+		<text>You can find coordinates for stashes on some stalkers if they die.</text>
+	</string>
+	<string id="ls_tip_58">
+		<text>Talk to stalkers in camps—you can learn about recent local events from their stories.</text>
+	</string>
+	<string id="ls_tip_59">
+		<text>After each emission, there is a chance to find new artefacts in already explored anomalies.</text>
+	</string>
+	<string id="ls_tip_60">
+		<text>Both primary weapon slots are equal. You can carry an assault rifle and a shotgun, or a sniper rifle and a machine gun simultaneously.</text>
+	</string>
+	<string id="ls_tip_61">
+		<text>Specialized traders offer the best assortment in their field. Go to a medic for medicine, a trader for gear, and a bartender for supplies.</text>
+	</string>
+	<string id="ls_tip_62">
+		<text>Medics in major camps often provide first aid for free or for a symbolic fee.</text>
+	</string>
+	<string id="ls_tip_63">
+		<text>Personal boxes in camps are a reliable place to store loot. Stalkers generally do not steal from shared boxes at bases.</text>
+	</string>
+	<string id="ls_tip_64">
+		<text>If you need to pass the time, use a sleeping spot in a camp.</text>
+	</string>
+	<string id="ls_tip_65">
+		<text>Night Vision (NVG) is built into helmets, some suits, or scopes. Second and third-generation devices provide a much clearer image.</text>
+	</string>
+	<string id="ls_tip_66">
+		<text>Listen carefully to your Geiger counter and anomaly detector—they will warn you of danger before you see it.</text>
+	</string>
+	<string id="ls_tip_67">
+		<text>Always take a few spare magazines on a raid; there are never "too many" bullets in the Zone.</text>
+	</string>
+	<string id="ls_tip_68">
+		<text>Don't forget to monitor the weather and environmental phenomena of the Zone, as well as the time of day—all of these can catch you off guard.</text>
+	</string>
+	<string id="ls_tip_69">
+		<text>Study drug descriptions. For example, using a scientific medkit instead of a regular one can save your life from certain types of damage.</text>
+	</string>
+	<string id="ls_tip_70">
+		<text>Flush enemies out of cover with grenades. But remember the shrapnel radius and try not to hit allies or neutrals.</text>
+	</string>
+	<string id="ls_tip_71">
+		<text>You can drop almost any item without fear of cluttering the Zone; it will eventually disappear after some time.</text>
+	</string>
+	<string id="ls_tip_72">
+		<text>Sometimes auto-saves occur upon taking or completing key mission stages; a notification will appear on the screen.</text>
+	</string>
+	<string id="ls_tip_73">
+		<text>Upon returning from a raid, the first thing you should do is repair and restock. A second trip with a worn-out gun could be your last.</text>
+	</string>
+	<string id="ls_tip_74">
+		<text>The game difficulty can be adjusted at any time through the settings menu.</text>
+	</string>
+	<string id="ls_tip_75">
+		<text>Protection against anomalies can be increased in three ways: upgrading your suit, equipped artefacts, or taking specialized drugs.</text>
+	</string>
+	<string id="ls_tip_76">
+		<text>Compare weapon stats before buying. A high rate of fire is good for close range, but accuracy and stopping power are more important at a distance.</text>
+	</string>
+	<string id="ls_tip_77">
+		<text>Don't overestimate the explosive power of grenades; usually, one is barely enough to cause non-lethal shrapnel wounds to several opponents.</text>
+	</string>
+	<string id="ls_tip_78">
+		<text>Artefacts aren't just for money; they are a way to acquire various anomalous improvements and characteristics.</text>
+	</string>
+	<string id="ls_tip_79">
+		<text>Many objects are highly radioactive; do not approach them without anti-rad drugs.</text>
+	</string>
+	<string id="ls_tip_80">
+		<text>Optical scopes with adjustable magnification allow for more effective fire at different ranges. Use the mouse wheel to zoom.</text>
+	</string>
+	<string id="ls_tip_81">
+		<text>To switch firing modes, use the «$$ACTION_WPN_FIREMODE_NEXT$$» keys.</text>
+	</string>
+	<string id="ls_tip_82">
+		<text>To crouch as low as possible, hold both the crouch and walk keys simultaneously.</text>
+	</string>
+	<string id="ls_tip_83">
+		<text>Screenshots are saved in the game folder by pressing «$$ACTION_SCREENSHOT$$».</text>
+	</string>
+	<string id="ls_tip_84">
+		<text>Use the lean keys to fire from around corners without exposing your entire body to bullets.</text>
+	</string>
+	<string id="ls_tip_85">
+		<text>Don't be afraid to use binoculars—they are free and feature powerful, adjustable zoom.</text>
+	</string>
+	<string id="ls_tip_86">
+		<text>At night, don't forget to use your headlamp or NVG if you have either available.</text>
+	</string>
+	<string id="ls_tip_87">
+		<text>Try to stay neutral with all stalkers; you never know when a particular acquaintance might come in handy.</text>
+	</string>
+	<string id="ls_tip_88">
+		<text>Anomalies outside of anomalous fields also change their location.</text>
+	</string>
+	<string id="ls_tip_89">
+		<text>After an emission, there is a small chance you will find artefacts at the site of single anomalies.</text>
+	</string>
+	<string id="ls_tip_90">
+		<text>The PDA displays not only the map but also message history—where you can re-read the details of an important dialogue.</text>
+	</string>
+	<string id="ls_tip_91">
+		<text>To pull out your detector, press «$$ACTION_SHOW_DETECTOR$$». It will automatically be held in your left hand.</text>
+	</string>
+	<string id="ls_tip_92">
+		<text>The pause menu allows you to think over your combat tactics without exiting the game.</text>
+	</string>
+	<string id="ls_tip_93">
+		<text>A stalker or mutant caught in an anomaly has a small chance of generating an artefact.</text>
+	</string>
+	<string id="ls_tip_94">
+		<text>Sprinting and frequent jumping lead to rapid exhaustion, but there are special jumping techniques that allow you to conserve stamina.</text>
+	</string>
+	<string id="ls_tip_95">
+		<text>Learn to fire "from the hip" at medium ranges; with proper skill, this will make your shooting much more efficient.</text>
+	</string>
+	<string id="ls_tip_96">
+		<text>Some weapons allow the installation of an under-barrel grenade launcher, which lets you send explosive gifts to unfriendly stalkers much further and more accurately.</text>
+	</string>
+	<string id="ls_tip_97">
+		<text>There are various types of ammunition in the Zone; study each of them theoretically and empirically.</text>
+	</string>
+	<string id="ls_tip_98">
+		<text>When an emission occurs, you have enough time to unhurriedly reach the nearest shelter.</text>
+	</string>
+	<string id="ls_tip_99">
+		<text>Some anomalies and mutants emit dangerous auras that have a negative effect on you. Try to break distance from the source of such trouble as quickly as possible.</text>
+	</string>
+	<string id="ls_tip_100">
+		<text>Most locations on the map must be discovered on your own. Roam as often as possible in search of something interesting.</text>
+	</string>
+
+	<!-- Multiplayer -->	
+	<string id="ls_mp_tip_1">
+		<text>Money and rating points are awarded for kills and artefact deliveries, unlocking access to more powerful gear.</text>
+	</string>
+	<string id="ls_mp_tip_2">
+		<text>In «Artefact Hunt» mode, the first team to deliver the required number of artefacts to their base wins.</text>
+	</string>
+	<string id="ls_mp_tip_3">
+		<text>In «Deathmatch» mode, it's every man for himself. Your goal is the maximum number of kills within the time limit.</text>
+	</string>
+	<string id="ls_mp_tip_4">
+		<text>Coordination is key in «Team Deathmatch». Loners quickly become targets for a well-organized group.</text>
+	</string>
+	<string id="ls_mp_tip_5">
+		<text>In «Capture the Artefact» mode, your task is to steal the artefact from the enemy base and bring it to yours.</text>
+	</string>
+	<string id="ls_mp_tip_6">
+		<text>If an ally carrying the artefact is killed, pick it up with the «Use» key to continue the mission.</text>
+	</string>
+	<string id="ls_mp_tip_7">
+		<text>An activated artefact creates a temporary anomaly that can block a narrow passage for the enemy.</text>
+	</string>
+	<string id="ls_mp_tip_8">
+		<text>A player carrying the artefact cannot sprint. Provide them with heavy cover.</text>
+	</string>
+	<string id="ls_mp_tip_9">
+		<text>The player with the artefact is visible on the mini-map to all participants of the battle.</text>
+	</string>
+	<string id="ls_mp_tip_10">
+		<text>Energy drinks in multiplayer allow you to pursue an enemy longer or escape from fire faster.</text>
+	</string>
+	<string id="ls_mp_tip_11">
+		<text>Smoke grenades are an ideal tool for covertly entering the enemy base.</text>
+	</string>
+	<string id="ls_mp_tip_12">
+		<text>In «Free for All» mode, ammo is infinite, but weapons still wear out and can jam.</text>
+	</string>
+	<string id="ls_mp_tip_13">
+		<text>The buy menu is divided into categories. The higher your rank, the more NATO and Eastern bloc weapons become available to you.</text>
+	</string>
+	<string id="ls_mp_tip_14">
+		<text>Use the quick-buy slots (floppy disk icons) to instantly purchase your favorite gear set at the start of the round.</text>
+	</string>
+	<string id="ls_mp_tip_15">
+		<text>Keys 2 and 3 allow you to quickly switch between your primary and secondary weapons.</text>
+	</string>
+	<string id="ls_mp_tip_16">
+		<text>Shooting limbs deals less damage. Always aim for the head or the heart area.</text>
+	</string>
+	<string id="ls_mp_tip_17">
+		<text>Be careful with artefact activation: the created anomaly kills everyone indiscriminately, including allies.</text>
+	</string>
+	<string id="ls_mp_tip_18">
+		<text>The «SEVA» suit provides excellent protection against player-made anomalies but is weak against bullets.</text>
+	</string>
+	<string id="ls_mp_tip_19">
+		<text>The AN-94 «Abakan» in multiplayer is a formidable weapon at medium ranges thanks to its two-round burst mode.</text>
+	</string>
+	<string id="ls_mp_tip_20">
+		<text>Weapon attachments are purchased separately in the equipment menu.</text>
+	</string>
+	<string id="ls_mp_tip_21">
+		<text>The mini-map displays the position of the artefact. The target's vertical position is indicated by an arrow next to the icon.</text>
+	</string>
+	<string id="ls_mp_tip_22">
+		<text>Quiet movement allows you to flank the enemy. Remember: sprinting can be heard from afar.</text>
+	</string>
+	<string id="ls_mp_tip_23">
+		<text>A shotgun in the hands of an enemy in a narrow corridor is almost guaranteed death. Keep your distance.</text>
+	</string>
+	<string id="ls_mp_tip_24">
+		<text>Material penetration in multiplayer is the same as in singleplayer. Hide behind concrete.</text>
+	</string>
+	<string id="ls_mp_tip_25">
+		<text>Pistols in multiplayer are often used as a "last chance" weapon when your primary magazine is empty.</text>
+	</string>
+	<string id="ls_mp_tip_26">
+		<text>A headshot from an SVD instantly takes out any player, except for Exoskeleton owners at full health.</text>
+	</string>
+	<string id="ls_mp_tip_27">
+		<text>Jumping and sprinting consume stamina. If it's at zero, you won't be able to quickly dodge a grenade.</text>
+	</string>
+	<string id="ls_mp_tip_28">
+		<text>A long grenade throw allows you to deliver a "gift" to the second floor of the enemy base.</text>
+	</string>
+	<string id="ls_mp_tip_29">
+		<text>If a grenade is at your feet, jump to the side. This can save you from lethal shrapnel damage.</text>
+	</string>
+	<string id="ls_mp_tip_30">
+		<text>Multiplayer maps are full of secret paths. Use parkour to take an unexpected position.</text>
+	</string>
+	<string id="ls_mp_tip_31">
+		<text>Health and armor are your main resources. Don't forget to buy medkits at the base.</text>
+	</string>
+	<string id="ls_mp_tip_32">
+		<text>Snipers on open maps are the main threat. Cross open areas only in zigzags or under smoke cover.</text>
+	</string>
+	<string id="ls_mp_tip_33">
+		<text>Shooting while jumping is absolutely inaccurate. Don't try to play the action hero.</text>
+	</string>
+	<string id="ls_mp_tip_34">
+		<text>Worn weapons can fail you at the most critical moment of a duel.</text>
+	</string>
+	<string id="ls_mp_tip_35">
+		<text>Artefact direction icons help you navigate multi-level maps.</text>
+	</string>
+	<string id="string_mp_36">
+		<text>Pick up the backpacks of the fallen—they might contain scarce grenades or an expensive rifle.</text>
+	</string>
+	<string id="ls_mp_tip_37">
+		<text>Protecting the artefact carrier is the #1 priority for the entire team.</text>
+	</string>
+	<string id="ls_mp_tip_38">
+		<text>When throwing a grenade, warn your allies to avoid a «Teamkill» penalty.</text>
+	</string>
+	<string id="ls_mp_tip_39">
+		<text>Use the voice command system (V, C) to quickly request support.</text>
+	</string>
+	<string id="ls_mp_tip_40">
+		<text>Voting to kick cheaters or change the map is initiated through the pause menu.</text>
+	</string>
+	<string id="ls_mp_tip_41">
+		<text>The score table (TAB) shows players' ping. High ping gives an advantage in sudden movements but hinders accurate shooting.</text>
+	</string>
+	<string id="ls_mp_tip_42">
+		<text>After death, you respawn after a few seconds. Use the time to plan your next purchase.</text>
+	</string>
+	<string id="ls_mp_tip_43">
+		<text>The buy menu is only available within your base zone.</text>
+	</string>
+	<string id="ls_mp_tip_44">
+		<text>Team chat allows for coordinating stealthy attacks.</text>
+	</string>
+	<string id="ls_mp_tip_45">
+		<text>Running with a heavy RP-74 machine gun exhausts the character in seconds.</text>
+	</string>
+	<string id="ls_mp_tip_46">
+		<text>Aiming mode reduces recoil and bullet spread.</text>
+	</string>
+	<string id="ls_mp_tip_47">
+		<text>An under-barrel grenade launcher is an excellent argument against a group of enemies at a capture point.</text>
+	</string>
+	<string id="ls_mp_tip_48">
+		<text>Different ammo types are effective in different situations. Hollow-point for "naked" enemies, armor-piercing for Exoskeletons.</text>
+	</string>
+	<string id="ls_mp_tip_49">
+		<text>Reload only in cover. The magazine change animation is your moment of maximum vulnerability.</text>
+	</string>
+	<string id="ls_mp_tip_50">
+		<text>Weapons dropped at the base can be picked up by allies who didn't have enough money for a purchase.</text>
+	</string>
+	<string id="ls_mp_tip_51">
+		<text>In the inventory, you can quickly transfer ammo to a teammate.</text>
+	</string>
+	<string id="ls_mp_tip_52">
+		<text>Use the 3-round burst on assault rifles for recoil control at long distances.</text>
+	</string>
+	<string id="ls_mp_tip_53">
+		<text>A low crouch allows you to hide behind low objects where a sniper doesn't expect to see you.</text>
+	</string>
+	<string id="ls_mp_tip_54">
+		<text>A headshot from a Desert Eagle pistol kills even through a good helmet.</text>
+	</string>
+	<string id="ls_mp_tip_55">
+		<text>Leaning allows you to fire while leaving only a small portion of your head exposed.</text>
+	</string>
+</string_table>

@@ -1,0 +1,12 @@
+[spawn_loadout] \n
+wpn_toz34 = 1 \n
+wpn_ak74u = 1 \n
+wpn_bm16_full = 1 \n
+
+[spawn_loadout2] \n
+wpn_pm = 1 \n
+wpn_fort = 1 \n
+wpn_tt33 = 1 \n
+
+[spawn_loadout3] \n
+detector_simple = 1, prob=0.25 \n

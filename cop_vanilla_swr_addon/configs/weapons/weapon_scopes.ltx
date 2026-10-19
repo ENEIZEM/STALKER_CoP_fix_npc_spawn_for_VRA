@@ -1,0 +1,264 @@
+;-----------------------------------------------------------------------------
+; Scopes settings
+;-----------------------------------------------------------------------------
+
+[scope_detector]
+vis_frame_speed             = 4                     ; speed at which the targeting frame locks onto the target
+vis_frame_color             = 0.7,0.7,0.7,1.0       ; frame color RGBA (A is ignored)
+
+found_snd                   = detectors\DA-2_beep1
+catch_snd                   = detectors\DA-2_beep1
+
+[scope_nightvision]
+pp_eff_name                 = nightvision_3.ppe
+pp_eff_cyclic               = 1
+pp_eff_overlap              = false
+
+snd_night_vision_on         = weapons\nv_start
+snd_night_vision_off        = weapons\nv_off
+snd_night_vision_idle       = weapons\nv_loop
+snd_night_vision_broken     = weapons\nv_off
+
+[scope_contrast]
+pp_eff_name                 = contrast.ppe
+pp_eff_cyclic               = 1
+pp_eff_overlap              = false
+
+;-----------------------------------------------------------------------------
+; Scopes // Mortan scope system
+;-----------------------------------------------------------------------------
+
+[default_scope]
+scope_name                                         = wpn_addon_scope
+scope_x                                            = 0
+scope_y                                            = 0
+icons_texture                                      = ui\ui_icon_equipment_swr.dds
+
+[wpn_addon_scope_pso]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
+slot							         = -1
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "scope\wpn_addon_scope_pso"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+cost									 = 2000
+inv_name								 = st_addon_scope_pso
+inv_name_short							 = st_addon_scope_pso
+description								 = st_addon_scope_pso_descr
+inv_weight								 = 0.58
+inv_grid_width     						 = 2
+inv_grid_height    						 = 1
+inv_grid_x			                     = 18
+inv_grid_y			                     = 2
+scope_texture							 = wpn_crosshair
+scope_zoom_factor						 = 4
+;3d_zoom_factor							 = 65
+;3d_fov 								 = 0.145
+scope_dynamic_zoom                       = off
+
+[wpn_addon_scope_pso_9x39]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
+slot							         = -1
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "scope\wpn_addon_scope_pso_9x39"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+cost									 = 3000
+inv_name								 = st_addon_scope_pso_9x39
+inv_name_short							 = st_addon_scope_pso_9x39
+description								 = st_addon_scope_pso_9x39_descr
+inv_weight								 = 0.58
+inv_grid_width     						 = 2
+inv_grid_height    						 = 1
+inv_grid_x			                     = 18
+inv_grid_y			                     = 2
+scope_texture							 = wpn_crosshair_pso_9x39
+scope_zoom_factor						 = 4
+;3d_zoom_factor							 = 65
+;3d_fov 								 = 0.145
+scope_dynamic_zoom                       = off
+
+[wpn_addon_scope_pu]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
+slot							         = -1
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "scope\wpn_addon_scope_pu"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope_pu.ogf
+cost									 = 1500
+inv_name								 = st_addon_scope_pu
+inv_name_short							 = st_addon_scope_pu
+description								 = st_addon_scope_pu_descr
+inv_weight								 = 0.27
+inv_grid_width     						 = 2
+inv_grid_height    						 = 1
+inv_grid_x			                     = 20
+inv_grid_y			                     = 1
+scope_texture							 = wpn_crosshair_pu
+scope_zoom_factor						 = 3.5
+;3d_zoom_factor							 = 90
+;3d_fov 								 = 0.1
+scope_dynamic_zoom                       = off
+
+[wpn_addon_scope_susat_rail]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
+slot							         = -1
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "scope\wpn_addon_scope_susat_rail"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+cost									 = 2700
+inv_name								 = st_addon_scope_susat_rail
+inv_name_short							 = st_addon_scope_susat_rail
+description								 = st_addon_scope_susat_rail_descr
+inv_weight								 = 0.7
+inv_grid_width     						 = 1
+inv_grid_height    						 = 1
+inv_grid_x			                     = 19
+inv_grid_y			                     = 1
+scope_texture							 = wpn_crosshair_l85
+scope_zoom_factor						 = 4
+;3d_zoom_factor							 = 90
+;3d_fov 								 = 0.1
+scope_dynamic_zoom                       = off
+
+[wpn_addon_scope_susat_adapter]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
+slot							         = -1
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "scope\wpn_addon_scope_susat_adapter"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+cost									 = 2700
+inv_name								 = st_addon_scope_susat_adapter
+inv_name_short							 = st_addon_scope_susat_adapter
+description								 = st_addon_scope_susat_adapter_descr
+inv_weight								 = 0.8
+inv_grid_width     						 = 1
+inv_grid_height    						 = 1
+inv_grid_x			                     = 20
+inv_grid_y			                     = 15
+scope_texture							 = wpn_crosshair_l85
+scope_zoom_factor						 = 4
+;3d_zoom_factor							 = 90
+;3d_fov 								 = 0.1
+scope_dynamic_zoom                       = off
+
+[wpn_addon_scope_acog]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
+slot							         = -1
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "scope\wpn_addon_scope_acog"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope_acog.ogf
+cost									 = 2500
+inv_name								 = st_addon_scope_acog
+inv_name_short							 = st_addon_scope_acog
+description								 = st_addon_scope_acog_descr
+inv_weight								 = 0.4
+inv_grid_width     						 = 1
+inv_grid_height    						 = 1
+inv_grid_x			                     = 21
+inv_grid_y			                     = 9
+scope_texture							 = wpn_crosshair_acog
+scope_zoom_factor						 = 4
+;3d_zoom_factor							 = 90
+;3d_fov 								 = 0.1
+scope_dynamic_zoom                       = off
+
+[wpn_addon_scope_pgo]:identity_immunities, default_scope
+GroupControlSection						 = spawn_group
+slot							         = -1
+discovery_dependency					 =
+cform									 = skeleton
+class									 = WP_SCOPE
+$spawn 									 = "scope\wpn_addon_scope_pgo"
+visual          						 = dynamics\weapons\wpn_upgrade\wpn_scope_pgo.ogf
+cost									 = 2300
+inv_name								 = st_addon_scope_pgo
+inv_name_short							 = st_addon_scope_pgo
+description								 = st_addon_scope_pgo_descr
+inv_weight								 = 0.6
+inv_grid_width     						 = 1
+inv_grid_height    						 = 1
+inv_grid_x                  			 = 21
+inv_grid_y                  			 = 14
+scope_texture							 = wpn_crosshair_rpg
+scope_zoom_factor						 = 2.7
+;3d_zoom_factor							 = 90
+;3d_fov 								 = 0.1
+scope_dynamic_zoom                       = off
+
+;-----------------------------------------------------------------------------
+; Scopes // Vanilla system
+;-----------------------------------------------------------------------------
+
+[wpn_addon_scope]:identity_immunities
+GroupControlSection         = spawn_group
+discovery_dependency        = 
+slot                        = -1
+$spawn                      = "weapons\addons\scope" ; option for Level Editor
+class                       = WP_SCOPE
+cform                       = skeleton
+visual                      = dynamics\weapons\wpn_upgrade\wpn_scope.ogf
+$prefetch                   = 32
+
+inv_name                    = st_addon_scope_broken
+inv_name_short              = st_addon_scope_broken
+description                 = st_addon_scope_broken_descr
+cost                        = 250
+inv_weight                  = 0.2
+
+holder_range_modifier       = 1.2
+holder_fov_modifier         = 1.0
+
+inv_grid_width              = 2
+inv_grid_height             = 1
+inv_grid_x                  = 20
+inv_grid_y                  = 18
+
+scope_texture               = wpn_crosshair
+scope_zoom_factor           = 4
+
+[wpn_addon_scope_x2.7]:wpn_addon_scope
+$spawn                      = "weapons\addons\scope_x2.7"
+
+[wpn_addon_scope_detector]:wpn_addon_scope
+$spawn                      = "weapons\addons\scope_detector"
+
+[wpn_addon_scope_night]:wpn_addon_scope
+$spawn                      = "weapons\addons\scope_night"
+
+[wpn_addon_scope_susat]:wpn_addon_scope
+$spawn                      = "weapons\addons\scope_susat"
+visual                      = dynamics\weapons\wpn_upgrade\wpn_scope_susat.ogf
+inv_name                    = st_addon_scope_broken
+inv_name_short              = st_addon_scope_broken
+description                 = st_addon_scope_broken_descr
+cost                        = 250
+holder_range_modifier       = 1.3
+scope_texture               = wpn_crosshair_l85
+scope_zoom_factor           = 4
+
+inv_grid_width              = 1
+inv_grid_height             = 1
+inv_grid_x                  = 20
+inv_grid_y                  = 17
+
+[wpn_addon_scope_susat_x1.6]:wpn_addon_scope_susat
+$spawn                      = "weapons\addons\scope_susat_x1.6"
+
+[wpn_addon_scope_susat_custom]:wpn_addon_scope_susat
+$spawn                      = "weapons\addons\scope_susat_custom"
+
+[wpn_addon_scope_susat_dusk]:wpn_addon_scope_susat
+$spawn                      = "weapons\addons\scope_susat_dusk"
+
+[wpn_addon_scope_susat_night]:wpn_addon_scope_susat
+$spawn                      = "weapons\addons\scope_susat_night"

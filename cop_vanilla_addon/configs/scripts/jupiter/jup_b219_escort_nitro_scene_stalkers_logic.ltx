@@ -1,0 +1,405 @@
+;;;;;;;;;; Gonta Group
+
+[logic@jup_b219_stalker_gonta]
+suitable = {=check_npc_name(zat_b106_stalker_gonta)} true
+prior = 300
+active = walker@stay_gonta
+
+[walker@stay_gonta]
+path_walk = zulus_walk
+path_look = zulus_look
+def_state_standing = guard_chasovoy
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+jup_a6_stalker_gonta_squad_teleported -jup_b219_gonta_on_pos} %=teleport_npc(jup_b219_zulus_walk) +jup_b219_gonta_on_pos%
+on_game_timer = 290 | {+jup_b219_start_actor_one} remark@prepare_gonta
+
+[remark@prepare_gonta]
+target = story | jup_b32_scanner_place_2
+anim = guard
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@jup_b219_stalker_garmata]
+suitable = {=check_npc_name(zat_b106_stalker_garmata)} true
+prior = 310
+active = walker@stay_garmata
+
+[walker@stay_garmata]
+path_walk = nitro_escort_2_walk
+path_look = nitro_escort_2_look
+def_state_standing = hide
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+jup_a6_stalker_gonta_squad_teleported -jup_b219_garmata_on_pos} %=teleport_npc(jup_b219_nitro_escort_2_walk) +jup_b219_garmata_on_pos%
+
+[logic@jup_b219_stalker_crab]
+suitable = {=check_npc_name(zat_b106_stalker_crab)} true
+prior = 320
+active = walker@stay_crab
+
+[walker@stay_crab]
+path_walk = nitro_escort_6_walk
+path_look = nitro_escort_6_look
+def_state_standing = guard
+def_state_moving = walk
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+jup_a6_stalker_gonta_squad_teleported -jup_b219_crab_on_pos} %=teleport_npc(jup_b219_tech_spawn_spown) +jup_b219_crab_on_pos%
+on_game_timer = 90 | {+jup_b219_start_actor_one} remark@salut_crab
+
+[remark@salut_crab]
+target = story | actor
+anim = hello_wpn
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+;;;;;;;;;; Bear Group
+
+[logic@jup_b219_stalker_assaulter]
+suitable = {=check_npc_name(jup_a12_stalker_assaulter)} true
+prior = 300
+active = walker@stay_assaulter
+
+[walker@stay_assaulter]
+path_walk = zulus_walk
+path_look = zulus_look
+def_state_standing = guard_chasovoy
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+jup_a12_stalker_squad_teleported -jup_b219_assaulter_on_pos} %=teleport_npc(jup_b219_zulus_walk) +jup_b219_assaulter_on_pos%
+on_game_timer = 290 | {+jup_b219_start_actor_one} remark@prepare_assaulter
+
+[remark@prepare_assaulter]
+target = story | jup_b32_scanner_place_2
+anim = guard
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@jup_b219_stalker_diplomat]
+suitable = {=check_npc_name(jup_a12_stalker_diplomat)} true
+prior = 310
+active = walker@stay_diplomat
+
+[walker@stay_diplomat]
+path_walk = nitro_escort_2_walk
+path_look = nitro_escort_2_look
+def_state_standing = hide
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+jup_a12_stalker_squad_teleported -jup_b219_diplomat_on_pos} %=teleport_npc(jup_b219_nitro_escort_2_walk) +jup_b219_diplomat_on_pos%
+
+[logic@jup_b219_stalker_prisoner]
+suitable = {=check_npc_name(jup_a12_stalker_prisoner)} true
+prior = 320
+active = walker@stay_prisoner
+
+[walker@stay_prisoner]
+path_walk = nitro_escort_6_walk
+path_look = nitro_escort_6_look
+def_state_standing = guard
+def_state_moving = walk
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+jup_a12_stalker_squad_teleported -jup_b219_prisoner_on_pos} %=teleport_npc(jup_b219_tech_spawn_spown) +jup_b219_prisoner_on_pos%
+on_game_timer = 90 | {+jup_b219_start_actor_one} remark@salut_prisoner
+
+[remark@salut_prisoner]
+target = story | actor
+anim = hello_wpn
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+;;;;;;;;;; Duty Group
+
+[logic@jup_b219_duty_squad_stalker_1]
+suitable = {=check_npc_name(sim_default_duty_3)} true
+prior = 330
+active = walker@stay_duty_1
+
+[walker@stay_duty_1]
+path_walk = zulus_walk
+path_look = zulus_look
+def_state_standing = guard_chasovoy
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+duty_escort_nitro_squad_spawned -jup_b219_duty_1_on_pos} %=teleport_npc(jup_b219_zulus_walk) +jup_b219_duty_1_on_pos%
+on_game_timer = 290 | {+jup_b219_start_actor_one} remark@prepare_duty_1
+
+[remark@prepare_duty_1]
+target = story | jup_b32_scanner_place_2
+anim = guard
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@jup_b219_duty_squad_stalker_2]
+suitable = {=check_npc_name(sim_default_duty)} true
+prior = 320
+active = walker@stay_duty_2
+
+[walker@stay_duty_2]
+path_walk = nitro_escort_2_walk
+path_look = nitro_escort_2_look
+def_state_standing = hide
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+duty_escort_nitro_squad_spawned -jup_b219_duty_2_on_pos} %=teleport_npc(jup_b219_nitro_escort_2_walk) +jup_b219_duty_2_on_pos%
+
+[logic@jup_b219_duty_squad_stalker_3]
+suitable = {=check_npc_name(sim_default_duty)} true
+prior = 300
+active = walker@stay_duty_3
+
+[walker@stay_duty_3]
+path_walk = nitro_escort_5_walk
+path_look = nitro_escort_5_look
+def_state_standing = threat
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+duty_escort_nitro_squad_spawned -jup_b219_duty_3_on_pos} %=teleport_npc(jup_b219_nitro_escort_5_walk) +jup_b219_duty_3_on_pos%
+
+[logic@jup_b219_duty_squad_stalker_4]
+suitable = {=check_npc_name(sim_default_duty)} true
+prior = 310
+active = walker@stay_duty_4
+
+[walker@stay_duty_4]
+path_walk = nitro_escort_6_walk
+path_look = nitro_escort_6_look
+def_state_standing = guard
+def_state_moving = walk
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+duty_escort_nitro_squad_spawned -jup_b219_duty_4_on_pos} %=teleport_npc(jup_b219_tech_spawn_spown) +jup_b219_duty_4_on_pos%
+on_game_timer = 90 | {+jup_b219_start_actor_one} remark@salut_duty_4
+
+[remark@salut_duty_4]
+target = story | actor
+anim = hello_wpn
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+;;;;;;;;;; Freedom Group
+
+[logic@jup_b219_freedom_squad_stalker_1]
+suitable = {=check_npc_name(sim_default_freedom_3)} true
+prior = 330
+active = walker@stay_freedom_1
+
+[walker@stay_freedom_1]
+path_walk = zulus_walk
+path_look = zulus_look
+def_state_standing = guard_chasovoy
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+freedom_escort_nitro_squad_spawned -jup_b219_freedom_1_on_pos} %=teleport_npc(jup_b219_zulus_walk) +jup_b219_freedom_1_on_pos%
+on_game_timer = 290 | {+jup_b219_start_actor_one} remark@prepare_freedom_1
+
+[remark@prepare_freedom_1]
+target = story | jup_b32_scanner_place_2
+anim = guard
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[logic@jup_b219_freedom_squad_stalker_2]
+suitable = {=check_npc_name(sim_default_freedom)} true
+prior = 320
+active = walker@stay_freedom_2
+
+[walker@stay_freedom_2]
+path_walk = nitro_escort_2_walk
+path_look = nitro_escort_2_look
+def_state_standing = hide
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+freedom_escort_nitro_squad_spawned -jup_b219_freedom_2_on_pos} %=teleport_npc(jup_b219_nitro_escort_2_walk) +jup_b219_freedom_2_on_pos%
+
+[logic@jup_b219_freedom_squad_stalker_3]
+suitable = {=check_npc_name(sim_default_freedom)} true
+prior = 300
+active = walker@stay_freedom_3
+
+[walker@stay_freedom_3]
+path_walk = nitro_escort_5_walk
+path_look = nitro_escort_5_look
+def_state_standing = threat
+def_state_moving = walk_noweap
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+freedom_escort_nitro_squad_spawned -jup_b219_freedom_3_on_pos} %=teleport_npc(jup_b219_nitro_escort_5_walk) +jup_b219_freedom_3_on_pos%
+
+[logic@jup_b219_freedom_squad_stalker_4]
+suitable = {=check_npc_name(sim_default_freedom)} true
+prior = 310
+active = walker@stay_freedom_4
+
+[walker@stay_freedom_4]
+path_walk = nitro_escort_6_walk
+path_look = nitro_escort_6_look
+def_state_standing = guard
+def_state_moving = walk
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+use_camp = false
+on_info = {+freedom_escort_nitro_squad_spawned -jup_b219_freedom_4_on_pos} %=teleport_npc(jup_b219_tech_spawn_spown) +jup_b219_freedom_4_on_pos%
+on_game_timer = 90 | {+jup_b219_start_actor_one} remark@salut_freedom_4
+
+[remark@salut_freedom_4]
+target = story | actor
+anim = hello_wpn
+meet = no_meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = jup_factory_default_in_restrictor
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false

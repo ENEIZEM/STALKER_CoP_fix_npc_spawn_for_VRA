@@ -1,0 +1,61 @@
+;;;;;;;;;; Вокруг вент. комплекса
+
+[logic@night_hunter_chimera]
+suitable = {=target_squad_name(jup_b212_jupiter_chimera)} true
+active = mob_home@patrol_1
+monster_job = true
+on_death = mob_death
+
+[mob_home@patrol_1]
+path_home = chimera_home_1
+home_min_radius = 5
+home_max_radius = 10
+aggressive = true
+on_info = {=actor_in_zone(jup_b212_actor_cheat)} mob_walker@prepare_to_jump %=restore_health +jup_b212_jupiter_chimera_go_away =clear_smart_radius(jup_sim_11:300)%
+on_info2 = {=health_le(0.2)} mob_walker@prepare_to_jump %=restore_health +jup_b212_jupiter_chimera_go_away =clear_smart_radius(jup_sim_11:300)%
+on_game_timer = 600 | {!actor_in_zone(jup_b212_actor_cheat)} mob_home@patrol_2
+
+[mob_home@patrol_2]
+path_home = chimera_home_2
+home_min_radius = 5
+home_max_radius = 10
+aggressive = true
+on_info = {=actor_in_zone(jup_b212_actor_cheat)} mob_walker@prepare_to_jump %=restore_health +jup_b212_jupiter_chimera_go_away =clear_smart_radius(jup_sim_11:300)%
+on_info2 = {=health_le(0.2)} mob_walker@prepare_to_jump %=restore_health +jup_b212_jupiter_chimera_go_away =clear_smart_radius(jup_sim_11:300)%
+on_game_timer = 600 | {!actor_in_zone(jup_b212_actor_cheat)} mob_home@patrol_1
+
+[mob_walker@prepare_to_jump]
+path_walk = chimera_jump_1_walk
+path_look = chimera_jump_1_look
+on_signal = path_end | mob_jump@jump
+on_info = {=health_le(0.5)} %=restore_health%
+aggressive = false
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+
+[mob_jump@jump]
+path_jump = chimera_jump_2_walk
+ph_jump_factor = 1.4
+offset = 0,0,0
+on_signal = jumped | %+jup_b212_jupiter_chimera_jumped%
+on_info = {=health_le(0.5)} %=restore_health%
+aggressive = false
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+
+;;;;;;;;;; Сбежала на другой смарт jup_sim_11
+
+[logic@night_hunter_chimera_gone]
+suitable = {=target_squad_name(jup_b212_jupiter_chimera)} true
+active = mob_home@jup_sim_11
+monster_job = true
+on_death = mob_death
+
+[mob_home@jup_sim_11]
+path_home = mob_home_1
+home_min_radius = 5
+home_max_radius = 15
+aggressive = true
+
+[mob_death]
+on_info = %+jup_b212_jupiter_chimera_dead%

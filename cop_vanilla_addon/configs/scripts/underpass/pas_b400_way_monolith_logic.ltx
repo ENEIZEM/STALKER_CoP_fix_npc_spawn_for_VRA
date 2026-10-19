@@ -1,0 +1,108 @@
+; First camper
+
+[logic@monolith_warrior_1]
+active = camper@monolith_camper_1
+suitable = {=target_squad_name(pas_b400_hall_monolith_after_fwd_squad)}
+prior = 200
+
+[camper@monolith_camper_1]
+path_walk = camper_monolith_1_walk
+path_look = camper_monolith_1_look
+no_retreat = true
+def_state_moving = assault
+def_state_campering = hide
+wounded = wounded@no_wound
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+combat_ignore_cond = {=fighting_dist_ge(10)} true, false
+combat_ignore_keep_when_attacked = false
+
+; Second camper
+
+[logic@monolith_warrior_2]
+active = camper@monolith_camper_2
+suitable = {=target_squad_name(pas_b400_hall_monolith_after_fwd_squad)}
+prior = 200
+
+[camper@monolith_camper_2]
+path_walk = camper_monolith_2_walk
+path_look = camper_monolith_2_look
+no_retreat = true
+def_state_moving = assault
+def_state_campering = hide
+wounded = wounded@no_wound
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+combat_ignore_cond = {=fighting_dist_ge(10)} true, false
+combat_ignore_keep_when_attacked = false
+
+; Third camper
+
+[logic@monolith_warrior_3]
+active = camper@monolith_camper_3
+suitable = {=target_squad_name(pas_b400_hall_monolith_after_fwd_squad)}
+prior = 200
+
+[camper@monolith_camper_3]
+path_walk = camper_monolith_3_walk
+path_look = camper_monolith_3_look
+no_retreat = true
+def_state_moving = assault
+def_state_campering = hide
+wounded = wounded@no_wound
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+combat_ignore_cond = {=fighting_dist_ge(10)} true, false
+combat_ignore_keep_when_attacked = false
+
+; First assaulter
+
+[logic@monolith_warrior_4]
+active = walker@monolith_assaulter_1
+suitable = {=target_squad_name(pas_b400_hall_monolith_after_fwd_squad)}
+prior = 200
+
+[walker@monolith_assaulter_1]
+path_walk = walker_monolith_1_walk
+path_look = walker_monolith_1_look
+no_retreat = true
+def_state_moving = assault
+def_state_standing = hide_na
+wounded = wounded@no_wound
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+on_info = {-monolith_assaulter_1_teleported} %=teleport_npc(pas_b400_way_walker_monolith_2_walk) +monolith_assaulter_1_teleported%
+combat_ignore_cond = {=fighting_dist_ge(10)} true, false
+combat_ignore_keep_when_attacked = false
+
+; Second assaulter
+
+[logic@monolith_warrior_5]
+active = walker@monolith_assaulter_2
+suitable = {=target_squad_name(pas_b400_hall_monolith_after_fwd_squad)}
+prior = 200
+
+[walker@monolith_assaulter_2]
+path_walk = walker_monolith_2_walk
+path_look = walker_monolith_2_look
+no_retreat = true
+def_state_moving = assault
+def_state_standing = hide_na
+wounded = wounded@no_wound
+corpse_detection_enabled = false
+gather_items_enabled = false
+help_wounded_enabled = false
+on_info = {-monolith_assaulter_2_teleported} %=teleport_npc(pas_b400_way_walker_monolith_2_walk) +monolith_assaulter_2_teleported%
+combat_ignore_cond = {=fighting_dist_ge(10)} true, false
+combat_ignore_keep_when_attacked = false
+
+[wounded@no_wound]
+hp_state = 0 | wounded_heavy@help_heavy
+hp_state_see = 0 | wounded_heavy@help_heavy
+hp_victim = 0 | nil
+hp_cover = 0 | false
+hp_fight = 0 | false

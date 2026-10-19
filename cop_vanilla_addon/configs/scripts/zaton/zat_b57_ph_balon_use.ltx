@@ -1,0 +1,27 @@
+[logic]
+active = ph_idle@wait
+
+[ph_idle@wait]
+on_info = {+zat_b57_den_of_the_bloodsucker_place_gas_give -zat_b57_balon_use} ph_idle@use
+
+[ph_idle@use]
+on_use = {=actor_has_item(zat_b57_gas)} ph_idle@work %+zat_b57_balon_use =play_sound(ph_gas_balon_stay)%
+tips = zat_b57_balon_use_hint
+
+[ph_idle@work]
+on_game_timer = 10 | {+zat_b57_gas_running_play -ph_vintil_gas_running} %=play_sound_looped(ph_vintil_gas_running) +ph_vintil_gas_running%
+on_info2 = {=random_time_passed(10:20)} ph_idle@stop %+vintil_gas_running_clipped =play_sound(ph_vintil_gas_gone)%
+on_info3 = {+zat_b57_gas_running_stop} ph_idle@wait_sound %=play_sound(ph_vintil_gas_gone)%
+on_info4 = {+zat_b38_den_of_the_bloodsucker_actor_gone} sr_idle@nil
+
+[ph_idle@stop]
+on_game_timer = 5 | {+ph_vintil_gas_running} %=stop_sound_looped -ph_vintil_gas_running%
+on_info2 = {+zat_b57_gas_running_stop} ph_idle@wait_sound %=play_sound(ph_vintil_gas_gone)%
+on_info3 = {+zat_b38_den_of_the_bloodsucker_actor_gone} sr_idle@nil
+on_use = {-ph_vintil_gas_running} ph_idle@work %-vintil_gas_running_clipped =play_sound(ph_gas_balon_fix)%
+tips = zat_b57_balon_clip_use_hint
+
+[ph_idle@wait_sound]
+on_info = ph_idle@nil %=stop_sound_looped%
+
+[ph_idle@nil]

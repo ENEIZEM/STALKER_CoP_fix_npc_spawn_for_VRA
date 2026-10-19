@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="Clear">
+		<text>Clear</text>
+	</string>
+	<string id="Cloudy">
+		<text>Cloudy</text>
+	</string>
+	<string id="Default">
+		<text>Medium</text>
+	</string>
+	<string id="Extreme">
+		<text>Maximum</text>
+	</string>
+	<string id="High">
+		<text>High</text>
+	</string>
+	<string id="Low">
+		<text>Low</text>
+	</string>
+	<string id="Minimum">
+		<text>Minimum</text>
+	</string>
+	<string id="Night">
+		<text>Night</text>
+	</string>
+	<string id="Rain">
+		<text>Rain</text>
+	</string>
+	<string id="game type">
+		<text>GAMETYPE</text>
+	</string>
+	<string id="gd_master">
+		<text>Master</text>
+	</string>
+	<string id="gd_novice">
+		<text>Newbie</text>
+	</string>
+	<string id="gd_veteran">
+		<text>Veteran</text>
+	</string>
+	<string id="icon">
+		<text>ICONS</text>
+	</string>
+	<string id="map">
+		<text>MAP</text>
+	</string>
+	<string id="mm_mp_actret_time">
+		<text>Artifact Return Time</text>
+	</string>
+	<string id="mm_mp_allowvoting">
+		<text>Allow Voting</text>
+	</string>
+	<string id="mm_mp_anomalytime">
+		<text>Anomaly Time (Min.)</text>
+	</string>
+	<string id="mm_mp_artefactcapture">
+		<text>Capture the Artifact</text>
+	</string>
+	<string id="mm_mp_artefdelay">
+		<text>Artifact Spawn Delay</text>
+	</string>
+	<string id="mm_mp_artefnum">
+		<text># of Artifacts</text>
+	</string>
+	<string id="mm_mp_artefstay">
+		<text>Artifact Stay Time</text>
+	</string>
+	<string id="mm_mp_artret_time">
+		<text>Artifact Time</text>
+	</string>
+	<string id="mm_mp_autoteambalance">
+		<text>Auto Team Balance</text>
+	</string>
+	<string id="mm_mp_autoteamswap">
+		<text>Auto Team Swapping</text>
+	</string>
+	<string id="mm_mp_avail_maps">
+		<text>AVAILABLE MAPS</text>
+	</string>
+	<string id="mm_mp_cancel">
+		<text>Cancel</text>
+	</string>
+	<string id="mm_mp_cd_key">
+		<text>CD-key</text>
+	</string>
+	<string id="mm_mp_check_cdkey">
+		<text>Check CD-key</text>
+	</string>
+	<string id="mm_mp_client">
+		<text>Client</text>
+	</string>
+	<string id="mm_mp_create">
+		<text>Create Server</text>
+	</string>
+	<string id="mm_mp_damageblock">
+		<text>Spawn Protection (Sec.)</text>
+	</string>
+	<string id="mm_mp_damageblockindicator">
+		<text>Invulnerability Indicator</text>
+	</string>
+	<string id="mm_mp_deaths">
+		<text>Deaths</text>
+	</string>
+	<string id="mm_mp_dedicated">
+		<text>Dedicated</text>
+	</string>
+	<string id="mm_mp_demo_play_list">
+		<text>Demo Playlist</text>
+	</string>
+	<string id="mm_mp_demo_play_players_stats">
+		<text>Player Statistics</text>
+	</string>
+	<string id="mm_mp_demosave">
+		<text>Save Demo</text>
+	</string>
+	<string id="mm_mp_demosave_options">
+		<text>Demo Save Options</text>
+	</string>
+	<string id="mm_mp_empty">
+		<text>Empty</text>
+	</string>
+	<string id="mm_mp_filters">
+		<text>Filters</text>
+	</string>
+	<string id="mm_mp_forcerespawn">
+		<text>Respawn Time (Sec.)</text>
+	</string>
+	<string id="mm_mp_fraglimit">
+		<text>Frag Limit</text>
+	</string>
+	<string id="mm_mp_frags">
+		<text>Frags</text>
+	</string>
+	<string id="mm_mp_freezetime">
+		<text>Bullet Time</text>
+	</string>
+	<string id="mm_mp_friendlyfire">
+		<text>Friendly Fire (%)</text>
+	</string>
+	<string id="mm_mp_friendlyindicators">
+		<text>Friendly Indicators</text>
+	</string>
+	<string id="mm_mp_friendlynames">
+		<text>Friendly Names</text>
+	</string>
+	<string id="mm_mp_full">
+		<text>Full</text>
+	</string>
+	<string id="mm_mp_gamemode">
+		<text>Gamemode</text>
+	</string>
+	<string id="mm_mp_host_port">
+		<text>IP/Host:Port</text>
+	</string>
+	<string id="mm_mp_internet">
+		<text>Internet</text>
+	</string>
+	<string id="mm_mp_join">
+		<text>Connect</text>
+	</string>
+	<string id="mm_mp_lan">
+		<text>Local Area Network</text>
+	</string>
+	<string id="mm_mp_listenservers">
+		<text>Listen Mode</text>
+	</string>
+	<string id="mm_mp_load_demo">
+		<text>Load Demo</text>
+	</string>
+	<string id="mm_mp_mapratation">
+		<text>Map Rotation</text>
+	</string>
+	<string id="mm_mp_maxplayers">
+		<text># of Max Players</text>
+	</string>
+	<string id="mm_mp_network_connection">
+		<text>Network Connection</text>
+	</string>
+	<string id="mm_mp_noanomalies">
+		<text>No Anomalies</text>
+	</string>
+	<string id="mm_mp_options">
+		<text>Options</text>
+	</string>
+	<string id="mm_mp_password">
+		<text>Password</text>
+	</string>
+	<string id="mm_mp_player_name">
+		<text>Player Name:</text>
+	</string>
+	<string id="mm_mp_players">
+		<text>Players</text>
+	</string>
+	<string id="mm_mp_players_count">
+		<text>Player Count</text>
+	</string>
+	<string id="mm_mp_publicserver">
+		<text>Internet Server</text>
+	</string>
+	<string id="mm_mp_quickrefresh">
+		<text>Quick Refresh</text>
+	</string>
+	<string id="mm_mp_rateofchange">
+		<text>Rate of Change</text>
+	</string>
+	<string id="mm_mp_refresh">
+		<text>Refresh All</text>
+	</string>
+	<string id="mm_mp_reinforcement">
+		<text>Reinforcement (Sec.)</text>
+	</string>
+	<string id="mm_mp_respawnoptions">
+		<text>Respawn Options</text>
+	</string>
+	<string id="mm_mp_sel_maps">
+		<text>SELECTED MAPS</text>
+	</string>
+	<string id="mm_mp_server">
+		<text>Server</text>
+	</string>
+	<string id="mm_mp_server_list">
+		<text>Master Server List</text>
+	</string>
+	<string id="mm_mp_server_prop">
+		<text>Server Properties</text>
+	</string>
+	<string id="mm_mp_serverinfo">
+		<text>Server Info</text>
+	</string>
+	<string id="mm_mp_serverlist">
+		<text>Server</text>
+	</string>
+	<string id="mm_mp_servername">
+		<text>Server Name</text>
+	</string>
+	<string id="mm_mp_serversettings">
+		<text>Server Settings</text>
+	</string>
+	<string id="mm_mp_spectator">
+		<text>Spectators</text>
+	</string>
+	<string id="mm_mp_spectator_firsteye">
+		<text>First Person Spectation</text>
+	</string>
+	<string id="mm_mp_spectator_freefly">
+		<text>Spectator Freefly Mode</text>
+	</string>
+	<string id="mm_mp_spectator_freelook">
+		<text>Spectator Freelook Mode</text>
+	</string>
+	<string id="mm_mp_spectator_lookat">
+		<text>Spectator Third Person</text>
+	</string>
+	<string id="mm_mp_spectator_options">
+		<text>Spectator Options</text>
+	</string>
+	<string id="mm_mp_spectator_teamonly">
+		<text>Team-only Spectation</text>
+	</string>
+	<string id="mm_mp_startweather">
+		<text>Weather</text>
+	</string>
+	<string id="mm_mp_team_stats">
+		<text>Count</text>
+	</string>
+	<string id="mm_mp_timelimit">
+		<text>Time Limit (Min.)</text>
+	</string>
+	<string id="mm_mp_warmuptime">
+		<text>Warm Up Time (Sec.)</text>
+	</string>
+	<string id="mm_mp_weatheroptions">
+		<text>Weather Options</text>
+	</string>
+	<string id="mm_mp_withoutfriendlyfire">
+		<text>Friendly Fire Off</text>
+	</string>
+	<string id="mm_mp_withoutpassword">
+		<text>Unpassworded</text>
+	</string>
+	<string id="mm_mp_withoutpunkbuster">
+		<text>Punkbuster Off</text>
+	</string>
+	<string id="mm_mp_withpassword">
+		<text>Passworded</text>
+	</string>
+	<string id="mm_offline_mode">
+		<text>Local Game</text>
+	</string>
+	<string id="mm_online_mode">
+		<text>Internet</text>
+	</string>
+	<string id="mp_agroprom">
+		<text>Agroprom Factory</text>
+	</string>
+	<string id="mp_atp">
+		<text>ATP</text>
+	</string>
+	<string id="mp_bath">
+		<text>Pool</text>
+	</string>
+	<string id="mp_change_unick_success">
+		<text>Username successfully changed!</text>
+	</string>
+	<string id="mp_darkvalley">
+		<text>Dark Valley</text>
+	</string>
+	<string id="mp_factory">
+		<text>Yantar Factory</text>
+	</string>
+	<string id="mp_gamespy_atlas_error">
+		<text>There is a problem with the statistics server.</text>
+	</string>
+	<string id="mp_gamespy_ws_login_error">
+		<text>There is a problem with the login server.</text>
+	</string>
+	<string id="mp_login_success">
+		<text>Login successful.</text>
+	</string>
+	<string id="mp_lost_village">
+		<text>Abandoned Village</text>
+	</string>
+	<string id="mp_military_1">
+		<text>Military Stockades</text>
+	</string>
+	<string id="mp_nick_name_not_valid">
+		<text>Invalid Username. Try again.</text>
+	</string>
+	<string id="mp_pool">
+		<text>Pool</text>
+	</string>
+	<string id="mp_railroad">
+		<text>Railroad</text>
+	</string>
+	<string id="mp_rostok">
+		<text>Rostok Factory</text>
+	</string>
+	<string id="mp_unique_nick_not_valid">
+		<text>Username already taken. Try again.</text>
+	</string>
+	<string id="mp_want_to_delete_demo">
+		<text>Are you sure you wish to delete this demo?</text>
+	</string>
+	<string id="mp_workshop">
+		<text>Abandoned Factory</text>
+	</string>
+	<string id="ping">
+		<text>PING</text>
+	</string>
+	<string id="players">
+		<text>PLAYERS</text>
+	</string>
+	<string id="renderer_r1">
+		<text>Static Lighting</text>
+	</string>
+	<string id="renderer_r2">
+		<text>Full Dynamic Lighting</text>
+	</string>
+	<string id="renderer_r2.5">
+		<text>Enhanced Full Dynamic Lighting</text>
+	</string>
+	<string id="renderer_r2a">
+		<text>Object-based Dynamic Lighting</text>
+	</string>
+	<string id="renderer_r3">
+		<text>Improved Full Lighting (DX10)</text>
+	</string>
+	<string id="server name">
+		<text>SERVER NAME</text>
+	</string>
+	<string id="st_artefacthunt">
+		<text>Artifact Hunt</text>
+	</string>
+	<string id="st_capture_the_artefact">
+		<text>Capture The Artifact</text>
+	</string>
+	<string id="st_deathmatch">
+		<text>Deathmatch</text>
+	</string>
+	<string id="st_mp_gsfilter">
+		<text>Filter:</text>
+	</string>
+	<string id="st_opt_high">
+		<text>High</text>
+	</string>
+	<string id="st_opt_low">
+		<text>Low</text>
+	</string>
+	<string id="st_opt_medium">
+		<text>Medium</text>
+	</string>
+	<string id="st_opt_off">
+		<text>Disabled</text>
+	</string>
+	<string id="st_rank_experienced">
+		<text>Skilled</text>
+	</string>
+	<string id="st_rank_legend">
+		<text>Legendary Stalker</text>
+	</string>
+	<string id="st_rank_novice">
+		<text>Newbie</text>
+	</string>
+	<string id="st_rank_professional">
+		<text>Professional</text>
+	</string>
+	<string id="st_rank_veteran">
+		<text>Veteran</text>
+	</string>
+	<string id="st_team_deathmatch">
+		<text>Team Deathmatch</text>
+	</string>
+	<string id="ui_mm_60_hz">
+		<text>Force 60Hz Refresh Rate</text>
+	</string>
+	<string id="ui_mm_action">
+		<text>Action</text>
+	</string>
+	<string id="ui_mm_advanced">
+		<text>Advanced</text>
+	</string>
+	<string id="ui_mm_alternative">
+		<text>Alternative</text>
+	</string>
+	<string id="ui_mm_anisotropic">
+		<text>Anisotropic Filtering</text>
+	</string>
+	<string id="ui_mm_apply">
+		<text>Apply</text>
+	</string>
+	<string id="ui_mm_back">
+		<text>Back</text>
+	</string>
+	<string id="ui_mm_blood">
+		<text>Blood</text>
+	</string>
+	<string id="ui_mm_brightness">
+		<text>Brightness</text>
+	</string>
+	<string id="ui_mm_cancel">
+		<text>Cancel</text>
+	</string>
+	<string id="ui_mm_check_updates">
+		<text>Update Game</text>
+	</string>
+	<string id="ui_mm_contrast">
+		<text>Contrast</text>
+	</string>
+	<string id="ui_mm_controls">
+		<text>Controls</text>
+	</string>
+	<string id="ui_mm_credits">
+		<text>Credits</text>
+	</string>
+	<string id="ui_mm_crosshair_distance">
+		<text>Crosshair Target Distance</text>
+	</string>
+	<string id="ui_mm_default">
+		<text>Defaults</text>
+	</string>
+	<string id="ui_mm_delete">
+		<text>Delete</text>
+	</string>
+	<string id="ui_mm_delete_existing_file_q">
+		<text>Are you sure you wish to delete this file?</text>
+	</string>
+	<string id="ui_mm_detail_density">
+		<text>Detail Level</text>
+	</string>
+	<string id="ui_mm_difficulty">
+		<text>Game Difficulty</text>
+	</string>
+	<string id="ui_mm_disconnect">
+		<text>Disconnect</text>
+	</string>
+	<string id="ui_mm_disconnect_message">
+		<text>Are you sure you wish to disconnect?</text>
+	</string>
+	<string id="ui_mm_dof">
+		<text>Depth of Field</text>
+	</string>
+	<string id="ui_mm_dyn_crosshair">
+		<text>Dynamic Crosshair</text>
+	</string>
+	<string id="ui_mm_dynamic_music">
+		<text>Dynamic Music</text>
+	</string>
+	<string id="ui_mm_eax">
+		<text>EAX</text>
+	</string>
+	<string id="ui_mm_fullscreen">
+		<text>Fullscreen Mode</text>
+	</string>
+	<string id="ui_mm_gameplay">
+		<text>Game</text>
+	</string>
+	<string id="ui_mm_gamma">
+		<text>Gamma</text>
+	</string>
+	<string id="ui_mm_geometry_lod">
+		<text>Object LOD Distance</text>
+	</string>
+	<string id="ui_mm_invert_mouse">
+		<text>Inverted Mouselook</text>
+	</string>
+	<string id="ui_mm_key">
+		<text>Primary Key</text>
+	</string>
+	<string id="ui_mm_keyboard_setup">
+		<text>Keyboard Setup</text>
+	</string>
+	<string id="ui_mm_last_save">
+		<text>Load Last Savegame</text>
+	</string>
+	<string id="ui_mm_light_distance">
+		<text>Lighting Draw Distance</text>
+	</string>
+	<string id="ui_mm_load">
+		<text>Load</text>
+	</string>
+	<string id="ui_mm_load_game">
+		<text>Load Game</text>
+	</string>
+	<string id="ui_mm_logout">
+		<text>Logout</text>
+	</string>
+	<string id="ui_mm_master">
+		<text>Master</text>
+	</string>
+	<string id="ui_mm_master_volume">
+		<text>Volume</text>
+	</string>
+	<string id="ui_mm_mouse_sense">
+		<text>Mouse Sensitivity</text>
+	</string>
+	<string id="ui_mm_msaa_alphatest">
+		<text>MSAA Alphatest</text>
+	</string>
+	<string id="ui_mm_msaa_opt">
+		<text>Optimize MSAA</text>
+	</string>
+	<string id="ui_mm_multiplayer">
+		<text>MULTIPLAYER</text>
+	</string>
+	<string id="ui_mm_multiplayer_n">
+		<text>Multiplayer</text>
+	</string>
+	<string id="ui_mm_music_volume">
+		<text>Music Volume</text>
+	</string>
+	<string id="ui_mm_need_restart">
+		<text>You must restart the game for video changes to take effect.</text>
+	</string>
+	<string id="ui_mm_network_game">
+		<text>Network Game</text>
+	</string>
+	<string id="ui_mm_newgame">
+		<text>New Game</text>
+	</string>
+	<string id="ui_mm_novice">
+		<text>Newbie</text>
+	</string>
+	<string id="ui_mm_npc_torch">
+		<text>NPC Flashlights</text>
+	</string>
+	<string id="ui_mm_options">
+		<text>OPTIONS</text>
+	</string>
+	<string id="ui_mm_options_n">
+		<text>Options</text>
+	</string>
+	<string id="ui_mm_particles_distance">
+		<text>Particle Draw Distance</text>
+	</string>
+	<string id="ui_mm_quality_presets">
+		<text>Quality Presets</text>
+	</string>
+	<string id="ui_mm_quit2windows">
+		<text>Quit to Windows</text>
+	</string>
+	<string id="ui_mm_quit_game">
+		<text>Quit Game</text>
+	</string>
+	<string id="ui_mm_quit_game_message">
+		<text>Are you sure you wish to quit the game?</text>
+	</string>
+	<string id="ui_mm_quit_windows_message">
+		<text>Are you sure you want to exit?</text>
+	</string>
+	<string id="ui_mm_r2_detail_bump">
+		<text>Detailed Bumpmaps</text>
+	</string>
+	<string id="ui_mm_r2_steep_parallax">
+		<text>Steep Parallax</text>
+	</string>
+	<string id="ui_mm_r2_sun">
+		<text>Sun-cast Shadows</text>
+	</string>
+	<string id="ui_mm_r2_sun_details">
+		<text>Grass Shadows</text>
+	</string>
+	<string id="ui_mm_r2_sun_quality">
+		<text>Sun Details</text>
+	</string>
+	<string id="ui_mm_r3_DX10_1">
+		<text>Use DX10.1</text>
+	</string>
+	<string id="ui_mm_r3_MSAA">
+		<text>MSAA</text>
+	</string>
+	<string id="ui_mm_r3_dynamic_wet_surfaces">
+		<text>Dynamic Wet Surfacing</text>
+	</string>
+	<string id="ui_mm_r3_gbuffer_opt">
+		<text>Geometry Buffer Optimization</text>
+	</string>
+	<string id="ui_mm_r3_volumetric_smoke">
+		<text>Volumetric Smoke</text>
+	</string>
+	<string id="ui_mm_render_2">
+		<text>Render-2</text>
+	</string>
+	<string id="ui_mm_renderer">
+		<text>Rendering Type</text>
+	</string>
+	<string id="ui_mm_resolution">
+		<text>Resolution</text>
+	</string>
+	<string id="ui_mm_return_game">
+		<text>Return to Game</text>
+	</string>
+	<string id="ui_mm_save">
+		<text>Save</text>
+	</string>
+	<string id="ui_mm_save_game">
+		<text>Save Game</text>
+	</string>
+	<string id="ui_mm_show_crosshair">
+		<text>Display Crosshair</text>
+	</string>
+	<string id="ui_mm_show_weapon">
+		<text>Display Weapon</text>
+	</string>
+	<string id="ui_mm_simply">
+		<text>Simple</text>
+	</string>
+	<string id="ui_mm_snd_device">
+		<text>Soundcard</text>
+	</string>
+	<string id="ui_mm_soft_particles">
+		<text>Soft Particles</text>
+	</string>
+	<string id="ui_mm_soft_water">
+		<text>Soft Water</text>
+	</string>
+	<string id="ui_mm_sound">
+		<text>Sound</text>
+	</string>
+	<string id="ui_mm_sound_quality">
+		<text>Sound Quality</text>
+	</string>
+	<string id="ui_mm_stalker">
+		<text>Stalker</text>
+	</string>
+	<string id="ui_mm_sun_quality">
+		<text>Shadow Quality</text>
+	</string>
+	<string id="ui_mm_sun_shafts">
+		<text>Sun Ray Complexity</text>
+	</string>
+	<string id="ui_mm_supersample">
+		<text>Supersampling</text>
+	</string>
+	<string id="ui_mm_switch_torch">
+		<text>Enable NPC Flashlights</text>
+	</string>
+	<string id="ui_mm_texture_quality">
+		<text>Texture Quality</text>
+	</string>
+	<string id="ui_mm_tips">
+		<text>Display NPC Names</text>
+	</string>
+	<string id="ui_mm_veteran">
+		<text>Veteran</text>
+	</string>
+	<string id="ui_mm_video">
+		<text>Video</text>
+	</string>
+	<string id="ui_mm_vis_distance">
+		<text>Draw Distance</text>
+	</string>
+	<string id="ui_mm_volumetric_light">
+		<text>Volumetric Lighting</text>
+	</string>
+	<string id="ui_mm_vsync">
+		<text>Vertical Sync</text>
+	</string>
+	<string id="ui_mp_gamespy_changing_unique_nick">
+		<text>Changing Username...</text>
+	</string>
+	<string id="ui_mp_gamespy_email_already_exist">
+		<text>E-mail address already registered.</text>
+	</string>
+	<string id="ui_mp_internet">
+		<text>Internet</text>
+	</string>
+	<string id="ui_mp_localnet">
+		<text>Local Area Network</text>
+	</string>
+	<string id="ui_st_backstabks_in_row">
+		<text>Backstabs</text>
+	</string>
+	<string id="ui_st_bleed_kills_in_row">
+		<text>Bleeding Kills</text>
+	</string>
+	<string id="ui_st_explosive_kills_in_row">
+		<text>Explosive Kills</text>
+	</string>
+	<string id="ui_st_eye_kills_in_row">
+		<text>Eyeshots</text>
+	</string>
+	<string id="ui_st_headshots_in_row">
+		<text>Headshots</text>
+	</string>
+	<string id="ui_st_invalid_saved_game">
+		<text>Savegame version incompatible with current game version.</text>
+	</string>
+	<string id="ui_st_kills_in_row">
+		<text>Kills in a row</text>
+	</string>
+	<string id="ui_st_knife_kills_in_row">
+		<text>Knife Kills</text>
+	</string>
+	<string id="ui_st_last_set">
+		<text>Last Settings</text>
+	</string>
+	<string id="ui_st_mp_local_network_login_page">
+		<text>Join Local Game</text>
+	</string>
+	<string id="ui_st_mp_nickname">
+		<text>Username:</text>
+	</string>
+	<string id="ui_st_mp_try_change">
+		<text>Modify</text>
+	</string>
+	<string id="ui_st_preset1">
+		<text>Preset 1</text>
+	</string>
+	<string id="ui_st_preset2">
+		<text>Preset 2</text>
+	</string>
+	<string id="ui_st_preset3">
+		<text>Preset 3</text>
+	</string>
+	<string id="ui_st_reset">
+		<text>Reset</text>
+	</string>
+	<string id="ui_st_sell_all">
+		<text>Sell Everything</text>
+	</string>
+	<string id="version">
+		<text>VERSION</text>
+	</string>
+	<string id="mp_pripyat">
+		<text>Pripyat</text>
+	</string>
+	<string id="ui_mm_crouch_toggle">
+		<text>Toggle Crouching</text>
+	</string>
+	<string id="ui_mm_important_save">
+		<text>Enable Autosaving</text>
+	</string>
+	<string id="ui_mm_r1_detail_textures">
+		<text>Detailed Textures</text>
+	</string>
+	<string id="mm_mp_demo">
+		<text>Demo</text>
+	</string>
+	<string id="ui_st_mp_login">
+		<text>Login</text>
+	</string>
+	<string id="ui_st_mp_logout">
+		<text>Logout</text>
+	</string>
+	<string id="ui_st_mp_create">
+		<text>Create</text>
+	</string>
+	<string id="mp_gp_unknown_email_or_bad_password">
+		<text>Unknown e-mail or bad password.</text>
+	</string>
+	<string id="mp_gp_parameter_error">
+		<text>Profile Error.</text>
+	</string>
+	<string id="mp_gp_network_error">
+		<text>Connection error.</text>
+	</string>
+	<string id="mp_gp_server_error">
+		<text>Server timeout error.</text>
+	</string>
+	<string id="mp_gp_unknown_error_2">
+		<text>Critical profile load error.</text>
+	</string>
+	<string id="mp_gp_unknown_error_6">
+		<text>Connection Error.</text>
+	</string>
+	<string id="mp_gp_unknown_error_7">
+		<text>Connection Error.</text>
+	</string>
+	<string id="mp_gp_unknown_error_8">
+		<text>Connection Error.</text>
+	</string>
+	<string id="mp_gp_unknown_error_513">
+		<text>Invalid Profile Name.</text>
+	</string>
+	<string id="mp_gp_unknown_error_514">
+		<text>Invalid Password.</text>
+	</string>
+	<string id="mp_gp_unknown_error_515">
+		<text>Invalid Unique Username.</text>
+	</string>
+	<string id="mp_gp_unknown_error_516">
+		<text>Unique Username already taken.</text>
+	</string>
+	<string id="mp_first_need_to_login">
+		<text>You need to log in first.</text>
+	</string>
+	<string id="mp_first_need_to_logout">
+		<text>You need to log out first.</text>
+	</string>
+	<string id="mp_gamespy_http_error">
+		<text>Profile server connection error.</text>
+	</string>
+	<string id="ui_st_you_cannot_delete_profile_after_creation">
+		<text>You cannot delete a profile after its creation.</text>
+	</string>
+	<string id="ui_mm_ssao_quality">
+		<text>SSAO Quality</text>
+	</string>
+	<string id="ui_mm_ssao_text">
+		<text>SSAO Text</text>
+	</string>
+	<string id="ui_mm_ssao">
+		<text>Normal</text>
+	</string>
+	<string id="ui_mm_hdao">
+		<text>HDAO</text>
+	</string>
+	<string id="ui_mm_hbao">
+		<text>HBAO</text>
+	</string>
+	<string id="ui_st_disable_hud">
+		<text>Enable HUD</text>
+	</string>
+	<string id="mp_gp_unique_nick_not_registred">
+		<text>Unique username unregistered. Please register it.</text>
+	</string>
+	<string id="mp_gp_unique_nick_has_expired">
+		<text>Your unique username has expired. Please register a new one.</text>
+	</string>
+	<string id="gd_stalker">
+		<text>Stalker</text>
+	</string>
+	<string id="st_opt_extreme">
+		<text>Maximum</text>
+	</string>
+	<string id="renderer_r4">
+		<text>Improved Full Dynamic Lighting (DX11)</text>
+	</string>
+	<string id="mp_please_login">
+		<text>Please log in.</text>
+	</string>
+	<string id="mp_already_logged_in">
+		<text>This GameSpy ID is currently being used. Please use a different GameSpy ID.</text>
+	</string>
+	<string id="mp_gp_unknown_email">
+		<text>Unknown E-mail</text>
+	</string>
+	<string id="mp_gp_bad_password">
+		<text>Invalid Password</text>
+	</string>
+	<string id="mp_use_offline_mode">
+		<text>Вы не можете использовать профиль GameSpy ID для входа на локальный сервер. Пожалуйста, используйте режим игры по локальной сети.</text>
+	</string>
+	<string id="st_kicked_by_server">
+		<text>You have been kicked from the server.</text>
+	</string>
+	<string id="mp_you_have_been_banned_by">
+		<text>You have been banned by an administrator: </text>
+	</string>
+	<string id="mp_you_have_been_banned_by_server">
+		<text>You have been banned by server.</text>
+	</string>
+	<string id="mp_server_info">
+		<text>Server Info</text>
+	</string>
+	<string id="mp_gp_email_is_too_big">
+		<text>E-mail is too long. The character limit is 50.</text>
+	</string>
+	<string id="mp_gp_bad_email">
+		<text>Incorrect E-mail.</text>
+	</string>
+	<string id="mp_gp_password_is_too_small">
+		<text>Password is too short.</text>
+	</string>
+	<string id="mp_gp_password_is_too_big">
+		<text>Password is too long.</text>
+	</string>
+	<string id="mp_gp_no_email">
+		<text>E-mail not entered.</text>
+	</string>
+	<string id="mp_gp_no_unique_nick">
+		<text>No username entered!</text>
+	</string>
+	<string id="mp_gp_unique_nick_is_too_big">
+		<text>Unique username is too long. There is a character limit of 30.</text>
+	</string>
+	<string id="mp_gp_unique_nick_must_contain_only">
+		<text>Unique username may only contain numbers, letters, and special characters</text>
+	</string>
+	<string id="mp_gp_unique_nick_must_contain_nospaces">
+		<text>Unique username must not contain any spaces.</text>
+	</string>
+	<string id="mp_gp_unique_nick_bad_first_symbol">
+		<text>Your username may not begin with a space or any of these characters: '@', '+', ':' or '#'</text>
+	</string>
+	<string id="st_opt_ultra">
+		<text>Very High</text>
+	</string>
+</string_table>

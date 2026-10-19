@@ -1,0 +1,318 @@
+[wpn_fort]:identity_immunities,weapon_probability,default_weapon_params,wpn_fort_sounds
+
+;-------------------------------------------------------------------------------
+; MAIN & COMMON
+;-------------------------------------------------------------------------------
+$spawn                              = "weapons\fort"
+class                               = WP_PM
+hud                                 = wpn_fort_hud
+
+ef_weapon_type                      = 5
+
+default_to_ruck                     = false
+sprint_allowed                      = true
+
+upgrades                            = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
+installed_upgrades                  = 
+upgrade_scheme                      = upgrade_scheme_fort
+
+;-------------------------------------------------------------------------------
+; INVENTORY & UI
+;-------------------------------------------------------------------------------
+cost                                = 600
+inv_weight                          = 0.83
+
+slot                                = 1
+animation_slot                      = 1
+inv_name                            = st_wpn_fort
+inv_name_short                      = st_wpn_fort
+description                         = st_wpn_fort_descr
+
+icons_texture                       = ui\ui_icon_equipment_swr.dds
+inv_grid_width                      = 1
+inv_grid_height                     = 1
+inv_grid_x                          = 0
+inv_grid_y                          = 25
+
+upgr_icon_x                         = 870
+upgr_icon_y                         = 1450
+upgr_icon_width                     = 145
+upgr_icon_height                    = 145
+
+;-------------------------------------------------------------------------------
+; AMMUNITION & FIRING MODES
+;-------------------------------------------------------------------------------
+ammo_class                          = ammo_9x18_fmj, ammo_9x18_pmm
+ammo_elapsed                        = 12
+ammo_mag_size                       = 12
+ammo_in_chamber                     = true
+
+hand_dependence                     = 1
+single_handed                       = 1
+
+;-------------------------------------------------------------------------------
+; BALLISTICS & DAMAGE
+;-------------------------------------------------------------------------------
+hit_power                           = 0.32, 0.32, 0.32, 0.32
+hit_impulse                         = 75
+hit_type                            = fire_wound
+fire_distance                       = 145
+bullet_speed                        = 315
+rpm                                 = 183
+rpm_empty_click                     = 120
+
+min_radius                          = 0
+max_radius                          = 30
+
+;-------------------------------------------------------------------------------
+; DISPERSION & ACCURACY
+;-------------------------------------------------------------------------------
+fire_dispersion_base                = 0.25
+control_inertion_factor             = 1.0
+crosshair_inertion                  = 2.75
+fire_dispersion_condition_factor    = 10
+
+PDM_disp_base                       = 0.5
+PDM_disp_vel_factor                 = 1.1
+PDM_disp_accel_factor               = 1.1
+PDM_disp_crouch                     = 1.0
+PDM_disp_crouch_no_acc              = 1.0
+
+;-------------------------------------------------------------------------------
+; RECOIL & CAMERA MOVEMENT
+;-------------------------------------------------------------------------------
+cam_return                          = 0
+cam_relax_speed                     = 8
+cam_relax_speed_ai                  = 360
+cam_dispersion                      = 0.9
+cam_dispersion_inc                  = 0.4
+cam_dispersion_frac                 = 1.0
+cam_max_angle                       = 5.0
+cam_max_angle_horz                  = 5.0
+cam_step_angle_horz                 = 1.0
+
+;-------------------------------------------------------------------------------
+; RELIABILITY & DEGRADATION
+;-------------------------------------------------------------------------------
+misfire_probability                 = 0.005
+misfire_start_condition             = 0.6
+misfire_end_condition               = 0.1
+misfire_start_prob                  = 0.0075
+misfire_end_prob                    = 0.075
+condition_shot_dec                  = 0.0034
+condition_queue_shot_dec            = 0.0034
+
+;-------------------------------------------------------------------------------
+; WORLD MODEL & POSITIONING
+;-------------------------------------------------------------------------------
+position                            = -0.021, -0.1, 0.0
+orientation                         = 0, 0, 0
+visual                              = dynamics\weapons\wpn_fort\wpn_fort.ogf
+
+;-------------------------------------------------------------------------------
+; EFFECTS & PARTICLES
+;-------------------------------------------------------------------------------
+fire_point              			= 0.0, 0.148, 0.161
+shell_point		 					= 0.0, 0.133, 0.047
+shell_dir		 					= 0.0, 0.0, 0.4
+
+flame_particles                     = weapons\generic_weapon03
+smoke_particles                     = weapons\generic_shoot_00
+shell_particles                     = weapons\generic_shells
+
+light_color                         = 0.6, 0.5, 0.3
+light_range                         = 3.0
+light_var_color                     = 0.05
+light_var_range                     = 0.5
+light_time                          = 0.2
+
+;-------------------------------------------------------------------------------
+; OPTICS & ADDONS
+;-------------------------------------------------------------------------------
+zoom_enabled                        = true
+zoom_rotate_time                    = 0.25
+zoom_dof                            = -1000, 1.0, 1000
+reload_dof                          = 0.0, 0.5, 5, 1.7
+
+scope_status                        = 0
+scope_zoom_factor                   = 1.1
+
+silencer_status                     = 0
+silencer_name                       = wpn_addon_silencer
+silencer_x                          = 58
+silencer_y                          = -17
+silencer_smoke_particles            = weapons\generic_shoot_00
+silencer_light_color                = 0.6, 0.5, 0.3
+silencer_light_range                = 0.01
+silencer_light_var_color            = 0.05
+silencer_light_var_range            = 0.5
+silencer_light_time                 = 0.2
+
+grenade_launcher_status             = 0
+
+;-------------------------------------------------------------------------------
+; SOUNDS
+;-------------------------------------------------------------------------------
+snd_draw                            = weapons\generic_draw
+snd_holster                         = weapons\generic_holster
+;snd_shoot                           = weapons\fort\fort_shoot
+;snd_silncer_shot                    = weapons\fort\fort_shoot_s
+snd_empty                           = weapons\pistol_empty
+snd_reload                          = weapons\fort\fort_reload
+snd_reload_empty                    = weapons\fort\fort_reload_full
+snd_close                           = weapons\generic_holster
+snd_reload_misfire                  = weapons\fort\fort_revival
+
+
+;===============================================================================
+; HUD SECTION
+;===============================================================================
+
+[wpn_fort_hud]:hud_base
+item_visual                         = dynamics\weapons\wpn_fort\wpn_fort_hud
+
+hands_position                      = 0.000000, -0.077200, -0.008500
+hands_position_16x9                 = 0.000000, -0.077200, -0.008500
+hands_orientation                   = 0.0, 0.0, 0.0
+hands_orientation_16x9              = 0.0, 0.0, 0.0
+
+item_position                       = 0, 0, 0
+item_orientation                    = 0, 0, 0
+
+aim_hud_offset_pos          		= -0.075900, 0.044000, -0.107000
+aim_hud_offset_rot          		= 0.002000, 0.000550, 0.000000
+aim_hud_offset_pos_16x9          	= -0.075900, 0.044000, -0.107000
+aim_hud_offset_rot_16x9          	= 0.002000, 0.000550, 0.000000		
+
+lowered_hud_offset_pos              = 0.046401, 0.027462, 0.046365
+lowered_hud_offset_pos_16x9         = 0.046401, 0.027462, 0.046365
+lowered_hud_offset_rot              = 0.212509, -0.152878, -0.095673
+lowered_hud_offset_rot_16x9         = 0.212509, -0.152878, -0.095673
+
+fire_bone                           = wpn_body
+fire_point                          = 0.000000, 0.062700, 0.261801
+
+shell_bone                          = wpn_body
+shell_point                         = 200, 200, 200
+
+;-------------------------------------------------------------------------------
+; HUD ANIMATIONS
+;-------------------------------------------------------------------------------
+anm_show                            = fort_draw
+anm_show_empty                      = fort_draw, idle_empty
+
+anm_hide                            = fort_holster
+anm_hide_empty                      = fort_holster, idle_empty
+
+anm_idle                            = fort_idle
+anm_idle_empty                      = fort_idle, idle_empty
+anm_idle_slow                       = fort_moving_slow
+anm_idle_slow_empty                 = fort_moving_slow, idle_empty
+anm_idle_crouch                     = fort_crouch
+anm_idle_crouch_empty               = fort_crouch, idle_empty
+anm_idle_crouch_slow                = fort_crouch
+anm_idle_crouch_slow_empty          = fort_crouch, idle_empty
+
+anm_idle_aim                        = fort_idle_aim
+anm_idle_aim_empty                  = fort_idle_aim, idle_empty
+anm_idle_aim_moving                 = fort_moving_aim
+anm_idle_aim_moving_empty           = fort_moving_aim, idle_empty
+
+anm_idle_moving                     = fort_moving
+anm_idle_moving_empty               = fort_moving, idle_empty
+anm_idle_moving_slow                = fort_moving_slow
+anm_idle_moving_slow_empty          = fort_moving_slow, idle_empty
+anm_idle_moving_crouch              = fort_crouch
+anm_idle_moving_crouch_empty        = fort_crouch, idle_empty
+anm_idle_moving_crouch_slow         = fort_crouch
+anm_idle_moving_crouch_slow_empty   = fort_crouch, idle_empty
+
+anm_idle_sprint_start               = fort_sprint_start
+anm_idle_sprint_start_empty         = fort_sprint_start, idle_empty
+anm_idle_sprint                     = fort_sprint
+anm_idle_sprint_empty               = fort_sprint, idle_empty
+anm_idle_sprint_end                 = fort_sprint_end
+anm_idle_sprint_end_empty           = fort_sprint_end, idle_empty
+
+anm_shoot                           = fort_shoot, shoot
+anm_shoot_sil                       = fort_shoot, shoot
+anm_shoot_last                      = fort_shoot, idle_empty
+anm_shoot_last_sil                  = fort_shoot, idle_empty
+anm_shoot_aim                       = fort_shoot_aim, shoot
+anm_shoot_aim_sil                   = fort_shoot_aim, shoot
+anm_shoot_aim_last                  = fort_shoot_aim, idle_empty
+anm_shoot_aim_last_sil              = fort_shoot_aim, idle_empty
+
+anm_reload                          = fort_reload, reload
+anm_reload_empty                    = fort_reload_empty, reload_empty
+anm_reload_jammed                   = fort_misfire, misfire
+anm_reload_jammed_last              = fort_misfire, misfire
+
+;===============================================================================
+; UNIQUE WEAPONS
+;===============================================================================
+
+[wpn_fort_snag]:wpn_fort
+$spawn                              = "weapons\wpn_fort_snag"
+
+cost                                = 700
+
+upgrades                            = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
+installed_upgrades                  = up_firsta_fort, up_thirda_fort
+upgrade_scheme                      = upgrade_scheme_fort
+
+;===============================================================================
+; FORT-14
+;===============================================================================
+
+[wpn_fort_14]:wpn_fort
+$spawn                              = "weapons\wpn_fort_14"
+
+hud                                 = wpn_fort_14_hud
+
+cost                                = 900
+inv_weight                          = 0.92
+
+inv_name                            = st_wpn_14_fort
+inv_name_short                      = st_wpn_14_fort
+description                         = st_wpn_14_fort_descr
+
+inv_grid_width                      = 2
+inv_grid_height                     = 1
+inv_grid_x                          = 9
+inv_grid_y                          = 26
+
+upgr_icon_x                         = 1160
+upgr_icon_y                         = 1740
+upgr_icon_width                     = 145
+upgr_icon_height                    = 145
+
+ammo_class                          = ammo_9x18_fmj, ammo_9x18_pmm
+ammo_elapsed                        = 16
+ammo_mag_size                       = 16
+ammo_in_chamber                     = true
+
+hit_power                           = 0.33, 0.33, 0.33, 0.33
+hit_impulse                         = 75
+hit_type                            = fire_wound
+fire_distance                       = 155
+bullet_speed                        = 335
+rpm                                 = 183
+rpm_empty_click                     = 120
+
+fire_dispersion_base                = 0.26
+
+visual                              = dynamics\weapons\wpn_fort\wpn_fort_14.ogf
+
+silencer_status                     = 2
+silencer_name                       = wpn_addon_silencer_fort14
+silencer_x                          = 58
+silencer_y                          = -15
+
+[wpn_fort_14_hud]:wpn_fort_hud
+item_visual                         = dynamics\weapons\wpn_fort\wpn_fort_14_hud
+
+aim_hud_offset_pos          		= -0.076300, 0.035000, -0.110800
+aim_hud_offset_rot          		= 0.004400, 0.001150, 0.000000
+aim_hud_offset_pos_16x9          	= -0.076300, 0.035000, -0.110800
+aim_hud_offset_rot_16x9          	= 0.004400, 0.001150, 0.000000		

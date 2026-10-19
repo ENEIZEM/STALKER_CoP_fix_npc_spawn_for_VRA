@@ -1,0 +1,18 @@
+[smart_terrain]
+squad_id = 10
+max_population = 1
+arrive_dist = 80
+respawn_params = respawn@jup_b202
+
+[respawn@jup_b202]
+spawn_cat
+
+[spawn_cat]
+spawn_squads = simulation_cat
+spawn_num = {+vano_debt_to_bandits_task_give -vano_debt_to_bandits_task_end -vano_debt_to_bandits_task_fail} 0, {+jup_b52_actor_items_can_be_stolen -jup_b202_actor_items_returned} 0, 1
+
+[exclusive]
+jup_bandit_vano_debt_1 = jupiter\jup_vano_debt_bandits.ltx
+jup_bandit_vano_debt_2 = jupiter\jup_vano_debt_bandits.ltx
+jup_b202_stalker_snag_wounded = jupiter\jup_b202_snag_wounded.ltx
+jup_b202_stalker_bandit = jupiter\jup_b202_snag_wounded.ltx

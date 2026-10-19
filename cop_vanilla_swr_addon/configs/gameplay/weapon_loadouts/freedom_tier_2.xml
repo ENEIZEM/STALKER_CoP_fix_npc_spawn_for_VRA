@@ -1,0 +1,20 @@
+[spawn_loadout] \n
+wpn_ak74m = 1 \n
+wpn_ak74 = 1, scope \n
+wpn_lr300 = 1 \n
+wpn_mp5 = 1 \n
+
+[spawn_loadout2] \n
+wpn_beretta = 1 \n
+wpn_fort = 1 \n
+wpn_fort_14 = 1, silencer \n
+wpn_colt1911 = 1 \n
+wpn_hpsa = 1 \n
+wpn_glock = 1 \n
+wpn_tt33 = 1 \n
+
+[spawn_loadout3] \n
+grenade_rgd5 = 1 \n
+
+[spawn_loadout4] \n
+detector_advanced = 1, prob=0.25 \n

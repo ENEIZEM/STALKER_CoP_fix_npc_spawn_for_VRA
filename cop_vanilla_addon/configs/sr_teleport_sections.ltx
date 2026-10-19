@@ -1,0 +1,58 @@
+; From: CoC - Alundaio
+; Explanations
+; Although the condlist supports any info, in this case the spot will only update if actor has any alife_info (infoportions like).
+; enable = {+has_info} true, false 
+; Name of waypoint that is placed in the CLevelChanger object of your SDK.
+; path = zaton_space_restrictor_to_jupiter_drop
+; Name of waypoint that teleports the player away from the restrictor if they refuse to move to another location.
+; reject_path = zaton_way_if_reject_to_jupiter
+; Flag determines if reject_path is triggered when enable = false
+; reject_on_disabled bool
+
+; ZATON
+
+[zaton_space_restrictor_to_jupiter]
+enable = {+zat_b215_gave_maps +jup_b217_welcome_tech_talked} true, false
+spot = level_changer_down
+text = st_level_changer_descr
+hint = space_restrictor_to_jupiter_desc
+path = zaton_space_restrictor_to_jupiter_drop
+reject_path = zaton_way_if_reject_to_jupiter
+reject_on_disabled = false
+autosave = true
+
+; JUPITER
+
+[jup_space_restrictor_to_zaton]
+enable = {+zat_b215_gave_maps +jup_b217_welcome_tech_talked} true, false
+spot = level_changer_up
+text = st_level_changer_descr
+hint = space_restrictor_to_zaton_desc
+path = jup_space_restrictor_to_zaton_drop
+reject_path = jup_way_if_reject_to_zaton
+reject_on_disabled = false
+autosave = true
+
+; JUPITER UNDEGROUND
+
+[jupiter_ug_space_restrictor_to_cop_pripyat]
+enable = {+pri_a17_actor_bring_gauss_rifle} true, false
+spot = nil
+text = st_level_changer_descr
+hint = space_restrictor_cop_pripyat_desc
+path = jupiter_ug_space_restrictor_to_cop_pripyat_drop
+reject_path = jupiter_ug_way_if_reject_to_cop_pripyat
+reject_on_disabled = {+pri_a17_actor_bring_gauss_rifle} true, false
+autosave = true
+
+; PRIPYAT
+
+[cop_pripyat_space_restrictor_to_jupiter_ug]
+enable = {+pri_a17_actor_bring_gauss_rifle} true, false
+spot = level_changer_down
+text = st_level_changer_descr
+hint = space_restrictor_jupiter_ug_desc
+path = cop_pripyat_space_restrictor_to_jupiter_ug_drop
+reject_path = cop_pripyat_way_if_reject_to_jupiter_ug
+reject_on_disabled = true
+autosave = true

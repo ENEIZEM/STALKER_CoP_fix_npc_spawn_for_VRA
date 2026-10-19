@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_up_outfit_nvg_gen_3">
+		<text>ПНВ 3-го поколения</text>
+	</string>
+	<string id="st_up_outfit_nvg_gen_3_descr">
+		<text>Установка первоклассного помехозащищённого ПНВ, который позволяет действовать в условиях полной темноты.</text>
+	</string>	
+</string_table>

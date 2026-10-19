@@ -1,0 +1,22 @@
+[logic@gigant_1]
+active = mob_home@gigant_1
+monster_job = true
+prior = 200
+;on_death = mob_death@gigant_1
+suitable = {=target_squad_name(jup_b219_gigant_squad)} true
+
+[mob_death@gigant_1]
+on_info = %+jup_b219_gigant_squad_dead%
+
+[mob_home@gigant_1]
+on_info = {+jup_a9_power_info} mob_home@gigant_2 %=teleport_npc(jup_b219_mob_home_2)%
+path_home = mob_home_1
+home_min_radius = 1
+home_max_radius = 30
+out_restr = jup_factory_default_in_restrictor
+
+[mob_home@gigant_2]
+path_home = mob_home_2
+home_min_radius = 1
+home_max_radius = 10
+out_restr = jup_factory_default_in_restrictor

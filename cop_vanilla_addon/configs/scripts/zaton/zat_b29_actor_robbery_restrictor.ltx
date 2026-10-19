@@ -1,0 +1,49 @@
+[logic]
+active = sr_idle@wait
+
+[sr_idle@wait]
+on_info = {+zat_b14_stalker_1_first_deal_reversed} sr_idle@timer 
+on_info2 = {+zat_b14_stalker_1_first_deal_start} sr_idle@postprocess %=stop_surge_timer =run_postprocess(fade_in) =disable_ui =remove_npc(zat_stalker_friend_1_id) =remove_npc(zat_stalker_friend_2_id) =clear_smart_terrain(zat_b55)%
+
+[sr_idle@timer]
+on_game_timer = 17200 | nil %+zat_b14_stalker_1_first_deal_reversed_time_gone%
+on_info = {+zat_b14_stalker_1_first_deal_start} sr_idle@postprocess %=stop_surge_timer =run_postprocess(fade_in) =disable_ui =remove_npc(zat_stalker_friend_1_id) =remove_npc(zat_stalker_friend_2_id) =clear_smart_terrain(zat_b55)%
+
+[sr_idle@postprocess]
+on_game_timer = 15 | sr_idle@postprocess2 %=run_postprocess(black:22219:true) +zat_b55_robbery_task_vobla_ready =teleport_npc_by_story_id(zat_b14_stalker_1:zat_b55_zat_b14_stalker_spawn) =teleport_actor(zat_b55_stalker_actor_robbery_teleport_walk:zat_b55_stalker_actor_robbery_teleport_look) =create_squad(zat_b55_stalker_victim_squad:zat_b55)%
+
+[sr_idle@postprocess2]
+on_game_timer = 15 | sr_idle@start
+
+[sr_idle@start]
+on_game_timer = 5 | sr_idle@position %=stop_postprocess(22219) =enable_ui +zat_b55_robbery_task_actor_ready%
+
+[sr_idle@position]
+on_info = {=actor_in_zone(zat_b29_actor_robbery_restrictor)} sr_idle@bandits %+zat_b55_robbery_task_actor_take_position%
+on_info2 = {+zat_b55_robbery_task_actor_ready =dist_to_story_obj_ge(zat_b29_actor_robbery_restrictor:200)} sr_idle@end %+zat_b14_stalker_1_first_deal_actor_far%
+
+[sr_idle@bandits]
+on_info = {+zat_b14_stalker_robbery_talk} sr_idle@bandits_spawn
+on_info2 = {+zat_b55_robbery_task_actor_ready =dist_to_story_obj_ge(zat_b29_actor_robbery_restrictor:200)} sr_idle@end %+zat_b14_stalker_1_first_deal_actor_far%
+on_info3 = {-zat_b55_bandit_leader_shoot -zat_b14_stalker_robbery_talk +zat_b55_robbery_task_actor_take_position !actor_in_zone(zat_b29_actor_robbery_restrictor)} sr_idle@position %-zat_b55_robbery_task_actor_take_position%
+on_info4 = {-zat_b55_bandit_leader_shoot +zat_b14_stalker_robbery_talk +zat_b55_robbery_task_actor_take_position !actor_in_zone(zat_b29_actor_robbery_restrictor) !dist_to_story_obj_ge(zat_b55_stalker_victim:10)} sr_idle@enemy %+zat_b55_stalker_actor_robbery_task_reversed =set_squads_enemies(zat_b14_stalkers:zat_b55_stalker_victim_squad)%
+
+[sr_idle@bandits_spawn]
+on_game_timer = 120 | {-zat_b55_bandit_leader_squad} %=create_squad(zat_b55_bandit_leader_squad:zat_b55) +zat_b55_bandit_leader_squad%
+on_info = {+zat_b55_robbery_task_actor_ready =dist_to_story_obj_ge(zat_b29_actor_robbery_restrictor:200)} sr_idle@end %+zat_b14_stalker_1_first_deal_actor_far%
+on_info2 = {-zat_b55_bandit_leader_shoot +zat_b14_stalker_robbery_talk +zat_b55_robbery_task_actor_take_position !actor_in_zone(zat_b29_actor_robbery_restrictor) !dist_to_story_obj_ge(zat_b55_stalker_victim:10)} sr_idle@enemy %+zat_b55_stalker_actor_robbery_task_reversed =set_squads_enemies(zat_b14_stalkers:zat_b55_stalker_victim_squad)%
+on_info3 = {+zat_b55_bandit_leader_dead} sr_idle@end
+on_info4 = {+zat_b55_bandit_leader_first_deal_dlg} sr_idle@end
+
+[sr_idle@enemy]
+on_info = {+zat_b55_zat_b14_stalker_1_dead} sr_idle@end %=set_squad_enemy_to_actor(zat_b55_stalker_victim_squad)%
+
+[sr_idle@end]
+on_info = {-zat_b55_robbery_task_start_surge_timer} %=start_surge_timer +zat_b55_robbery_task_start_surge_timer%
+on_info2 = {=dist_to_story_obj_ge(zat_b29_actor_robbery_restrictor:200)} sr_idle@nil %+zat_b14_stalker_1_first_deal_actor_far =remove_squad(zat_b55_bandit_leader_squad)%
+on_info3 = {+zat_b55_bandit_leader_first_deal_dlg =surge_started} sr_idle@delete %+zat_b14_stalker_1_first_deal_actor_far%
+
+[sr_idle@delete]
+on_info = {=dist_to_story_obj_ge(zat_b29_actor_robbery_restrictor:200)} sr_idle@nil %=remove_squad(zat_b55_bandit_leader_squad)%
+
+[sr_idle@nil]

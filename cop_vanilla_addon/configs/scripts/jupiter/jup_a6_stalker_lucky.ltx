@@ -1,0 +1,32 @@
+[logic@jup_a6_stalker_lucky]
+suitable = {=check_npc_name(jup_a6_stalker_lucky)}
+active = animpoint@sit_alone
+prior = 200
+
+[animpoint@sit_alone]
+cover_name = jup_a6_lucky_smart_sit
+use_camp = false
+meet = meet
+combat_ignore_cond = {=actor_enemy} false, true
+combat_ignore_keep_when_attacked = false
+corpse_detection_enabled = false
+invulnerable = true
+out_restr = jup_a6_sr_noweap_zulus
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+on_info = {-jup_a6_stalker_lucky_first_tp} %=teleport_npc(jup_b15_actor_walk) +jup_a6_stalker_lucky_first_tp%
+
+[meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance  = 0
+far_distance 	= 0
+snd_on_use = nil
+use = {=actor_enemy} false, true
+allow_break = false
+trade_enable = false
+;meet_dialog	= 
+meet_on_talking = false

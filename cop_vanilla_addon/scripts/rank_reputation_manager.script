@@ -1,0 +1,243 @@
+-- rank_reputation_manager.script
+-- Менеджер управления рангом и репутацией ГГ
+
+-- Получить текущий ранг
+function get_rank()
+    if not (db.actor) then return 0 end
+    return db.actor:character_rank()
+end
+
+-- Получить текущую репутацию
+function get_reputation()
+    if not (db.actor) then return 0 end
+    return db.actor:character_reputation()
+end
+
+--------------------------------------------------------------------------------
+-- Управление РАНГОМ
+--------------------------------------------------------------------------------
+
+-- Добавить ранг
+function add_rank(value)
+    if not (db.actor) then return end
+    
+    local current = db.actor:character_rank()
+    local new_val = current + value
+    
+    db.actor:set_character_rank(new_val)
+end
+
+-- Отнять ранг
+function decrease_rank(value)
+    if not (db.actor) then return end
+    
+    local current = db.actor:character_rank()
+    local new_val = current - value
+    
+    if new_val < 0 then new_val = 0 end
+    
+    db.actor:set_character_rank(new_val)
+end
+
+-- Жестко установить значение ранга
+function set_rank(value)
+    if not (db.actor) then return end
+    if value < 0 then value = 0 end
+    
+    db.actor:set_character_rank(value)
+end
+
+--------------------------------------------------------------------------------
+-- Управление РЕПУТАЦИЕЙ
+--------------------------------------------------------------------------------
+
+-- Добавить репутацию
+function add_reputation(value)
+    if not (db.actor) then return end
+    -- Метод change принимает дельту (сколько добавить)
+    db.actor:change_character_reputation(value)
+end
+
+-- Отнять репутацию
+function decrease_reputation(value)
+    if not (db.actor) then return end
+    -- Чтобы отнять, передаем отрицательное число
+    db.actor:change_character_reputation(-value)
+end
+
+-- Жестко установить значение репутации (костыль через разницу)
+function set_reputation(target_value)
+    if not (db.actor) then return end
+    
+    local current = db.actor:character_reputation()
+    local delta = target_value - current
+    
+    if delta ~= 0 then
+        db.actor:change_character_reputation(delta)
+    end
+end
+
+--------------------------------------------------------------------------------
+-- БОНУС НОВИЧКА ЗА СИЛЬНОГО МУТАНТА (Один раз за игру)
+--------------------------------------------------------------------------------
+
+-- Список классов, считающихся "сильными"
+local strong_mutants_clsids = {
+    [clsid.gigant_s]        = true, -- Псевдогигант
+    [clsid.chimera_s]       = true, -- Химера
+    [clsid.controller_s]    = true, -- Контролер
+    [clsid.burer_s]         = true, -- Бюрер
+    [clsid.bloodsucker_s]   = true, -- Кровосос
+    [clsid.poltergeist_s]   = true, -- Полтергейст
+}
+
+function check_first_strong_kill_bonus(victim)
+    -- Проверяем, был ли уже выдан бонус (проверяем инфопоршень)
+    if has_alife_info("info_rank_bonus_first_strong_kill") then
+        return
+    end
+
+    -- Проверяем текущий ранг (должен быть меньше 300)
+    if get_rank() >= 300 then
+        return
+    end
+
+    -- Проверяем, является ли убитый мутант сильным
+    if strong_mutants_clsids[victim:clsid()] then
+        
+        -- ВЫДАЕМ БОНУС
+        add_rank(400)
+        
+        -- Запоминаем навсегда, что бонус выдан
+        db.actor:give_info_portion("info_rank_bonus_first_strong_kill")
+    end
+end
+
+--------------------------------------------------------------------------------
+-- НАГРАДЫ ЗА МУТАНТОВ (ПО КЛАССАМ)
+--------------------------------------------------------------------------------
+
+-- 1. Связываем движковый класс (CLSID) с понятным названием
+-- Это позволит легко группировать монстров
+local mutant_classes = {
+    [clsid.bloodsucker_s]   = "bloodsucker",
+    [clsid.boar_s]          = "boar",
+    [clsid.burer_s]         = "burer",
+    [clsid.chimera_s]       = "chimera",
+    [clsid.controller_s]    = "controller",
+    [clsid.dog_s]           = "dog",
+    [clsid.flesh_s]         = "flesh",
+    [clsid.gigant_s]        = "gigant",
+    [clsid.poltergeist_s]   = "poltergeist",
+    [clsid.psy_dog_s]       = "psy_dog",
+    [clsid.pseudodog_s]     = "pseudodog",
+    [clsid.snork_s]         = "snork",
+    [clsid.tushkano_s]      = "tushkano",
+    [clsid.cat_s]           = "cat",    
+    [clsid.zombie_s]        = "monster_zombie", 
+}
+
+-- 2. Назначаем награду репутацией за каждый тип
+local class_rewards = {
+    ["bloodsucker"]     = 40,
+    ["boar"]            = 15,
+    ["burer"]           = 60,
+    ["chimera"]         = 80,
+    ["controller"]      = 70,
+    ["dog"]             = 5,
+    ["flesh"]           = 5,
+    ["gigant"]          = 100,
+    ["poltergeist"]     = 30,
+    ["psy_dog"]         = 25,
+    ["pseudodog"]       = 15,
+    ["snork"]           = 20,
+    ["tushkano"]        = 1,
+    ["cat"]             = 10,
+    ["monster_zombie"]  = 3, -- Гражданские зомби
+}
+
+-- Функция обработки убийства
+function on_mutant_killed(victim, killer)
+    -- Проверка: убийца существует и это Актор
+    if not (killer and killer:id() == db.actor:id()) then
+        return
+    end
+
+    -- Получаем класс убитого объекта (число)
+    local obj_clsid = victim:clsid()
+
+    -- Получаем текстовое название типа из нашей таблицы
+    local mutant_type = mutant_classes[obj_clsid]
+
+    -- Если такой тип есть в списке и для него прописана награда
+    if mutant_type and class_rewards[mutant_type] then
+        local amount = class_rewards[mutant_type]
+        
+        add_reputation(amount)
+        
+        -- Лог для проверки (можно удалить потом)
+        -- printf("~ [REP MANAGER] Killed class: %s. Added: %d rep.", mutant_type, amount)
+    end
+	check_first_strong_kill_bonus(victim)
+end
+
+--------------------------------------------------------------------------------
+-- НАГРАДЫ ЗА СТАЛКЕРОВ (НПС)
+--------------------------------------------------------------------------------
+
+-- Функция, которая возвращает бонус за ранг жертвы
+local function get_rank_bonus(npc_rank)
+    if npc_rank >= 900 then
+        return 25
+    elseif npc_rank >= 600 then
+        return 10
+    elseif npc_rank >= 300 then
+        return 5
+    else
+        return 1
+    end
+end
+
+-- Основная функция обработки убийства сталкера
+function on_stalker_killed(victim, killer)
+    if not (killer and killer:id() == db.actor:id()) then return end
+    if not (victim and IsStalker(victim)) then return end
+
+    local community = victim:character_community()
+    local rank_val = victim:character_rank()
+    local relation = victim:relation(db.actor) -- Отношение к ГГ (enemy, neutral, friend)
+	 
+    if relation == game_object.friend then
+        decrease_reputation(100)
+    elseif relation == game_object.neutral then
+        decrease_reputation(10)
+    end
+ 
+    local reward_amount = 0
+
+    -- Логика начисления
+    if community == "zombied" then
+        reward_amount = 1
+    else
+        -- Считаем базу за группировку
+        local faction_base = 5
+        
+        if community == "monolith" then
+            faction_base = 10
+        end
+        
+        -- Считаем бонус за ранг
+        local rank_bonus = get_rank_bonus(rank_val)
+        
+        -- Суммируем
+        reward_amount = faction_base + rank_bonus
+    end
+
+    -- Выдаем награду 
+    if reward_amount > 0 then
+        add_rank(reward_amount)
+        
+        -- Лог для отладки
+        -- printf("~ [RANK MANAGER] Killed stalker (%s, rank: %d). Added: %d rank.", community, rank_val, reward_amount)
+    end
+end

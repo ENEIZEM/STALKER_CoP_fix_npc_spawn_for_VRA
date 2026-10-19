@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+<!-- Custom ones, like in Clear Sky -->
+
+	<string id="st_zat_treasure_box_1_name">
+		<text>Stash by the gates</text>
+	</string>
+	<string id="st_zat_treasure_box_1_desc">
+		<text>Left some supplies in case I bail from Zaton.</text>
+	</string>	
+
+<!-- Original CS stashes -->
+	
+	<!-- Zaton -->	
+	
+	<string id="st_zat_hiding_place_1_name">
+		<text>PM on a tree</text>
+	</string>
+	<string id="st_zat_hiding_place_1_desc">
+		<text>Tossed my piece and a couple of ammo packs up a tree, gotta check later if they didn't fall down.</text>
+	</string>			
+	<string id="st_zat_hiding_place_3_name">
+		<text>Ammo under the pontoon</text>
+	</string>
+	<string id="st_zat_hiding_place_3_desc">
+		<text>We shook down some stalkers, and I've got more of these pistol slugs than I know what to do with, for real. Left the extra under the pontoon, will grab it later.</text>
+	</string>	
+	<string id="st_zat_hiding_place_4_name">
+		<text>AK in the wreck</text>
+	</string>
+	<string id="st_zat_hiding_place_4_desc">
+		<text>Ah damn, long story short, I'll leave my AK here for now, hope nobody snatches it.</text>
+	</string>	
+	<string id="st_zat_hiding_place_6_name">
+		<text>Medkits and junk</text>
+	</string>
+	<string id="st_zat_hiding_place_6_desc">
+		<text>Stumbled upon some good army medkits and some science junk, leaving it here for now.</text>
+	</string>	
+	<string id="st_zat_hiding_place_11_name">
+		<text>In the rocks</text>
+	</string>
+	<string id="st_zat_hiding_place_11_desc">
+		<text>Stashed some extra loot under a rock where we made camp, we'll grab it later.</text>
+	</string>	
+	<string id="st_zat_hiding_place_13_name">
+		<text>Merc stash</text>
+	</string>
+	<string id="st_zat_hiding_place_13_desc">
+		<text>Hid some loot here in a tree, near our spot. Not sure where our boss is heading yet.</text>
+	</string>	
+	<string id="st_zat_hiding_place_14_name">
+		<text>Under the roof</text>
+	</string>
+	<string id="st_zat_hiding_place_14_desc">
+		<text>Stashed some meds here, place seems quiet and deserted, will pick it up later.</text>
+	</string>		
+	<string id="st_zat_hiding_place_15_name">
+		<text>New suit</text>
+	</string>
+	<string id="st_zat_hiding_place_15_desc">
+		<text>I'll leave it here on the roof, for now I'll head back to base in my jacket.</text>
+	</string>		
+	<string id="st_zat_hiding_place_16_name">
+		<text>A sweet piece</text>
+	</string>
+	<string id="st_zat_hiding_place_16_desc">
+		<text>Buried a real sweet gun here, ammo for it and a couple of nades, will pick it up when I come back with the boys.</text>
+	</string>		
+	<string id="st_zat_hiding_place_20_name">
+		<text>Present under the tree</text>
+	</string>
+	<string id="st_zat_hiding_place_20_desc">
+		<text>Dropped a AK and a little surprise for you, better grab it before it all rusts.</text>
+	</string>		
+	<string id="st_zat_hiding_place_21_name">
+		<text>Stash in the truck bed</text>
+	</string>
+	<string id="st_zat_hiding_place_21_desc">
+		<text>Gonna dump the extra expensive ammo in this truck bed. It's hot as hell here, and the place is crap, near an anomaly. Doubt anyone will crawl in here.</text>
+	</string>	
+	<string id="st_zat_hiding_place_23_name">
+		<text>Provisions</text>
+	</string>
+	<string id="st_zat_hiding_place_23_desc">
+		<text>Left it under the table for a rainy day, it'll come in handy.</text>
+	</string>		
+	<string id="st_zat_hiding_place_24_name">
+		<text>Juicy loot</text>
+	</string>
+	<string id="st_zat_hiding_place_24_desc">
+		<text>Found someone's stash under the bushes, marked it on my PDA for now, but can't grab it.</text>
+	</string>	
+	<string id="st_zat_hiding_place_25_name">
+		<text>Rock and bush</text>
+	</string>
+	<string id="st_zat_hiding_place_25_desc">
+		<text>Landmarks are crap, but I think you'll figure it out. Stashed a GP-25 and some VOG rounds there, grab it and let's get to work.</text>
+	</string>	
+	<string id="st_zat_hiding_place_27_name">
+		<text>Sucker's piece</text>
+	</string>
+	<string id="st_zat_hiding_place_27_desc">
+		<text>Me and the boys dumped a piece we took from some sucker here, but it's no good for us, just worthless crap.</text>
+	</string>		
+	<string id="st_zat_hiding_place_29_name">
+		<text>Foreign piece</text>
+	</string>
+	<string id="st_zat_hiding_place_29_desc">
+		<text>Bought a real cool piece, but don't wanna flash it to the boys, let it lie here.</text>
+	</string>		
+	<string id="st_zat_hiding_place_31_name">
+		<text>Medicals</text>
+	</string>
+	<string id="st_zat_hiding_place_31_desc">
+		<text>Stashed some meds by the tree. Will come in handy when I head towards the Iron Forest.</text>
+	</string>		
+	<string id="st_zat_hiding_place_34_name">
+		<text>Killer's piece</text>
+	</string>
+	<string id="st_zat_hiding_place_34_desc">
+		<text>No shit, I was walking and found some killer's piece. Tossed it in a truck bed with a couple of ammo packs for it.</text>
+	</string>	
+	<string id="st_zat_hiding_place_36_name">
+		<text>New sidearm</text>
+	</string>
+	<string id="st_zat_hiding_place_36_desc">
+		<text>The boss said we don't need them for the job yet, so I decided to stash mine here in a car nearby.</text>
+	</string>				
+	<string id="st_zat_hiding_place_39_name">
+		<text>Loot in the pipe</text>
+	</string>
+	<string id="st_zat_hiding_place_39_desc">
+		<text>Took a bunch of loot from the heli in the swamps. Dumped the meds and some weird pills in a pipe nearby, will figure it out later.</text>
+	</string>	
+	<string id="st_zat_hiding_place_40_name">
+		<text>VOGs</text>
+	</string>
+	<string id="st_zat_hiding_place_40_desc">
+		<text>Put some of the loot I cleaned out from the heli near a tree. VOGs here, hope they don't detonate out in the open, will grab them later.</text>
+	</string>	
+	<string id="st_zat_hiding_place_41_name">
+		<text>Shotty in the bushes</text>
+	</string>
+	<string id="st_zat_hiding_place_41_desc">
+		<text>Got lightly wounded after the hunt, can't carry it, will hide it here in the roots for now.</text>
+	</string>	
+	<string id="st_zat_hiding_place_42_name">
+		<text>Atom</text>
+	</string>
+	<string id="st_zat_hiding_place_42_desc">
+		<text>Spotted a weird symbol on the wall and, seems like there's loot in the electrical box, but I can't get to it nohow, just marking it on the PDA.</text>
+	</string>		
+	<string id="st_zat_hiding_place_43_name">
+		<text>Army stash</text>
+	</string>
+	<string id="st_zat_hiding_place_43_desc">
+		<text>Passing on the stash coordinates, use it as you see fit.</text>
+	</string>	
+	<string id="st_zat_hiding_place_45_name">
+		<text>Boozer's stash</text>
+	</string>
+	<string id="st_zat_hiding_place_45_desc">
+		<text>Hey, you gonna pick up our Boozer's piece soon? If you don't manage by tomorrow, I'll personally shove that gun up your ass.</text>
+	</string>		
+	<string id="st_zat_hiding_place_46_name">
+		<text>Army medkits</text>
+	</string>
+	<string id="st_zat_hiding_place_46_desc">
+		<text>Spotted some loot from the street, but I ain't going for it, this place feels wrong and I got a feeling I'm not alone here.</text>
+	</string>		
+	<string id="st_zat_hiding_place_49_name">
+		<text>Vintorez</text>
+	</string>
+	<string id="st_zat_hiding_place_49_desc">
+		<text>Left the VSS on the farmhouse roof after the job, just marking it on my PDA for now.</text>
+	</string>		
+	<string id="st_zat_hiding_place_50_name">
+		<text>Loot in a bush</text>
+	</string>
+	<string id="st_zat_hiding_place_50_desc">
+		<text>Dumped some extra loot, 'cause I feel like I'm gonna throw my back out soon, and I've got a long trek to Skadovsk ahead.</text>
+	</string>	
+	<string id="st_zat_hiding_place_54_name">
+		<text>Gear in the rocks</text>
+	</string>
+	<string id="st_zat_hiding_place_54_desc">
+		<text>Dropped some powerful loot here, the spot's good, doubt anyone will find it.</text>
+	</string>	
+	<string id="st_zat_hiding_place_55_name">
+		<text>Kalash on the roof</text>
+	</string>
+	<string id="st_zat_hiding_place_55_desc">
+		<text>Tossed my old Kalash on the roof, doubt anyone would think to climb up here.</text>
+	</string>	
+	
+	<!-- Jupiter Outskirts -->
+
+	<string id="st_jup_hiding_place_3_name">
+		<text>Special assault rifle</text>
+	</string>
+	<string id="st_jup_hiding_place_3_desc">
+		<text>I'll leave it here, looks quiet and reliable, need to fence it to a trader in a couple of days.</text>
+	</string>	
+	<string id="st_jup_hiding_place_5_name">
+		<text>Hot Lada</text>
+	</string>
+	<string id="st_jup_hiding_place_5_desc">
+		<text>Dammit, left my guns in this cursed Lada, and it started glowing after the blowout, what a mess.</text>
+	</string>		
+	<string id="st_jup_hiding_place_6_name">
+		<text>Loot under the fir tree</text>
+	</string>
+	<string id="st_jup_hiding_place_6_desc">
+		<text>It's quiet here, I'll drop some loot and move on towards Yanov.</text>
+	</string>		
+	<string id="st_jup_hiding_place_8_name">
+		<text>AK and supplies</text>
+	</string>
+	<string id="st_jup_hiding_place_8_desc">
+		<text>Tossed it behind the rocks, worked out pretty convenient, will grab it later.</text>
+	</string>		
+	<string id="st_jup_hiding_place_10_name">
+		<text>Under the concrete</text>
+	</string>
+	<string id="st_jup_hiding_place_10_desc">
+		<text>Hid some loot under the concrete bridge, what we had on us. Our guys will pick it up later.</text>
+	</string>	
+	<string id="st_jup_hiding_place_12_name">
+		<text>Monolith stash</text>
+	</string>
+	<string id="st_jup_hiding_place_12_desc">
+		<text>No information.</text>
+	</string>	
+	<string id="st_jup_hiding_place_13_name">
+		<text>Ataman's stash</text>
+	</string>
+	<string id="st_jup_hiding_place_13_desc">
+		<text>There should be some gun on top of the diesel locomotive. Don't know what kind, didn't check, heard it by chance when drunk.</text>
+	</string>	
+	<string id="st_jup_hiding_place_15_name">
+		<text>Captain's gun</text>
+	</string>
+	<string id="st_jup_hiding_place_15_desc">
+		<text>Picked up a dead Duty member's PDA, there's a stash on it. Don't know what's in it, don't even wanna go near the plant outskirts, that place is death.</text>
+	</string>	
+	<string id="st_jup_hiding_place_17_name">
+		<text>Monolith stash</text>
+	</string>
+	<string id="st_jup_hiding_place_17_desc">
+		<text>No information.</text>
+	</string>		
+	<string id="st_jup_hiding_place_18_name">
+		<text>Hunting rifle</text>
+	</string>
+	<string id="st_jup_hiding_place_18_desc">
+		<text>Near the science bunker in the swamp, I'll grab it when I'm ready.</text>
+	</string>		
+	<string id="st_jup_hiding_place_19_name">
+		<text>Veteran's stash</text>
+	</string>
+	<string id="st_jup_hiding_place_19_desc">
+		<text>Dropped a good shotgun here, if anyone steals it - I'll find them and break all their teeth.</text>
+	</string>	
+	<string id="st_jup_hiding_place_21_name">
+		<text>Fat loot</text>
+	</string>
+	<string id="st_jup_hiding_place_21_desc">
+		<text>Dropped some essentials here to prepare for the run towards the plant.</text>
+	</string>	
+	<string id="st_jup_hiding_place_24_name">
+		<text>Stash in the cab</text>
+	</string>
+	<string id="st_jup_hiding_place_24_desc">
+		<text>Couldn't resist, snitched some loot from the boys and stuffed it in the ZIL cab.</text>
+	</string>	
+	<string id="st_jup_hiding_place_26_name">
+		<text>Behind the iron</text>
+	</string>
+	<string id="st_jup_hiding_place_26_desc">
+		<text>Yar said not to chicken out from the local zombies, we can stash loot right here, they'll scare off the local jacket trash like scarecrows.</text>
+	</string>		
+	<string id="st_jup_hiding_place_33_name">
+		<text>Science loot</text>
+	</string>
+	<string id="st_jup_hiding_place_33_desc">
+		<text>In the excavator cab, watch your step. Take the readings and get back to the bunker.</text>
+	</string>		
+	<string id="st_jup_hiding_place_38_name">
+		<text>Merc gear</text>
+	</string>
+	<string id="st_jup_hiding_place_38_desc">
+		<text>Mission accomplished, dumping ammo, meet at the rendezvous point. Over and out.</text>
+	</string>	
+	<string id="st_jup_hiding_place_39_name">
+		<text>Faction reserves</text>
+	</string>
+	<string id="st_jup_hiding_place_39_desc">
+		<text>The Lieutenant ordered us to stash a backup gun somewhere in this grid, in case we clash with the bandits.</text>
+	</string>
+	<string id="st_jup_hiding_place_40_name">
+		<text>Two guns</text>
+	</string>
+	<string id="st_jup_hiding_place_40_desc">
+		<text>Dumped everything I managed to carry out under a fir tree near the warehouse, now we gotta get the hell out of here ASAP.</text>
+	</string>	
+	<string id="st_jup_hiding_place_42_name">
+		<text>Monolith stash</text>
+	</string>
+	<string id="st_jup_hiding_place_42_desc">
+		<text>No information.</text>
+	</string>			
+	<string id="st_jup_hiding_place_44_name">
+		<text>Gun under the fir tree</text>
+	</string>
+	<string id="st_jup_hiding_place_44_desc">
+		<text>Snatched it for a good price, hid it near the Cops, safer that way. Can test it on the locals too.</text>
+	</string>		
+	<string id="st_jup_hiding_place_47_name">
+		<text>Radioactive AK</text>
+	</string>
+	<string id="st_jup_hiding_place_47_desc">
+		<text>Spotted a gun, but was too scared to go for it, the detectors are going crazy in this spot.</text>
+	</string>		
+	<string id="st_jup_hiding_place_49_name">
+		<text>Under the shed</text>
+	</string>
+	<string id="st_jup_hiding_place_49_desc">
+		<text>Need to grab this stash before dark, when you're done with your business, head to the Cops, I've sent the marker to your PDA.</text>
+	</string>	
+	<string id="st_jup_hiding_place_50_name">
+		<text>Old shotgun</text>
+	</string>
+	<string id="st_jup_hiding_place_50_desc">
+		<text>Bought a newer gun, so I don't need this one anymore, but I can't bring myself to sell it. Let it lie here with ammo for a rainy day.</text>
+	</string>	
+	
+<!-- Strelok's stashes -->
+
+	<string id="st_jup_b10_secret_01_name">
+		<text>Underground unknown signal</text>
+	</string>
+	<string id="st_jup_b10_secret_01_desc">
+		<text>First signal registered by the UAV when it flew over the area.</text>
+	</string>
+	<string id="st_jup_b10_secret_02_name">
+		<text>Unknown signal at height</text>
+	</string>
+	<string id="st_jup_b10_secret_02_desc">
+		<text>Second signal registered by the UAV when it flew over the area.</text>
+	</string>	
+	<string id="st_jup_b10_secret_03_name">
+		<text>Distorted unknown signal</text>
+	</string>
+	<string id="st_jup_b10_secret_03_desc">
+		<text>Third signal registered by the UAV when it flew over the area.</text>
+	</string>	
+	
+</string_table>
