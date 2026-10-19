@@ -15,6 +15,8 @@ local valid_territory = {
 }
 
 --' Проверка, что нпс подходит работе
+SemiLog("[VRA-SPAWN-TRACE] gamedata smart_terrain.script loaded")
+
 local function job_avail_to_npc(npc_info, job_info, smart)
 	--printf("job_avail_to_npc %s job %s smart %s", npc_info.se_obj:name(), tostring(job_info.job_id), smart:name())
 	local job = smart.job_data[job_info.job_id]
@@ -1412,11 +1414,10 @@ function se_smart_terrain:call_respawn()
 end
 
 function se_smart_terrain:try_respawn()
-    local trace_smart = self:name() == "zat_stalker_base_smart"
     local function trace_status(status)
-        if trace_smart and self._vra_spawn_trace_status ~= status then
+        if self._vra_spawn_trace_status ~= status then
             self._vra_spawn_trace_status = status
-            SemiLog("[VRA-SPAWN-TRACE] " .. tostring(self:name()) .. " respawn gate=" .. tostring(status) .. " population=" .. tostring(self.population) .. " max=" .. tostring(self.max_population) .. " disabled=" .. tostring(self.disabled) .. " respawn_point=" .. tostring(self.respawn_point))
+            SemiLog("[VRA-SPAWN-TRACE] smart=" .. tostring(self:name()) .. " level=" .. tostring(self.smart_level) .. " respawn_gate=" .. tostring(status) .. " population=" .. tostring(self.population) .. " max=" .. tostring(self.max_population) .. " disabled=" .. tostring(self.disabled) .. " respawn_point=" .. tostring(self.respawn_point))
         end
     end
     local flags = { disabled = false }
