@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="windows-1251" ?>
-<string_table>
-	<string id="st_up_outfit_nvg_gen_3">
-		<text>3rd Gen Night Vision Goggles</text>
-	</string>
-	<string id="st_up_outfit_nvg_gen_3_descr">
-		<text>Installation of top-tier interference-resistant NVGs that enable operating in complete darkness.</text>
-	</string>
-</string_table>
