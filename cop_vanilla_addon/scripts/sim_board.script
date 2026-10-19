@@ -5,7 +5,7 @@
 --' В этом ltx хранятся дескрипторы сквадов.
 squad_ltx = system_ini()
 setting_ini = ini_file("misc\\simulation.ltx")
-printf("[VRA-SPAWN-TRACE] sim_board.script loaded; source=VRA addon")
+SemiLog("[VRA-SPAWN-TRACE] sim_board.script loaded; source=VRA addon")
 
 local group_id_by_levels = {zaton = 1,
 							pripyat = 2,
@@ -171,6 +171,7 @@ function sim_board:__init()
 	self.tmp_entered_squad = {}
 
 	printf("CREATE NEW SIM BOARD [%s]", tostring(self.sid))
+	SemiLog("[VRA-SPAWN-TRACE] sim_board instance constructed")
 end
 function sim_board:start_sim()
 	self.simulation_started = true
@@ -186,6 +187,7 @@ end
 --' Регистрация нового смарта.
 function sim_board:register_smart(obj)
 	printf("register_smart %s", obj:name())
+	SemiLog("[VRA-SPAWN-TRACE] register_smart name=" .. tostring(obj:name()) .. " id=" .. tostring(obj.id))
 	if self.smarts[obj.id] ~= nil then
 		abort("Smart already exist in list [%s]", obj:name())
 	end
@@ -222,6 +224,7 @@ end
 --' Создание нового отряда
 function sim_board:create_squad(spawn_smart, sq_id)
 	printf("create squad called")
+	SemiLog("[VRA-SPAWN-TRACE] create_squad requested id=" .. tostring(sq_id) .. " smart=" .. tostring(spawn_smart:name()))
 	local squad_id = tostring(sq_id)
 
 	local squad = alife():create(squad_id,spawn_smart.position,
@@ -385,9 +388,9 @@ end
 
 --' Заполнение стартового расположения
 function sim_board:fill_start_position()
-	printf("[VRA-SPAWN-TRACE] fill_start_position called; already_filled=%s", tostring(self.start_position_filled))
+	SemiLog("[VRA-SPAWN-TRACE] fill_start_position called; already_filled=" .. tostring(self.start_position_filled))
 	if self.start_position_filled == true then
-		printf("[VRA-SPAWN-TRACE] fill_start_position skipped: already filled")
+		SemiLog("[VRA-SPAWN-TRACE] fill_start_position skipped: already filled")
 		return
 	end
 	self.start_position_filled = true
@@ -398,28 +401,28 @@ function sim_board:fill_start_position()
 		local level_name = alife():level_name(level.id)
 		local section_name = "start_position_" .. tostring(level_name)
 		local has_section = setting_ini:section_exist(section_name)
-		printf("[VRA-SPAWN-TRACE] level=%s id=%s section=%s exists=%s", tostring(level_name), tostring(level.id), tostring(section_name), tostring(has_section))
+		SemiLog("[VRA-SPAWN-TRACE] level=" .. tostring(level_name) .. " id=" .. tostring(level.id) .. " section=" .. tostring(section_name) .. " exists=" .. tostring(has_section))
 		if has_section then
 			local n = setting_ini:line_count(section_name)
-			printf("[VRA-SPAWN-TRACE] section=%s entries=%s", tostring(section_name), tostring(n))
+			SemiLog("[VRA-SPAWN-TRACE] section=" .. tostring(section_name) .. " entries=" .. tostring(n))
 			for i=0,n-1 do
 				local result, id, value = setting_ini:r_line(section_name,i,"","")
 				local smrt_names = utils.parse_names(value)
 				for k,v in pairs(smrt_names) do
 					local spawn_smart = self.smarts_by_names[v]
 					if spawn_smart == nil then
-						printf("[VRA-SPAWN-TRACE] missing smart=%s squad=%s section=%s", tostring(v), tostring(id), tostring(section_name))
+						SemiLog("[VRA-SPAWN-TRACE] missing smart=" .. tostring(v) .. " squad=" .. tostring(id) .. " section=" .. tostring(section_name))
 						abort("Wrong smart name [%s] in start position", tostring(v))
 					end
 					local squad = self:create_squad(spawn_smart, id)
 					created_count = created_count + 1
-					printf("[VRA-SPAWN-TRACE] created squad=%s smart=%s", tostring(id), tostring(v))
+					SemiLog("[VRA-SPAWN-TRACE] created squad=" .. tostring(id) .. " smart=" .. tostring(v))
 					self:enter_smart(squad, spawn_smart.id)
 				end
 			end
 		end
 	end
-	printf("[VRA-SPAWN-TRACE] fill_start_position finished; levels=%s created_squads=%s", tostring(level_count), tostring(created_count))
+	SemiLog("[VRA-SPAWN-TRACE] fill_start_position finished; levels=" .. tostring(level_count) .. " created_squads=" .. tostring(created_count))
 end
 
 function sim_board:get_smart_by_name(name)

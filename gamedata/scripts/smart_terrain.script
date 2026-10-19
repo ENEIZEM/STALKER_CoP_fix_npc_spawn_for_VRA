@@ -135,7 +135,7 @@ end
 function se_smart_terrain:on_before_register()
 	cse_alife_smart_zone.on_before_register(self)
 	self.board = sim_board.get_sim_board()
-	printf("[VRA-SPAWN-TRACE] smart on_before_register name=%s id=%s", tostring(self:name()), tostring(self.id))
+	SemiLog("[VRA-SPAWN-TRACE] smart on_before_register name=" .. tostring(self:name()) .. " id=" .. tostring(self.id))
 	self.board:register_smart(self)
 	self.smart_level	= alife():level_name(game_graph():vertex(self.m_game_vertex_id):level_id())
 	--printf("SMARTLEVEL %s level %s", self:name(), tostring(self.smart_level))
@@ -148,7 +148,7 @@ function se_smart_terrain:on_register()
 	simulation_objects.get_sim_obj_registry():register(self)
 
 	printf("register smart %s", self:name())
-	printf("[VRA-SPAWN-TRACE] smart on_register name=%s max_population=%s respawn_point=%s respawn_time=%s", tostring(self:name()), tostring(self.max_population), tostring(self.respawn_point), tostring(self.respawn_time))
+	SemiLog("[VRA-SPAWN-TRACE] smart on_register name=" .. tostring(self:name()) .. " max_population=" .. tostring(self.max_population) .. " respawn_point=" .. tostring(self.respawn_point) .. " respawn_time=" .. tostring(self.respawn_time))
 
 	if dev_dedug then
 		self:refresh()
@@ -1390,6 +1390,7 @@ end
 function se_smart_terrain:call_respawn()
 	local available_sects = {}
 	printf("respawn called from smart_terrain [%s]", self:name())
+	SemiLog("[VRA-SPAWN-TRACE] call_respawn reached smart=" .. tostring(self:name()))
 	for k,v in pairs(self.respawn_params) do
 		if tonumber(xr_logic.pick_section_from_condlist(db.actor, nil,v.num)) > self.already_spawned[k].num then
 			table.insert(available_sects,k)
@@ -1415,7 +1416,7 @@ function se_smart_terrain:try_respawn()
     local function trace_status(status)
         if trace_smart and self._vra_spawn_trace_status ~= status then
             self._vra_spawn_trace_status = status
-            printf("[VRA-SPAWN-TRACE] %s respawn gate=%s population=%s max=%s disabled=%s respawn_point=%s", tostring(self:name()), tostring(status), tostring(self.population), tostring(self.max_population), tostring(self.disabled), tostring(self.respawn_point))
+            SemiLog("[VRA-SPAWN-TRACE] " .. tostring(self:name()) .. " respawn gate=" .. tostring(status) .. " population=" .. tostring(self.population) .. " max=" .. tostring(self.max_population) .. " disabled=" .. tostring(self.disabled) .. " respawn_point=" .. tostring(self.respawn_point))
         end
     end
     local flags = { disabled = false }
