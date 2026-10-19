@@ -1414,10 +1414,12 @@ function se_smart_terrain:call_respawn()
 end
 
 function se_smart_terrain:try_respawn()
+    local raw_squad_count = -1
+    local real_squad_count = -1
     local function trace_status(status)
         if self._vra_spawn_trace_status ~= status then
             self._vra_spawn_trace_status = status
-            SemiLog("[VRA-SPAWN-TRACE] smart=" .. tostring(self:name()) .. " level=" .. tostring(self.smart_level) .. " respawn_gate=" .. tostring(status) .. " population=" .. tostring(self.population) .. " max=" .. tostring(self.max_population) .. " disabled=" .. tostring(self.disabled) .. " respawn_point=" .. tostring(self.respawn_point))
+            SemiLog("[VRA-SPAWN-TRACE] smart=" .. tostring(self:name()) .. " level=" .. tostring(self.smart_level) .. " respawn_gate=" .. tostring(status) .. " population=" .. tostring(self.population) .. " max=" .. tostring(self.max_population) .. " raw_squads=" .. tostring(raw_squad_count) .. " eligible_squads=" .. tostring(real_squad_count) .. " disabled=" .. tostring(self.disabled) .. " respawn_point=" .. tostring(self.respawn_point))
         end
     end
     local flags = { disabled = false }
@@ -1434,12 +1436,18 @@ function se_smart_terrain:try_respawn()
         trace_status("sim_avail_false")
         return
     end
-    local real_squad_count = 0
-    if self.board.smarts[self.id] and self.board.smarts[self.id].squads then
-        for k, v in pairs(self.board.smarts[self.id].squads) do
-            real_squad_count = real_squad_count + 1
+    local squad_table = self.board.smarts[self.id] and self.board.smarts[self.id].squads
+    raw_squad_count = 0
+    if squad_table then
+        for k, v in pairs(squad_table) do
+            raw_squad_count = raw_squad_count + 1
         end
     end
+
+    -- Match target_precondition(): scripted/story squads with their own script target
+    -- must not consume the smart's simulation respawn population.
+    real_squad_count = squad_table and smart_terrain_squad_count(squad_table) or 0
+    trace_status("squad_count raw=" .. tostring(raw_squad_count) .. "_eligible=" .. tostring(real_squad_count))
     if real_squad_count >= self.max_population then
         trace_status("population_limit_" .. tostring(real_squad_count) .. "_of_" .. tostring(self.max_population))
         printf("%s cannot respawn due to REAL squad_count %s of max %s", self:name(), real_squad_count, self.max_population)
