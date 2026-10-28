@@ -1,9 +1,10 @@
 [smart_terrain]
+respawn_time = 800
 def_restr = jup_a6_sr_noweap
 safe_restr = jup_a6_sr_light
 smart_control = smart_control
 squad_id = 4
-max_population = {+jup_b207_attack_started} 4, 3
+max_population = {+jup_b207_attack_started} 5, 4
 respawn_params = respawn@jup_a6   
 arrive_dist = 65
 
@@ -14,15 +15,15 @@ spawn_duty
 
 [spawn_stalker]
 spawn_squads = stalker_sim_squad_veteran, stalker_sim_squad_advanced, stalker_sim_squad_novice
-spawn_num = 1
+spawn_num = 2
 
 [spawn_freedom]
 spawn_squads = freedom_sim_squad_veteran, freedom_sim_squad_advanced, freedom_sim_squad_novice
-spawn_num = {+sim_duty_help_harder} 0, {+balance_advocate_gained} 0, 1
+spawn_num = {+sim_duty_help_harder} 0, {+balance_advocate_gained} 0, 2
 
 [spawn_duty]
 spawn_squads = duty_sim_squad_veteran, duty_sim_squad_advanced, duty_sim_squad_novice
-spawn_num = {+sim_freedom_help_harder} 0, {+balance_advocate_gained} 0, 1
+spawn_num = {+sim_freedom_help_harder} 0, {+balance_advocate_gained} 0, 2
 
 [smart_control]
 noweap_zone = jup_a6_sr_noweap
